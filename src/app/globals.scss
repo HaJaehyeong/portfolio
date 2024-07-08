@@ -17,3 +17,44 @@ label {
 code {
   font-size: 14px;
 }
+
+// NOTE(hajae): 디자인상 현재 Light 모드가 없으므로 추후 추가
+:root {
+  --primary-black: #01080e;
+  --primary-background: #011627;
+  --primary-deep-background: #011221;
+
+  --secondary-gray: #607b96;
+  --secondary-green: #3c9d93;
+  --secondary-blue: #4d5bce;
+  --secondary-white: #ffffff;
+
+  --accent-orange: #fea55f;
+  --accent-green: #43d9ad;
+  --accent-red: #e99287;
+  --accent-pupple: #c98bdf;
+
+  --line: #1e2d3d;
+  --gradients-blue: #4d5bce;
+  --gradients-green: #43d9ad;
+}
+
+[data-theme='dark'] {
+  --primary-black: #01080e;
+  --primary-background: #011627;
+  --primary-deep-background: #011221;
+
+  --secondary-gray: #607b96;
+  --secondary-green: #3c9d93;
+  --secondary-blue: #4d5bce;
+  --secondary-white: #ffffff;
+
+  --accent-orange: #fea55f;
+  --accent-green: #43d9ad;
+  --accent-red: #e99287;
+  --accent-pupple: #c98bdf;
+
+  --line: #1e2d3d;
+  --gradients-blue: #4d5bce;
+  --gradients-green: #43d9ad;
+}
