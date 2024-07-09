@@ -44,6 +44,10 @@ code {
   --gradients-green: #43d9ad;
 
   --default-button-background: #1c2b3a;
+  --default-button-background-hover: #263b50;
+  --primary-button-background: #fea55f;
+  --primary-button-background-hover: #ffac6b;
+  --ghost-button-border-hover: rgba(255, 255, 255, 0.5);
 }
 
 [data-theme='dark'] {
