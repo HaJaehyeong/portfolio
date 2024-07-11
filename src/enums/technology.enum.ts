@@ -8,7 +8,7 @@ import {
   RiVuejsFill,
   RiVuejsLine,
 } from '@remixicon/react';
-import { EnumBase, EnumDef } from './EnumBase';
+import { EnumBase, EnumDef } from './enumBase';
 
 const TechnologyCode = {
   react: 'react',
