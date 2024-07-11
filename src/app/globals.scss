@@ -26,8 +26,8 @@ code {
 // NOTE(hajae): 디자인상 현재 Light 모드가 없으므로 추후 추가
 :root {
   --primary-black: #01080e;
-  --primary-background: #011627;
-  --primary-deep-background: #011221;
+  --primary-black-2: #011627;
+  --primary-black-3: #011221;
 
   --secondary-gray: #607b96;
   --secondary-green: #3c9d93;
@@ -52,8 +52,8 @@ code {
 
 [data-theme='dark'] {
   --primary-black: #01080e;
-  --primary-background: #011627;
-  --primary-deep-background: #011221;
+  --primary-black-2: #011627;
+  --primary-black-3: #011221;
 
   --secondary-gray: #607b96;
   --secondary-green: #3c9d93;
@@ -70,4 +70,8 @@ code {
   --gradients-green: #43d9ad;
 
   --default-button-background: #1c2b3a;
+  --default-button-background-hover: #263b50;
+  --primary-button-background: #fea55f;
+  --primary-button-background-hover: #ffac6b;
+  --ghost-button-border-hover: rgba(255, 255, 255, 0.5);
 }
