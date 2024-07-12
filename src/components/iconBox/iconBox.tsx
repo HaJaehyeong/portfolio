@@ -1,4 +1,3 @@
-import { RiReactjsFill } from '@remixicon/react';
 import styles from './iconBox.module.scss';
 import { Enums } from '@/enums/enums';
 
