@@ -14,7 +14,7 @@ const IconBox: React.FC<IconBoxProps> = ({ icon, size }) => {
 
   return (
     <div className={styles.iconBoxWrapper} style={{ backgroundColor: targetIcon?.backgroundColor }}>
-      <targetIcon.icon size={size ? size : 20}></targetIcon.icon>
+      <targetIcon.icon size={size ? size : 20} />
     </div>
   );
 };
