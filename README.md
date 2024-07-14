@@ -45,6 +45,32 @@ const TechnologyCode = {
 type TechnologyCode = (typeof TechnologyCode)[keyof typeof TechnologyCode];
 ```
 
+<br/><br/><br/>
+
+## TechnologyLogo (기술 로고)
+
+![technology logo component design](/src/public/readmeImages/technology-preview.png)
+
+### 설명
+
+IconBox와 동일
+
+#### 호출
+
+```tsx
+<TechnologyLogo icon="react" />
+<TechnologyLogo icon="html5" />
+<TechnologyLogo icon="angular" size={50} />
+```
+
+#### 결과
+
+![alt text](/src/public/readmeImages/technology-result.png)
+
+#### 현재 호출 가능한 아이콘 코드명
+
+IconBoy와 동일
+
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 # License Agreement
