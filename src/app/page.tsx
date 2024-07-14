@@ -1,12 +1,12 @@
 import TechnologyLogo from '@/components/technologyLogo/technologyLogo';
 import styles from './page.module.scss';
+import HeaderText from '@/components/headerText/headerText';
 
 const Home: React.FC = () => {
   return (
     <>
-      <TechnologyLogo icon="react" />
-      <TechnologyLogo icon="html5" />
-      <TechnologyLogo icon="angular" size={50} />
+      <HeaderText text="about-me" isSelected={true} />
+      <HeaderText text="projects" isSelected={false} />
     </>
   );
 };
