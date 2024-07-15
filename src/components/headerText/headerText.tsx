@@ -9,9 +9,11 @@ type HeaderTextProps = {
 const HeaderText: React.FC<HeaderTextProps> = ({ text, isSelected, isHeader = true }) => {
   return (
     <div
-      className={`${styles.headerTextWrapper} ${isSelected ? styles.active : ''} ${
-        isHeader ? styles.rightBorder : styles.leftBorder
-      }`}
+      className={`
+      ${styles.headerTextWrapper} 
+      ${isSelected ? styles.active : ''} 
+      ${isHeader ? styles.rightBorder : styles.leftBorder}
+      `}
     >
       {'_' + text}
     </div>
