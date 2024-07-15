@@ -1,0 +1,23 @@
+.header-text-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 120px;
+  height: 55px;
+
+  color: var(--secondary-gray);
+  font-size: 16px;
+
+  &.active {
+    color: var(--secondary-white);
+  }
+
+  &.right-border {
+    border-right: solid 1px var(--line);
+  }
+
+  &.left-border {
+    border-left: solid 1px var(--line);
+  }
+}
