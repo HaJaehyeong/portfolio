@@ -65,11 +65,37 @@ IconBox와 동일
 
 #### 결과
 
-![alt text](/src/public/readmeImages/technology-result.png)
+![technology logo print result](/src/public/readmeImages/technology-result.png)
 
 #### 현재 호출 가능한 아이콘 코드명
 
-IconBoy와 동일
+IconBox와 동일
+
+<br/><br/><br/>
+
+## HeaderText
+
+<img src="/src/public/readmeImages/headertext-preview.png" alt="header text component design" height="300">
+
+### 설명
+
+header에 추가될 tab component
+
+#### 호출
+
+```tsx
+// NOTE(hajae): 어두운 배경이 아니면 잘 보이지 않기 때문에 background를 000으로 설정
+<div style={{ backgroundColor: '#000' }}>
+  // NOTE(hajae): default value of isSelected and isHeader: false
+  <HeaderText text="hello" />
+  <HeaderText text="selected" isSelected={true} />
+  <HeaderText text="header" isSelected={false} isHeader={true} />
+</div>
+```
+
+#### 결과
+
+<img src="/src/public/readmeImages/headertext-result.png" alt="header text print result" height="300">
 
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 

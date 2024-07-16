@@ -2,11 +2,11 @@ import styles from './headerText.module.scss';
 
 type HeaderTextProps = {
   text: string;
-  isSelected: boolean;
+  isSelected?: boolean;
   isHeader?: boolean;
 };
 
-const HeaderText: React.FC<HeaderTextProps> = ({ text, isSelected, isHeader = true }) => {
+const HeaderText: React.FC<HeaderTextProps> = ({ text, isSelected = false, isHeader = true }) => {
   return (
     <div
       className={`
