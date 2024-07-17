@@ -131,6 +131,29 @@ return (
 
 (첫번째는 포커스된 checkbox)
 
+<br/><br/><br/>
+
+## Star
+
+<img src="/src/public/readmeImages/star-preview.png" alt="star component design" height="150">
+
+### 설명
+
+빈 별, 채워진 별을 출력하는 컴포넌트
+
+#### 호출
+
+```tsx
+// NOTE(hajae): default fill: false, size: 18
+<Star />
+<Star fill />
+<Star fill size={22} />
+```
+
+#### 결과
+
+![star print result](/src/public/readmeImages/star-result.png)
+
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 # License Agreement
