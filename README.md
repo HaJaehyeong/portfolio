@@ -129,6 +129,8 @@ return (
 
 <img src="/src/public/readmeImages/checkbox-result.png" alt="checkbox print result" height="200">
 
+(첫번째는 포커스된 checkbox)
+
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 # License Agreement
