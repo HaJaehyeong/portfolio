@@ -6,15 +6,16 @@ import { TechCodesType } from '@/types/constants';
 
 type TechnologiesRow = {
   tech: TechCodesType;
+  checked?: boolean;
 };
 
-const TechnologiesRow: React.FC<TechnologiesRow> = ({ tech }) => {
+const TechnologiesRow: React.FC<TechnologiesRow> = ({ tech, checked = false }) => {
   const targetTech = Enums.Technology.valueOf(tech);
 
   return (
     targetTech && (
       <div className={styles.technologiesRow}>
-        <Checkbox checked />
+        <Checkbox checked={checked} />
         <div className={styles.technologiesRowTitle}>
           <TechnologyLogo icon={tech} size={24} />
           <span>{targetTech?.name}</span>
