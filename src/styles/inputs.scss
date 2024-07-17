@@ -8,7 +8,7 @@ input[type='checkbox'] {
   height: 18px;
 
   background-color: var(--primary-black-2);
-  border-radius: 3px;
+  border-radius: 2px;
 
   cursor: pointer;
 }
@@ -22,7 +22,7 @@ input[type='checkbox']::before {
 
   background-color: var(--primary-black-2);
   border: solid 1px var(--secondary-gray);
-  border-radius: 3px;
+  border-radius: 2px;
   transition: background-color 0.2s;
 }
 

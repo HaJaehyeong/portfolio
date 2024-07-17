@@ -97,6 +97,38 @@ header에 추가될 tab component
 
 <img src="/src/public/readmeImages/headertext-result.png" alt="header text print result" height="300">
 
+<br/><br/><br/>
+
+## Checkbox
+
+<img src="/src/public/readmeImages/checkbox-preview.png" alt="checkbox component design" height="300">
+
+### 설명
+
+체크박스이다... <br/> 스타일을 글로벌로 적용해놨기 때문에 해당 컴포넌트가 아니라 `<input type='checkbox' ...`를 이용해도
+된다.
+
+#### 호출
+
+```tsx
+const [checked, setChecked] = useState(false);
+
+return (
+  // NOTE(hajae): 예시, div의 style도 결과 화면을 보여주기 위한 임시 style이다.
+  <div onClick={() => setChecked(!checked)} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+    <Checkbox checked={checked} />
+    <Checkbox checked={false} />
+    <Checkbox checked={true} />
+    <Checkbox checked />
+    <Checkbox />
+  </div>
+);
+```
+
+#### 결과
+
+<img src="/src/public/readmeImages/checkbox-result.png" alt="checkbox print result" height="200">
+
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 # License Agreement
