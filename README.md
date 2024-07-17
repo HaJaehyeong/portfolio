@@ -89,7 +89,7 @@ header에 추가될 tab component
   // NOTE(hajae): default value of isSelected and isHeader: false
   <HeaderText text="hello" />
   <HeaderText text="selected" isSelected={true} />
-  <HeaderText text="header" isSelected={false} isHeader={true} />
+  <HeaderText text="header" isSelected={false} isTab={false} />
 </div>
 ```
 

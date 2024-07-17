@@ -3,16 +3,16 @@ import styles from './headerText.module.scss';
 type HeaderTextProps = {
   text: string;
   isSelected?: boolean;
-  isHeader?: boolean;
+  isTab?: boolean;
 };
 
-const HeaderText: React.FC<HeaderTextProps> = ({ text, isSelected = false, isHeader = true }) => {
+const HeaderText: React.FC<HeaderTextProps> = ({ text, isSelected = false, isTab = true }) => {
   return (
     <div
       className={`
       ${styles.headerTextWrapper} 
       ${isSelected ? styles.active : ''} 
-      ${isHeader ? styles.rightBorder : styles.leftBorder}
+      ${isTab ? styles.rightBorder : styles.leftBorder}
       `}
     >
       {'_' + text}
