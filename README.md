@@ -154,6 +154,32 @@ return (
 
 ![star print result](/src/public/readmeImages/star-result.png)
 
+<br/><br/><br/>
+
+## TechnologiesRow
+
+<img src="/src/public/readmeImages/technologiesrow-preview.png" alt="technologiesRow component design" height="200">
+
+### 설명
+
+체크박스, 기술 아이콘, 기술 명을 표시하는 Row
+
+#### 호출
+
+```tsx
+// NOTE(hajae): Enums.Technology.values는 현재 표기가능한 모든 tech 객체가 들어있다.
+// TechCodesType -> 'react' | 'html5' | 'vue' | 'css' | 'flutter' | 'angular' | 'variant5' | 'nextjs';
+<>
+  {Enums.Technology.values.map((tech) => (
+    <TechnologiesRow tech={tech.code as TechCodesType} checked />
+  ))}
+</>
+```
+
+#### 결과
+
+<img src="/src/public/readmeImages/technologiesrow-result.png" alt="technologiesRow print result" height="300">
+
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 # License Agreement
