@@ -1,8 +1,9 @@
+import { TechCodesType } from '@/types/constants';
 import styles from './iconBox.module.scss';
 import { Enums } from '@/enums/enums';
 
 type IconBoxProps = {
-  icon: string;
+  icon: TechCodesType;
   size?: number;
 };
 

@@ -1,7 +1,8 @@
 import { Enums } from '@/enums/enums';
+import { TechCodesType } from '@/types/constants';
 
 type TechnologyLogoProps = {
-  icon: string;
+  icon: TechCodesType;
   size?: number;
 };
 
