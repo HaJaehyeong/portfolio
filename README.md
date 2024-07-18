@@ -84,18 +84,17 @@ header에 추가될 tab component
 #### 호출
 
 ```tsx
-// NOTE(hajae): 어두운 배경이 아니면 잘 보이지 않기 때문에 background를 000으로 설정
-<div style={{ backgroundColor: '#000' }}>
-  // NOTE(hajae): default value of isSelected and isHeader: false
-  <HeaderText text="hello" />
-  <HeaderText text="selected" isSelected={true} />
-  <HeaderText text="header" isSelected={false} isTab={false} />
-</div>
+// NOTE(hajae): tabs -> string[]
+{
+  tabs.map((tab, index) => (
+    <HeaderText key={tab + index} text={tab} isSelected={tab === activeTab} handleClick={() => setActiveTab(tab)} />
+  ));
+}
 ```
 
 #### 결과
 
-<img src="/src/public/readmeImages/headertext-result.png" alt="header text print result" height="300">
+<img src="/src/public/readmeImages/headertext-result.png" alt="header text print result" height="100">
 
 <br/><br/><br/>
 
@@ -221,6 +220,31 @@ return (
 #### 결과
 
 <img src="/src/public/readmeImages/comments-result.png" alt="SocialMedia component design" height="150">
+
+<br/><br/><br/>
+
+## Header
+
+![Header component design](/src/public/readmeImages/header-preview.png)
+
+### 설명
+
+Header를 작성하면서 아래와 같은 이유로 CSR을 이용하기로 했다. <br/> (초기 컴포넌트 작업으로 추후 변경될 가능성은 있으나
+현재는 대부분의 컴포넌트 모두 CSR로 작성 예정)
+
+- Tab 이동시 화면이 번쩍하는 새로고침을 없애기 위해
+- 그렇게 크게 무겁지 않을 프로젝트
+- 구글검색엔진(SEO)에 노출될 필요가 없는 프로젝트
+
+#### 호출
+
+```tsx
+<Header name="Jaehyeong-Ha 🤪" />
+```
+
+#### 결과
+
+![Header component design](/src/public/readmeImages/header-result.png)
 
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 

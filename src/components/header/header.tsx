@@ -1,5 +1,5 @@
 'use client';
-import { tabs } from '@/types/constants';
+import { TABS } from '@/types/constants';
 import HeaderText from '../headerText/headerText';
 import styles from './header.module.scss';
 import { useState } from 'react';
@@ -9,14 +9,14 @@ type HeaderProps = {
 };
 
 const Header: React.FC<HeaderProps> = ({ name }) => {
-  const [activeTab, setActiveTab] = useState<string>(tabs[0]);
+  const [activeTab, setActiveTab] = useState<string>(TABS[0]);
 
   return (
     <div className={styles.headerWrapper}>
       <div className={styles.name}>{name}</div>
       <div className={styles.tabsWrapper}>
         <div className={styles.tabs}>
-          {tabs.map((tab, index) => (
+          {TABS.map((tab, index) => (
             <HeaderText
               key={tab + index}
               text={tab}
