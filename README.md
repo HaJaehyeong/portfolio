@@ -180,6 +180,28 @@ return (
 
 <img src="/src/public/readmeImages/technologiesrow-result.png" alt="technologiesRow print result" height="300">
 
+<br/><br/><br/>
+
+## SocialMedia
+
+<img src="/src/public/readmeImages/socialmedia-preview.png" alt="SocialMedia component design" height="150">
+
+### 설명
+
+소셜미디어의 로고를 표시 <br/> (제가 사용하는 것만 추가... `github`, `blog`, `insta`)
+
+#### 호출
+
+```tsx
+<SocialMedia value="github" />
+<SocialMedia value="blog" size={28} />
+<SocialMedia value="insta" size={30} />
+```
+
+#### 결과
+
+![SocialMedia print result](/src/public/readmeImages/socialmedia-result.png)
+
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 # License Agreement
