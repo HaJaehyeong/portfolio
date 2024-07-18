@@ -202,6 +202,26 @@ return (
 
 ![SocialMedia print result](/src/public/readmeImages/socialmedia-result.png)
 
+<br/><br/><br/>
+
+## Comments
+
+<img src="/src/public/readmeImages/comments-preview.png" alt="SocialMedia component design" height="150">
+
+### 설명
+
+매우 간단하게 타이틀과 Body 텍스트를 표시할 수 있는 Component
+
+#### 호출
+
+```tsx
+<Comments title="Developer note" body="Text here." />
+```
+
+#### 결과
+
+<img src="/src/public/readmeImages/comments-result.png" alt="SocialMedia component design" height="150">
+
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 # License Agreement
