@@ -1,0 +1,24 @@
+.comments-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+
+  padding: 26px 32px;
+  width: calc(320px - 64px);
+  max-width: calc(320px - 64px);
+
+  background-color: var(--secondary-white);
+  border-radius: 6px;
+
+  color: var(--primary-black-3);
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.body {
+  font-size: 16px;
+  font-weight: 400;
+}
