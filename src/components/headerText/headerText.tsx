@@ -4,9 +4,10 @@ type HeaderTextProps = {
   text: string;
   isSelected?: boolean;
   isTab?: boolean;
+  handleClick?: (tab: string) => void;
 };
 
-const HeaderText: React.FC<HeaderTextProps> = ({ text, isSelected = false, isTab = true }) => {
+const HeaderText: React.FC<HeaderTextProps> = ({ text, isSelected = false, isTab = true, handleClick }) => {
   return (
     <div
       className={`
@@ -14,6 +15,7 @@ const HeaderText: React.FC<HeaderTextProps> = ({ text, isSelected = false, isTab
       ${isSelected ? styles.active : ''} 
       ${isTab ? styles.rightBorder : styles.leftBorder}
       `}
+      onClick={handleClick ? () => handleClick(text) : () => {}}
     >
       {'_' + text}
     </div>

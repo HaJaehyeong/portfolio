@@ -29,4 +29,11 @@ code {
 body {
   margin: 0;
   background-color: var(--primary-black-3);
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

@@ -3,21 +3,28 @@
   justify-content: center;
   align-items: center;
 
-  width: 120px;
   height: 55px;
 
   color: var(--secondary-gray);
   font-size: 16px;
 
+  box-sizing: border-box;
+  white-space: nowrap;
+
+  cursor: pointer;
+
   &.active {
     color: var(--secondary-white);
+    border-bottom: solid 3px var(--accent-orange);
   }
 
   &.right-border {
+    padding: 0 31px 0 32px;
     border-right: solid 1px var(--line);
   }
 
   &.left-border {
+    padding: 0 32px 0 31px;
     border-left: solid 1px var(--line);
   }
 }
