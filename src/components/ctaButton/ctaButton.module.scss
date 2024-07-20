@@ -1,0 +1,38 @@
+.cta-button {
+  padding: 10px 14px;
+
+  border: 0;
+  border-radius: 0.5em;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  &.default {
+    background-color: var(--default-button-background);
+    color: var(--secondary-white);
+
+    &:hover {
+      background-color: var(--default-button-background-hover);
+    }
+  }
+
+  &.primary {
+    background-color: var(--primary-button-background);
+    color: var(--primary-black);
+
+    &:hover {
+      background-color: var(--primary-button-background-hover);
+    }
+  }
+
+  &.ghost {
+    background-color: transparent;
+    color: var(--secondary-white);
+    border: 1px solid var(--secondary-white);
+
+    &:hover {
+      border: 1px solid var(--ghost-button-border-hover);
+    }
+  }
+}

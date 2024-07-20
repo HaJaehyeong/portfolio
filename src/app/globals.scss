@@ -1,0 +1,39 @@
+@import '@/styles/colors.scss';
+@import '@/styles/inputs.scss';
+
+button,
+input {
+  font-family: inherit;
+}
+
+h1 {
+  font-size: 62px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+p {
+  font-size: 18px;
+}
+
+label {
+  font-size: 16px;
+}
+
+code {
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--primary-black-3);
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
