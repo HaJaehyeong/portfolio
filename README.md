@@ -246,6 +246,27 @@ Header를 작성하면서 아래와 같은 이유로 CSR을 이용하기로 했�
 
 ![Header component design](/src/public/readmeImages/header-result.png)
 
+<br/><br/><br/>
+
+## Footer
+
+![footer component design](/src/public/readmeImages/footer-preview.png)
+
+### 설명
+
+Footer 컴포넌트는 자동적으로 아래쪽에 셋팅이 되지 않으므로 화면 사이즈를 비교하고 아래에 셋팅을 해줘야한다. 물론 중간중
+간 컴포넌트가 필요에 의해 바뀔 수 있음.. 추후 수정하도록 하겠습니다.
+
+#### 호출
+
+```tsx
+<Footer />
+```
+
+#### 결과
+
+![Footer component design](/src/public/readmeImages/footer-result.png)
+
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 # License Agreement
