@@ -88,9 +88,12 @@
     var(--gradients-green2) 60%,
     var(--gradients-blue2) 100%
   );
-  border-top: solid 1px var(--secondary-gray);
+
+  border: solid 1px var(--primary-black);
   border-radius: 10px;
 
-  box-shadow: 0 -1px 3px var(--primary-black);
+  box-shadow: inset 0 2px 0 var(--secondary-gray);
   box-sizing: content-box;
+
+  z-index: 100;
 }

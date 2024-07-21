@@ -23,7 +23,7 @@ const Main: React.FC = () => {
   return (
     <div className={styles.mainWrapper}>
       <div className={styles.whoami}>
-        <p className={styles.hello}>Hi all, I am</p>
+        <p className={styles.hello}>Hi all👋, I am</p>
         <h1 className={styles.name}>Jaehyeong Ha</h1>
         <h2 className={styles.job}>
           {'> '}
