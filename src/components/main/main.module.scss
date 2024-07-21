@@ -1,0 +1,75 @@
+.main-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+
+  width: 100%;
+  height: calc(100% - 120px);
+}
+
+.whoami {
+  display: flex;
+  flex-direction: column;
+
+  z-index: 2;
+
+  .hello {
+    margin: 0;
+
+    color: var(--secondary-white);
+  }
+
+  .name {
+    margin: 0;
+
+    font-weight: 300;
+    color: var(--secondary-white);
+  }
+
+  .job {
+    margin: 0 0 50px 0;
+
+    font-weight: 400;
+    color: var(--secondary-blue);
+  }
+
+  .comment {
+    color: var(--secondary-gray);
+  }
+
+  .code {
+    color: var(--secondary-blue);
+
+    .valiable {
+      color: var(--accent-green);
+    }
+
+    .equal {
+      color: var(--secondary-white);
+    }
+
+    .value {
+      color: var(--accent-red);
+    }
+  }
+}
+
+.game-box {
+  padding: 35px 30px;
+  width: 510px;
+  height: 475px;
+
+  background: linear-gradient(
+    145deg,
+    var(--gradients-green2) 0%,
+    var(--gradients-green2) 60%,
+    var(--gradients-blue2) 100%
+  );
+  border-top: solid 1px var(--secondary-gray);
+  border-radius: 10px;
+
+  box-shadow: 0 -1px 3px var(--primary-black);
+  box-sizing: content-box;
+}
