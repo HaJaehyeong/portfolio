@@ -1,3 +1,17 @@
-.home {
-  height: 100%;
+.page-wrapper {
+  padding: 30px;
+  width: 100vw;
+  height: 100dvh;
+
+  background-color: var(--primary-black);
+}
+
+.main-wrapper {
+  position: relative;
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
+
+  background-color: var(--primary-black-3);
+  border: solid 1px var(--line);
+  border-radius: 8px;
 }
