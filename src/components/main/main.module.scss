@@ -35,6 +35,27 @@
     color: var(--secondary-blue);
   }
 
+  .cursor {
+    display: inline-block;
+    margin-left: 2px;
+    width: 10px;
+    animation: blink 1s infinite;
+
+    font-weight: 500;
+    color: var(--secondary-white);
+  }
+
+  @keyframes blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+
   .comment {
     color: var(--secondary-gray);
   }
