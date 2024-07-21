@@ -78,6 +78,7 @@
 }
 
 .game-box {
+  position: relative;
   padding: 35px 30px;
   width: 510px;
   height: 475px;
@@ -96,4 +97,28 @@
   box-sizing: content-box;
 
   z-index: 100;
+
+  .bolt-up-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .bolt-up-right {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+  }
+
+  .bolt-down-left {
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+  }
+
+  .bolt-down-right {
+    position: absolute;
+    bottom: 15px;
+    right: 5px;
+  }
 }

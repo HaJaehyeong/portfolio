@@ -1,6 +1,13 @@
 'use client';
 import { useEffect, useState } from 'react';
 import styles from './main.module.scss';
+import SnakeGame from '../snakeGame/snakeGame';
+
+import boltUpLeft from '@/public/images/bolt-up-left.png';
+import boltUpRight from '@/public/images/bolt-up-right.png';
+import boltDownLeft from '@/public/images/bolt-down-left.png';
+import boltDownRight from '@/public/images/bolt-down-right.png';
+import Image from 'next/image';
 
 const Main: React.FC = () => {
   const [displayedText, setDisplayedText] = useState('');
@@ -40,7 +47,13 @@ const Main: React.FC = () => {
           <label className={styles.value}>"htts://github.com/HaJaehyeong/portfolio"</label>
         </div>
       </div>
-      <div className={styles.gameBox}>game box</div>
+      <div className={styles.gameBox}>
+        <Image className={styles.boltUpLeft} src={boltUpLeft.src} width={25} height={25} alt="boltUpLeft" />
+        <Image className={styles.boltUpRight} src={boltUpRight.src} width={25} height={25} alt="boltUpRight" />
+        <Image className={styles.boltDownLeft} src={boltDownLeft.src} width={25} height={25} alt="boltDownLeft" />
+        <Image className={styles.boltDownRight} src={boltDownRight.src} width={25} height={25} alt="boltDonwRight" />
+        <SnakeGame />
+      </div>
     </div>
   );
 };
