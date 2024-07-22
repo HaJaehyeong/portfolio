@@ -80,8 +80,8 @@
 .game-box {
   position: relative;
   padding: 35px 30px;
-  width: 510px;
-  height: 475px;
+  width: calc(510px - 60px);
+  height: calc(475px - 60px);
 
   background: linear-gradient(
     145deg,

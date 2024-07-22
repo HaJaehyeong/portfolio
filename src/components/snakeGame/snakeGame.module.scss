@@ -1,0 +1,32 @@
+.game-box-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  height: 100%;
+}
+
+.game-box {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 240px;
+  height: 408px;
+
+  background-color: var(--primary-black-2);
+  opacity: 0.84;
+  border-radius: 8px;
+
+  box-shadow: inset 1px 5px 11px rgba(#000, 0.71);
+}
+
+.cell {
+  width: 8px;
+  height: 8px;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.head {
+  background-color: var(--gradients-green);
+}
