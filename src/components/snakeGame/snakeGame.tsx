@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './snakeGame.module.scss';
+import CtaButton from '../ctaButton/ctaButton';
 
 const rows = 30;
 const cols = 51;
@@ -9,6 +10,7 @@ const SnakeGame: React.FC = () => {
     553, 583, 613, 643, 673, 703, 704, 705, 706, 707, 708, 738, 768, 798, 828, 858,
   ]);
   const [snakeMoveTo, setSnakeMoveTo] = useState<string>('UP');
+  const [isGameStarted, setIsGameStarted] = useState<boolean>(false);
   const [food, setFoot] = useState<number>();
 
   const changeDirection = (event: KeyboardEvent) => {
@@ -16,6 +18,10 @@ const SnakeGame: React.FC = () => {
     if (event.key === 'ArrowDown' && snakeMoveTo !== 'UP') setSnakeMoveTo('DOWN');
     if (event.key === 'ArrowLeft' && snakeMoveTo !== 'RIGHT') setSnakeMoveTo('LEFT');
     if (event.key === 'ArrowRight' && snakeMoveTo !== 'LEFT') setSnakeMoveTo('RIGHT');
+  };
+
+  const startGame = (event: KeyboardEvent) => {
+    if (event.key === ' ') setIsGameStarted(true);
   };
 
   const moveSnake = () => {
@@ -66,18 +72,41 @@ const SnakeGame: React.FC = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(moveSnake, 33);
-    document.addEventListener('keydown', changeDirection);
+    if (isGameStarted) {
+      const interval = setInterval(moveSnake, 40);
+      document.addEventListener('keydown', changeDirection);
+
+      return () => {
+        clearInterval(interval);
+        document.removeEventListener('keydown', changeDirection);
+      };
+    }
+  }, [isGameStarted, snakeMoveTo]);
+
+  useEffect(() => {
+    document.addEventListener('keydown', startGame);
 
     return () => {
-      clearInterval(interval);
-      document.removeEventListener('keydown', changeDirection);
+      document.removeEventListener('keydown', startGame);
     };
-  }, [snakeMoveTo]);
+  }, []);
 
   return (
     <div className={styles.gameBoxWrapper}>
-      <div className={styles.gameBox}>{getGameScreenCells()}</div>
+      <div className={styles.gameBox}>
+        {getGameScreenCells()}
+        {isGameStarted === false && (
+          <div className={styles.startGameButton}>
+            <CtaButton
+              type="primary"
+              value="start-game"
+              onClick={() => {
+                setIsGameStarted(true);
+              }}
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 };

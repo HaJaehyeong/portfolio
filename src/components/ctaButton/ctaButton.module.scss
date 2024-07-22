@@ -7,6 +7,7 @@
   font-size: 16px;
 
   cursor: pointer;
+  white-space: nowrap;
 
   &.default {
     background-color: var(--default-button-background);
