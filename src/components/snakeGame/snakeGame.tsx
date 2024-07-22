@@ -5,8 +5,11 @@ const rows = 30;
 const cols = 51;
 
 const SnakeGame: React.FC = () => {
-  const [snake, setSnake] = useState<number[]>([615]);
+  const [snake, setSnake] = useState<number[]>([
+    553, 583, 613, 643, 673, 703, 704, 705, 706, 707, 708, 738, 768, 798, 828, 858,
+  ]);
   const [snakeMoveTo, setSnakeMoveTo] = useState<string>('UP');
+  const [food, setFoot] = useState<number>();
 
   const changeDirection = (event: KeyboardEvent) => {
     if (event.key === 'ArrowUp' && snakeMoveTo !== 'DOWN') setSnakeMoveTo('UP');
@@ -45,16 +48,17 @@ const SnakeGame: React.FC = () => {
     return Array.from({ length: cols }, (_, colIndex) =>
       Array.from({ length: rows }, (_, rowIndex) => {
         const cellIndex = colIndex * rows + rowIndex;
+        const opacity = snake.indexOf(cellIndex) !== -1 ? 1 - snake.indexOf(cellIndex) * 0.05 : 1;
 
         return (
           <div
-            className={`${styles.cell} ${snake[0] === cellIndex ? styles.head : ''} ${
-              snake.includes(cellIndex) ? styles.head : ''
-            } ${snake[0] === cellIndex && snakeMoveTo === 'UP' ? styles.headUp : ''} ${
-              snake[0] === cellIndex && snakeMoveTo === 'DOWN' ? styles.headDown : ''
-            } ${snake[0] === cellIndex && snakeMoveTo === 'LEFT' ? styles.headLeft : ''} ${
-              snake[0] === cellIndex && snakeMoveTo === 'RIGHT' ? styles.headRight : ''
-            }`}
+            className={`${styles.cell} ${snake[0] === cellIndex ? styles.head : ''} 
+            ${snake.includes(cellIndex) ? styles.head : ''} 
+            ${snake[0] === cellIndex && snakeMoveTo === 'UP' ? styles.headUp : ''} 
+            ${snake[0] === cellIndex && snakeMoveTo === 'DOWN' ? styles.headDown : ''} 
+            ${snake[0] === cellIndex && snakeMoveTo === 'LEFT' ? styles.headLeft : ''} 
+            ${snake[0] === cellIndex && snakeMoveTo === 'RIGHT' ? styles.headRight : ''}`}
+            style={{ opacity }}
           ></div>
         );
       })
@@ -62,7 +66,7 @@ const SnakeGame: React.FC = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(moveSnake, 50);
+    const interval = setInterval(moveSnake, 33);
     document.addEventListener('keydown', changeDirection);
 
     return () => {
