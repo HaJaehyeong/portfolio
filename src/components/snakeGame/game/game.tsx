@@ -23,9 +23,7 @@ const Game: React.FC = () => {
 
   const startGame = (event: KeyboardEvent) => {
     if (event.key === ' ') {
-      setSnake(defaultSnake);
-      setSnakeMoveTo('UP');
-      setIsGameStarted(true);
+      restartGame();
     }
   };
 
@@ -153,6 +151,13 @@ const Game: React.FC = () => {
     };
   }, []);
 
+  const restartGame = () => {
+    setSnake(defaultSnake);
+    setSnakeMoveTo('UP');
+    setIsGameOvered(false);
+    setIsGameStarted(true);
+  };
+
   return (
     <div className={styles.gameBox}>
       {getGameScreenCells()}
@@ -173,7 +178,9 @@ const Game: React.FC = () => {
         <div className={styles.gameOverWrapper}>
           <div className={styles.gameOverBox}>
             <div className={styles.gameOver}>GAME OVER!</div>
-            <div className={styles.gameRestart}>start-again</div>
+            <div className={styles.gameRestart} onClick={() => restartGame()}>
+              start-again
+            </div>
           </div>
         </div>
       )}
