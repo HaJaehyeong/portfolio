@@ -12,6 +12,7 @@ const Game: React.FC = () => {
   const [isGameStarted, setIsGameStarted] = useState<boolean>(false);
   const [isGameOvered, setIsGameOvered] = useState<boolean>(false);
   const [isGameCleared, setIsGameCleared] = useState<boolean>(false);
+  const [foodCount, setFoodCount] = useState<number>(0);
   const [food, setFood] = useState<number>(253);
 
   const changeDirection = (event: KeyboardEvent) => {
@@ -73,6 +74,7 @@ const Game: React.FC = () => {
 
       // NOTE(hajae): food를 먹었을 땐 꼬리를 늘려준다.. 한개는 좀 쉬우니까 두개 늘리자
       if (head === food) {
+        setFoodCount(foodCount + 1);
         // NOTE(hajae): Make a food!!
         setFood(Math.floor(Math.random() * rows * cols));
         copiedSnake.unshift(head);
@@ -151,17 +153,27 @@ const Game: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (foodCount === 10) {
+      setIsGameCleared(true);
+      setIsGameStarted(false);
+    }
+  }, [foodCount]);
+
   const restartGame = () => {
     setSnake(defaultSnake);
     setSnakeMoveTo('UP');
+    setFoodCount(0);
+    setFood(253);
     setIsGameOvered(false);
+    setIsGameCleared(false);
     setIsGameStarted(true);
   };
 
   return (
     <div className={styles.gameBox}>
       {getGameScreenCells()}
-      {!isGameStarted && !isGameOvered && (
+      {!isGameStarted && !isGameOvered && !isGameCleared && (
         <div className={styles.startGameButton}>
           <CtaButton
             type="primary"
@@ -174,12 +186,12 @@ const Game: React.FC = () => {
           />
         </div>
       )}
-      {isGameOvered === true && (
+      {(isGameOvered || isGameCleared) && (
         <div className={styles.gameOverWrapper}>
           <div className={styles.gameOverBox}>
-            <div className={styles.gameOver}>GAME OVER!</div>
+            <div className={styles.gameOver}>{isGameOvered ? 'GAME OVER!' : 'WELL DONE!'}</div>
             <div className={styles.gameRestart} onClick={() => restartGame()}>
-              start-again
+              {isGameOvered ? 'start-again' : 'play-again'}
             </div>
           </div>
         </div>
