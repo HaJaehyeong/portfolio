@@ -10,6 +10,8 @@ const Game: React.FC = () => {
   const [snake, setSnake] = useState<number[]>(defaultSnake);
   const [snakeMoveTo, setSnakeMoveTo] = useState<string>('UP');
   const [isGameStarted, setIsGameStarted] = useState<boolean>(false);
+  const [isGameOvered, setIsGameOvered] = useState<boolean>(false);
+  const [isGameCleared, setIsGameCleared] = useState<boolean>(false);
   const [food, setFood] = useState<number>(253);
 
   const changeDirection = (event: KeyboardEvent) => {
@@ -67,6 +69,7 @@ const Game: React.FC = () => {
         copiedSnake.includes(head)
       ) {
         setIsGameStarted(false);
+        setIsGameOvered(true);
         return prevSnake;
       }
 
@@ -153,7 +156,7 @@ const Game: React.FC = () => {
   return (
     <div className={styles.gameBox}>
       {getGameScreenCells()}
-      {isGameStarted === false && (
+      {!isGameStarted && !isGameOvered && (
         <div className={styles.startGameButton}>
           <CtaButton
             type="primary"
@@ -164,6 +167,14 @@ const Game: React.FC = () => {
               setIsGameStarted(true);
             }}
           />
+        </div>
+      )}
+      {isGameOvered === true && (
+        <div className={styles.gameOverWrapper}>
+          <div className={styles.gameOverBox}>
+            <div className={styles.gameOver}>GAME OVER!</div>
+            <div className={styles.gameRestart}>start-again</div>
+          </div>
         </div>
       )}
     </div>
