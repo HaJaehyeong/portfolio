@@ -215,8 +215,13 @@ const SnakeGame: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className={styles.foods}>
-            <div>// food left</div>
+          <div className={styles.foodsWrapper}>
+            <code>// food left</code>
+            <div className={styles.foods}>
+              {Array.from({ length: 10 }, (_, index) => (
+                <div key={index} className={`${styles.foodScore} ${foodCount > index ? styles.ate : ''}`}></div>
+              ))}
+            </div>
           </div>
         </div>
         <div className={styles.skip}>

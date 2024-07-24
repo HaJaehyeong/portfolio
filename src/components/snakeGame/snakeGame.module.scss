@@ -150,10 +150,6 @@
   border-radius: 8px;
 }
 
-.foods {
-  padding: 0 10px;
-}
-
 .keypad {
   display: flex;
   flex-direction: column;
@@ -178,6 +174,41 @@
       &:hover {
         box-shadow: 0 0 10px var(--accent-green);
       }
+    }
+  }
+}
+
+.foods-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding: 0 10px;
+  width: 170px;
+
+  .foods {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 25px;
+
+    width: 100%;
+  }
+
+  .food-score {
+    width: 8px;
+    height: 8px;
+
+    background-color: var(--accent-green);
+    border-radius: 4px;
+
+    opacity: 0.3;
+
+    &.ate {
+      opacity: 1;
+      box-shadow: 0 0 10px 3px var(--gradients-green);
     }
   }
 }
