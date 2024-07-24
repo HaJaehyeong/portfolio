@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './snakeGame.module.scss';
 import CtaButton from '@/components/ctaButton/ctaButton';
+import { RiArrowDownSFill, RiArrowLeftSFill, RiArrowRightSFill, RiArrowUpSFill } from '@remixicon/react';
 
 const rows = 30;
 const cols = 51;
@@ -197,6 +198,30 @@ const SnakeGame: React.FC = () => {
             </div>
           </div>
         )}
+      </div>
+      <div className={styles.gameStatusWrapper}>
+        <div className={styles.manual}>
+          <div className={styles.keypadWrapper}>
+            <code>// use keyboard</code>
+            <code>// arrows to play</code>
+            <div className={styles.keypad}>
+              <div>
+                <RiArrowUpSFill />
+              </div>
+              <div>
+                <RiArrowLeftSFill />
+                <RiArrowDownSFill />
+                <RiArrowRightSFill />
+              </div>
+            </div>
+          </div>
+          <div className={styles.foods}>
+            <div>// food left</div>
+          </div>
+        </div>
+        <div className={styles.skip}>
+          <CtaButton value="skip" type="ghost" onClick={() => {}} />
+        </div>
       </div>
     </div>
   );

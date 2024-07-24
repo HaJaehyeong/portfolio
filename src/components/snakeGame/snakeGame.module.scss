@@ -4,6 +4,8 @@
   align-items: center;
 
   height: 100%;
+
+  gap: 20px;
 }
 
 .game-box {
@@ -114,4 +116,77 @@
   background-color: var(--gradients-green);
   border-radius: 4px;
   box-shadow: 0 0 10px 3px var(--gradients-green);
+}
+
+.game-status-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 170px;
+  height: 100%;
+}
+
+.manual {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 100%;
+
+  color: var(--secondary-white);
+}
+
+.keypad-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  margin-top: 3px;
+  padding: 15px 10px;
+  width: 100%;
+
+  background-color: var(--primary-black-opacity);
+  border-radius: 8px;
+}
+
+.foods {
+  padding: 0 10px;
+}
+
+.keypad {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  margin-top: 10px;
+  width: 170px;
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
+
+    > svg {
+      padding: 2px 12px;
+      background-color: #000;
+      border-radius: 8px;
+
+      cursor: pointer;
+      &:hover {
+        box-shadow: 0 0 10px var(--accent-green);
+      }
+    }
+  }
+}
+
+.skip {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  padding: 15px 0 0 0;
+  width: 190px;
 }
