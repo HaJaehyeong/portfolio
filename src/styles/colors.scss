@@ -1,7 +1,9 @@
 // NOTE(hajae): 디자인상 현재 Light 모드가 없으므로 추후 추가
 :root {
   --primary-black: #01080e;
+  --primary-black-opacity: #01080e2d;
   --primary-black-2: #011627;
+  --primary-black-2-opacity: #011627d6;
   --primary-black-3: #011221;
 
   --secondary-gray: #607b96;
@@ -18,6 +20,8 @@
   --line: #1e2d3d;
   --gradients-blue: #4d5bce;
   --gradients-green: #43d9ad;
+  --gradients-blue2: #4d5cce22;
+  --gradients-green2: #43d9ad22;
 
   --default-button-background: #1c2b3a;
   --default-button-background-hover: #263b50;
