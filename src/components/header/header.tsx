@@ -2,14 +2,15 @@
 import { TABS } from '@/types/constants';
 import HeaderText from '../headerText/headerText';
 import styles from './header.module.scss';
-import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 type HeaderProps = {
   name: string;
 };
 
 const Header: React.FC<HeaderProps> = ({ name }) => {
-  const [activeTab, setActiveTab] = useState<string>(TABS[0]);
+  const pathname = usePathname();
 
   return (
     <div className={styles.headerWrapper}>
@@ -17,20 +18,12 @@ const Header: React.FC<HeaderProps> = ({ name }) => {
       <div className={styles.tabsWrapper}>
         <div className={styles.tabs}>
           {TABS.map((tab, index) => (
-            <HeaderText
-              key={tab + index}
-              text={tab}
-              isSelected={tab === activeTab}
-              handleClick={() => setActiveTab(tab)}
-            />
+            <Link href={tab.pathname}>
+              <HeaderText key={tab.tabName + index} text={tab.tabName} isSelected={tab.pathname === pathname} />
+            </Link>
           ))}
         </div>
-        <HeaderText
-          text={'contact-me'}
-          isTab={false}
-          isSelected={activeTab === 'contact-me'}
-          handleClick={() => setActiveTab('contact-me')}
-        />
+        <HeaderText text={'contact-me'} isTab={false} isSelected={pathname === 'contact'} />
       </div>
     </div>
   );
