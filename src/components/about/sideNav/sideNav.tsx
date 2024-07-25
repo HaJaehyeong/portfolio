@@ -1,15 +1,13 @@
 'use client';
 import TechnologyLogo from '@/components/technologyLogo/technologyLogo';
 import styles from './sideNav.module.scss';
-import { useState } from 'react';
 
-const SideNav: React.FC = () => {
-  const [activeNav, setActiveNav] = useState<'terminal' | 'user' | 'gamepad'>('terminal');
+type SideNavProps = {
+  activeNav: 'terminal' | 'user' | 'gamepad';
+  handleNavClick: (nav: 'terminal' | 'user' | 'gamepad') => void;
+};
 
-  const handleNavClick = (nav: 'terminal' | 'user' | 'gamepad') => {
-    setActiveNav(nav);
-  };
-
+const SideNav: React.FC<SideNavProps> = ({ activeNav, handleNavClick }) => {
   return (
     <div className={styles.sideNav}>
       <TechnologyLogo
