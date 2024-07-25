@@ -1,0 +1,9 @@
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+
+  padding: 15px 20px;
+
+  border-right: solid 1px var(--line);
+}
