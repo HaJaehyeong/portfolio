@@ -1,4 +1,15 @@
-export type TechCodesType = 'react' | 'html5' | 'vue' | 'css' | 'flutter' | 'angular' | 'variant5' | 'nextjs';
+export type TechCodesType =
+  | 'react'
+  | 'html5'
+  | 'vue'
+  | 'css'
+  | 'flutter'
+  | 'angular'
+  | 'variant5'
+  | 'nextjs'
+  | 'terminal'
+  | 'user'
+  | 'gamepad';
 export type SocialMediaType = 'github' | 'blog' | 'insta';
 export type TabType = {
   tabName: string;

@@ -2,9 +2,12 @@ import {
   RiAngularjsFill,
   RiCss3Fill,
   RiFlutterFill,
+  RiGamepadFill,
   RiHtml5Fill,
   RiNextjsLine,
   RiReactjsFill,
+  RiTerminalBoxFill,
+  RiUser4Fill,
   RiVuejsFill,
   RiVuejsLine,
 } from '@remixicon/react';
@@ -19,6 +22,9 @@ const TechnologyCode = {
   angular: 'angular',
   variant5: 'variant5',
   nextjs: 'nextjs',
+  terminal: 'terminal',
+  user: 'user',
+  gamepad: 'gamepad',
 };
 type TechnologyCode = (typeof TechnologyCode)[keyof typeof TechnologyCode];
 
@@ -31,6 +37,9 @@ const TechnologyName = {
   angular: 'Angular',
   variant5: 'Variant5',
   nextjs: 'Next.js',
+  terminal: 'Terminal',
+  user: 'User',
+  gamepad: 'Gamepad',
 };
 type TechnologyName = (typeof TechnologyName)[keyof typeof TechnologyName];
 
@@ -43,6 +52,9 @@ const TechnologyIcon = {
   angular: RiAngularjsFill,
   variant5: RiVuejsLine,
   nextjs: RiNextjsLine,
+  terminal: RiTerminalBoxFill,
+  user: RiUser4Fill,
+  gamepad: RiGamepadFill,
 };
 type TechnologyIcon = (typeof TechnologyIcon)[keyof typeof TechnologyIcon];
 
@@ -55,6 +67,9 @@ const TechnologyBackgroundColor = {
   angular: '#F2A9B9',
   variant5: '#A0BDE1',
   nextjs: '#ABCDEF', // NOTE(hajae): 디자인이 없기 때문에 임시
+  terminal: '#ABCDEF', // NOTE(hajae): 디자인이 없기 때문에 임시
+  user: '#ABCDEF', // NOTE(hajae): 디자인이 없기 때문에 임시
+  gamepad: '#ABCDEF', // NOTE(hajae): 디자인이 없기 때문에 임시
 } as const;
 type TechnologyBackgroundColor = (typeof TechnologyBackgroundColor)[keyof typeof TechnologyBackgroundColor];
 
@@ -122,5 +137,38 @@ export class Technology extends EnumBase<TechnologyEnum> {
     backgroundColor: TechnologyBackgroundColor.nextjs,
   };
 
-  values = [this.react, this.html5, this.vue, this.css, this.flutter, this.angular, this.variant5, this.nextjs];
+  terminal = {
+    code: TechnologyCode.terminal,
+    name: TechnologyName.terminal,
+    icon: TechnologyIcon.terminal,
+    backgroundColor: TechnologyBackgroundColor.terminal,
+  };
+
+  user = {
+    code: TechnologyCode.user,
+    name: TechnologyName.user,
+    icon: TechnologyIcon.user,
+    backgroundColor: TechnologyBackgroundColor.user,
+  };
+
+  gamepad = {
+    code: TechnologyCode.gamepad,
+    name: TechnologyName.gamepad,
+    icon: TechnologyIcon.gamepad,
+    backgroundColor: TechnologyBackgroundColor.gamepad,
+  };
+
+  values = [
+    this.react,
+    this.html5,
+    this.vue,
+    this.css,
+    this.flutter,
+    this.angular,
+    this.variant5,
+    this.nextjs,
+    this.terminal,
+    this.user,
+    this.gamepad,
+  ];
 }
