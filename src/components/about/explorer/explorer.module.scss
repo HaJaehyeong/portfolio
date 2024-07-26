@@ -5,3 +5,25 @@
   width: 245px;
   border-right: solid 1px var(--line);
 }
+
+.subject {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+
+  padding: 8px 5px;
+  border-bottom: solid 1px var(--line);
+
+  color: var(--secondary-white);
+}
+
+.subject-text {
+  margin: 0;
+}
+
+.content {
+  label {
+    color: var(--secondary-white);
+  }
+}
