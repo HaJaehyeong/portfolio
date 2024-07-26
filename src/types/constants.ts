@@ -19,6 +19,7 @@ export type AccordionType = {
   accordionName: string;
   isOpen: boolean;
   toggles: Toggle;
+  dirColor: string;
 };
 type Toggle = {};
 
@@ -46,15 +47,18 @@ export const accordions: AccordionType[] = [
     accordionName: 'experience',
     isOpen: true,
     toggles: {},
+    dirColor: 'var(--accent-red)',
   },
   {
     accordionName: 'hard-skills',
     isOpen: false,
     toggles: {},
+    dirColor: 'var(--accent-green)',
   },
   {
     accordionName: 'soft-skills',
     isOpen: false,
     toggles: {},
+    dirColor: 'var(--gradients-blue)',
   },
 ];
