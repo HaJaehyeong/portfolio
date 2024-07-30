@@ -3,33 +3,35 @@ import styles from './accordion.module.scss';
 import { AccordionType } from '@/types/constants';
 
 type AccordionProps = {
-  accordions: AccordionType[];
+  accordion: AccordionType;
+  handleAccordionClick: (accordionId: number) => void;
+  handleToggleClick: (accordionId: number, toggleId: number) => void;
 };
 
-const Accordion: React.FC<AccordionProps> = ({ accordions }) => {
+const Accordion: React.FC<AccordionProps> = ({ accordion, handleAccordionClick, handleToggleClick }) => {
   return (
     <div className={styles.accordionWrapper}>
-      {accordions.map((acc) => (
-        <div className={styles.accordions}>
-          <div key={acc.accordionName} className={styles.accordion}>
-            {acc.isOpen ? (
-              <RiArrowDownSLine size={16} color="var(--secondary-white)" />
-            ) : (
-              <RiArrowRightSLine size={16} color="var(--secondary-gray)" />
-            )}
-            <RiFolder3Fill size={16} color={acc.dirColor} />
-            <label className={acc.isOpen ? styles.open : ''}>{acc.accordionName}</label>
+      <div
+        key={accordion.accordionName + accordion.accordionId}
+        className={styles.accordion}
+        onClick={() => handleAccordionClick(accordion.accordionId)}
+      >
+        {accordion.isOpen ? (
+          <RiArrowDownSLine size={16} color="var(--secondary-white)" />
+        ) : (
+          <RiArrowRightSLine size={16} color="var(--secondary-gray)" />
+        )}
+        <RiFolder3Fill size={16} color={accordion.dirColor} />
+        <label className={accordion.isOpen ? styles.open : ''}>{accordion.accordionName}</label>
+      </div>
+      {accordion.isOpen &&
+        accordion.toggles &&
+        accordion.toggles.map((toggle) => (
+          <div className={styles.toggle} onClick={() => handleToggleClick(accordion.accordionId, toggle.toggleId)}>
+            <RiMarkdownFill size={16} color="var(--secondary-gray)" />
+            <label className={toggle.isOpen ? styles.open : ''}>{toggle.toggleName}</label>
           </div>
-          {acc.isOpen &&
-            acc.toggles &&
-            acc.toggles.map((toggle) => (
-              <div className={styles.toggle}>
-                <RiMarkdownFill size={16} color="var(--secondary-gray)" />
-                <label>{toggle.toggleName}</label>
-              </div>
-            ))}
-        </div>
-      ))}
+        ))}
     </div>
   );
 };

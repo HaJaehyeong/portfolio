@@ -1,15 +1,6 @@
 .accordion-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 8px;
-
-  padding: 14px;
-}
-
-.accordions {
-  display: flex;
-  flex-direction: column;
   gap: 8px;
 }
 
@@ -19,9 +10,12 @@
   align-items: center;
   gap: 2px;
 
+  cursor: pointer;
+
   label {
     margin: 0 0 0 5px;
     color: var(--secondary-gray);
+    cursor: pointer;
 
     &.open {
       color: var(--secondary-white);
@@ -37,8 +31,15 @@
 
   padding-left: 18px;
 
+  cursor: pointer;
+
   label {
     margin: 0 0 0 5px;
     color: var(--secondary-gray);
+    cursor: pointer;
+
+    &.open {
+      color: var(--secondary-white);
+    }
   }
 }

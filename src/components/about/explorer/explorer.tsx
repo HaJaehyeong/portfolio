@@ -1,26 +1,55 @@
 import { RiArrowDownSFill } from '@remixicon/react';
 import styles from './explorer.module.scss';
 import Accordion from './accordion/accordion';
-import { accordions } from '@/types/constants';
+import { ACCORDIONS, AccordionType } from '@/types/constants';
+import { useEffect, useState } from 'react';
 
 type ExplorerProps = {
   activeNav: 'terminal' | 'user' | 'gamepad';
   subject: string;
 };
 
+// TODO(hajae): refactoring
 const Explorer: React.FC<ExplorerProps> = ({ activeNav, subject }) => {
-  const getAccodionList = () => {
+  const [accordions, setAccordions] = useState<AccordionType[]>([]);
+
+  useEffect(() => {
     switch (activeNav) {
       case 'terminal':
-        return accordions.terminals;
+        return setAccordions(ACCORDIONS.terminals);
       case 'user':
-        return accordions.users;
+        return setAccordions(ACCORDIONS.users);
       case 'gamepad':
-        return accordions.gamepads;
+        return setAccordions(ACCORDIONS.gamepads);
       default:
-        return accordions.terminals;
+        return setAccordions(ACCORDIONS.terminals);
     }
+  }, [activeNav]);
+
+  const handleAccordionClick = (accordionId: number) => {
+    const updatedAccordions = accordions.map((accordion) =>
+      accordion.accordionId === accordionId
+        ? { ...accordion, isOpen: true, toggles: accordion.toggles.map((toggle) => ({ ...toggle, isOpen: false })) }
+        : { ...accordion, isOpen: false, toggles: accordion.toggles.map((toggle) => ({ ...toggle, isOpen: false })) }
+    );
+    setAccordions(updatedAccordions);
   };
+
+  const handleToggleClick = (accordionId: number, toggleId: number) => {
+    const updatedAccordions = accordions.map((accordion) =>
+      accordion.accordionId === accordionId
+        ? {
+            ...accordion,
+            isOpen: true,
+            toggles: accordion.toggles.map((toggle) =>
+              toggle.toggleId === toggleId ? { ...toggle, isOpen: true } : { ...toggle, isOpen: false }
+            ),
+          }
+        : { ...accordion, isOpen: false, toggles: accordion.toggles.map((toggle) => ({ ...toggle, isOpen: false })) }
+    );
+    setAccordions(updatedAccordions);
+  };
+
   return (
     <div className={styles.explorer}>
       <div className={styles.subject}>
@@ -29,7 +58,16 @@ const Explorer: React.FC<ExplorerProps> = ({ activeNav, subject }) => {
       </div>
       <div>
         <div className={styles.content}>
-          <Accordion accordions={getAccodionList()} />
+          <div className={styles.accordionsWrapper}>
+            {accordions &&
+              accordions.map((accordion) => (
+                <Accordion
+                  accordion={accordion}
+                  handleAccordionClick={handleAccordionClick}
+                  handleToggleClick={handleToggleClick}
+                />
+              ))}
+          </div>
         </div>
       </div>
     </div>
