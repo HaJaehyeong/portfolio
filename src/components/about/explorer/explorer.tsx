@@ -4,10 +4,23 @@ import Accordion from './accordion/accordion';
 import { accordions } from '@/types/constants';
 
 type ExplorerProps = {
+  activeNav: 'terminal' | 'user' | 'gamepad';
   subject: string;
 };
 
-const Explorer: React.FC<ExplorerProps> = ({ subject }) => {
+const Explorer: React.FC<ExplorerProps> = ({ activeNav, subject }) => {
+  const getAccodionList = () => {
+    switch (activeNav) {
+      case 'terminal':
+        return accordions.terminals;
+      case 'user':
+        return accordions.users;
+      case 'gamepad':
+        return accordions.gamepads;
+      default:
+        return accordions.terminals;
+    }
+  };
   return (
     <div className={styles.explorer}>
       <div className={styles.subject}>
@@ -16,7 +29,7 @@ const Explorer: React.FC<ExplorerProps> = ({ subject }) => {
       </div>
       <div>
         <div className={styles.content}>
-          <Accordion accordions={accordions} />
+          <Accordion accordions={getAccodionList()} />
         </div>
       </div>
     </div>

@@ -24,7 +24,7 @@ const AboutMe: React.FC = () => {
   return (
     <div className={styles.aboutMeWrapper}>
       <SideNav activeNav={activeNav} handleNavClick={handleNavClick} />
-      <Explorer subject={getSubject()} />
+      <Explorer activeNav={activeNav} subject={getSubject()} />
     </div>
   );
 };
