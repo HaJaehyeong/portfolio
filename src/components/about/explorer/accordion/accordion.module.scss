@@ -7,6 +7,12 @@
   padding: 14px;
 }
 
+.accordions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .accordion {
   display: flex;
   flex-direction: row;
@@ -20,5 +26,19 @@
     &.open {
       color: var(--secondary-white);
     }
+  }
+}
+
+.toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+
+  padding-left: 18px;
+
+  label {
+    margin: 0 0 0 5px;
+    color: var(--secondary-gray);
   }
 }

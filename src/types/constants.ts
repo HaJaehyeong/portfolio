@@ -23,10 +23,13 @@ export type AccordionList = {
 export type AccordionType = {
   accordionName: string;
   isOpen: boolean;
-  toggles: Toggle;
+  toggles: Toggle[];
   dirColor: string;
 };
-type Toggle = {};
+type Toggle = {
+  toggleName: string;
+  isOpen: boolean;
+};
 
 export const TABS: TabType[] = [
   {
@@ -52,19 +55,19 @@ export const accordions: AccordionList = {
     {
       accordionName: 'experience',
       isOpen: true,
-      toggles: {},
+      toggles: [],
       dirColor: 'var(--accent-red)',
     },
     {
       accordionName: 'hard-skills',
       isOpen: false,
-      toggles: {},
+      toggles: [],
       dirColor: 'var(--accent-green)',
     },
     {
       accordionName: 'soft-skills',
       isOpen: false,
-      toggles: {},
+      toggles: [],
       dirColor: 'var(--gradients-blue)',
     },
   ],
@@ -72,19 +75,28 @@ export const accordions: AccordionList = {
     {
       accordionName: 'about-me',
       isOpen: true,
-      toggles: {},
+      toggles: [],
       dirColor: 'var(--accent-red)',
     },
     {
       accordionName: 'interests',
       isOpen: false,
-      toggles: {},
+      toggles: [],
       dirColor: 'var(--accent-green)',
     },
     {
       accordionName: 'education',
       isOpen: false,
-      toggles: {},
+      toggles: [
+        {
+          toggleName: 'high-school',
+          isOpen: false,
+        },
+        {
+          toggleName: 'university',
+          isOpen: false,
+        },
+      ],
       dirColor: 'var(--gradients-blue)',
     },
   ],
@@ -92,13 +104,13 @@ export const accordions: AccordionList = {
     {
       accordionName: 'watch-e-sports',
       isOpen: true,
-      toggles: {},
+      toggles: [],
       dirColor: 'var(--accent-red)',
     },
     {
       accordionName: 'game',
       isOpen: false,
-      toggles: {},
+      toggles: [],
       dirColor: 'var(--accent-green)',
     },
   ],
