@@ -18,8 +18,8 @@ const Header: React.FC<HeaderProps> = ({ name }) => {
       <div className={styles.tabsWrapper}>
         <div className={styles.tabs}>
           {TABS.map((tab, index) => (
-            <Link href={tab.pathname}>
-              <HeaderText key={tab.tabName + index} text={tab.tabName} isSelected={tab.pathname === pathname} />
+            <Link href={tab.pathname} key={tab.tabName + index}>
+              <HeaderText text={tab.tabName} isSelected={tab.pathname === pathname} />
             </Link>
           ))}
         </div>

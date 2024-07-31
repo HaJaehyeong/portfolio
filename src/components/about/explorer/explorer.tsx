@@ -62,6 +62,7 @@ const Explorer: React.FC<ExplorerProps> = ({ activeNav, subject }) => {
             {accordions &&
               accordions.map((accordion) => (
                 <Accordion
+                  key={accordion.accordionId}
                   accordion={accordion}
                   handleAccordionClick={handleAccordionClick}
                   handleToggleClick={handleToggleClick}

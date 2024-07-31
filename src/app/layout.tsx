@@ -4,6 +4,7 @@ import styles from './layout.module.scss';
 import './globals.scss';
 import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
+import StoreProvider from './storeProvider';
 
 const firaCode = Fira_Code({ subsets: ['latin'] });
 
@@ -29,7 +30,7 @@ export default function RootLayout({
               <div className={`${styles.position4} ${styles.blue}`} />
             </div>
             <Header name="Jaehyeong-Ha 😎" />
-            {children}
+            <StoreProvider>{children}</StoreProvider>
             <Footer />
           </div>
         </div>
