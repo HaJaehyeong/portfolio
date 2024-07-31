@@ -7,7 +7,7 @@ import { RootState } from '@/lib/store';
 import { setAboutExplorerDirectoryId } from '@/lib/features/aboutExplorerSlice';
 import DirectoryComponent from './directory/directory';
 
-const Explorer: React.FC = () => {
+const AboutExplorer: React.FC = () => {
   const [directories, setDirectories] = useState<Directory[]>([]);
   const dispatch = useDispatch();
 
@@ -54,4 +54,4 @@ const Explorer: React.FC = () => {
   );
 };
 
-export default Explorer;
+export default AboutExplorer;

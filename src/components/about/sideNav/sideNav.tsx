@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
 import { setAboutExplorerType } from '@/lib/features/aboutExplorerSlice';
 
-const SideNav: React.FC = () => {
+const AboutSideNav: React.FC = () => {
   const explorerType = useSelector((state: RootState) => state.aboutExplorerReducer.type);
   const dispatch = useDispatch();
 
@@ -32,4 +32,4 @@ const SideNav: React.FC = () => {
   );
 };
 
-export default SideNav;
+export default AboutSideNav;
