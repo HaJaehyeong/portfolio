@@ -165,7 +165,7 @@ export const EXPLORER_CONTENTS: DirectoryContentList = {
       contentId: 7,
       directoryId: 5,
       fileId: 1,
-      content: 'I.... am..... Iron man.. 5 toggle 0',
+      content: 'I.... am..... Iron man.. 5 toggle 1',
     },
     {
       contentId: 8,
