@@ -1,72 +1,51 @@
 import { RiArrowDownSFill } from '@remixicon/react';
 import styles from './explorer.module.scss';
-import Accordion from './accordion/accordion';
-import { ACCORDIONS, AccordionType } from '@/types/constants';
+import { DIRECTORY_LIST, DIR_COLORS, Directory } from '@/types/constants';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/lib/store';
+import { setAboutExplorerDirectoryId } from '@/lib/features/aboutExplorerSlice';
+import DirectoryComponent from './directory/directory';
 
-type ExplorerProps = {
-  activeNav: 'terminal' | 'user' | 'gamepad';
-  subject: string;
-};
+const Explorer: React.FC = () => {
+  const [directories, setDirectories] = useState<Directory[]>([]);
+  const dispatch = useDispatch();
 
-// TODO(hajae): refactoring
-const Explorer: React.FC<ExplorerProps> = ({ activeNav, subject }) => {
-  const [accordions, setAccordions] = useState<AccordionType[]>([]);
+  const explorerState = useSelector((state: RootState) => state.aboutExplorerReducer);
 
   useEffect(() => {
-    switch (activeNav) {
-      case 'terminal':
-        return setAccordions(ACCORDIONS.terminals);
-      case 'user':
-        return setAccordions(ACCORDIONS.users);
-      case 'gamepad':
-        return setAccordions(ACCORDIONS.gamepads);
-      default:
-        return setAccordions(ACCORDIONS.terminals);
+    const targetDirectoies = DIRECTORY_LIST.directories.filter(
+      (directory) => directory.directoryType === explorerState.type
+    );
+    if (targetDirectoies) {
+      setDirectories(targetDirectoies);
+      dispatch(setAboutExplorerDirectoryId(targetDirectoies[0].directoryId));
     }
-  }, [activeNav]);
+  }, [explorerState.type]);
 
-  const handleAccordionClick = (accordionId: number) => {
-    const updatedAccordions = accordions.map((accordion) =>
-      accordion.accordionId === accordionId
-        ? { ...accordion, isOpen: true, toggles: accordion.toggles.map((toggle) => ({ ...toggle, isOpen: false })) }
-        : { ...accordion, isOpen: false, toggles: accordion.toggles.map((toggle) => ({ ...toggle, isOpen: false })) }
-    );
-    setAccordions(updatedAccordions);
-  };
-
-  const handleToggleClick = (accordionId: number, toggleId: number) => {
-    const updatedAccordions = accordions.map((accordion) =>
-      accordion.accordionId === accordionId
-        ? {
-            ...accordion,
-            isOpen: true,
-            toggles: accordion.toggles.map((toggle) =>
-              toggle.toggleId === toggleId ? { ...toggle, isOpen: true } : { ...toggle, isOpen: false }
-            ),
-          }
-        : { ...accordion, isOpen: false, toggles: accordion.toggles.map((toggle) => ({ ...toggle, isOpen: false })) }
-    );
-    setAccordions(updatedAccordions);
+  const getSubject = () => {
+    switch (explorerState.type) {
+      case 'terminal':
+        return 'professional-info';
+      case 'user':
+        return 'personal-info';
+      case 'gamepad':
+        return 'hobbies-info';
+    }
   };
 
   return (
     <div className={styles.explorer}>
       <div className={styles.subject}>
         <RiArrowDownSFill color="#fff" size={20} />
-        <label className={styles.subjectText}>{subject}</label>
+        <label className={styles.subjectText}>{getSubject()}</label>
       </div>
       <div>
         <div className={styles.content}>
-          <div className={styles.accordionsWrapper}>
-            {accordions &&
-              accordions.map((accordion) => (
-                <Accordion
-                  key={accordion.accordionId}
-                  accordion={accordion}
-                  handleAccordionClick={handleAccordionClick}
-                  handleToggleClick={handleToggleClick}
-                />
+          <div className={styles.directoriesWrapper}>
+            {directories &&
+              directories.map((directory, index) => (
+                <DirectoryComponent key={directory.directoryId} directory={directory} dirColor={DIR_COLORS[index]} />
               ))}
           </div>
         </div>

@@ -60,8 +60,8 @@ export const TABS: TabType[] = [
   },
 ];
 export const SOCIAL_MEDIAS = ['blog', 'insta'];
-export const DIR_COLORS = ['var(--accent-red)', 'var(--accent-green)', 'var(--accent-blue)'];
-export const EXPLORER_LIST: DirectoryList = {
+export const DIR_COLORS = ['var(--accent-red)', 'var(--accent-green)', 'var(--secondary-blue)'];
+export const DIRECTORY_LIST: DirectoryList = {
   directories: [
     {
       directoryId: 0,
@@ -176,100 +176,6 @@ export const EXPLORER_CONTENTS: DirectoryContentList = {
       contentId: 9,
       directoryId: 7,
       content: 'I.... am..... Iron man.. 7',
-    },
-  ],
-};
-
-export type AccordionList = {
-  terminals: AccordionType[];
-  users: AccordionType[];
-  gamepads: AccordionType[];
-};
-export type AccordionType = {
-  accordionId: number;
-  accordionName: string;
-  isOpen: boolean;
-  toggles: ToggleType[];
-  dirColor: string;
-};
-type ToggleType = {
-  toggleId: number;
-  toggleName: string;
-  isOpen: boolean;
-};
-
-export const ACCORDIONS: AccordionList = {
-  terminals: [
-    {
-      accordionId: 0,
-      accordionName: 'experience',
-      isOpen: true,
-      toggles: [],
-      dirColor: 'var(--accent-red)',
-    },
-    {
-      accordionId: 1,
-      accordionName: 'hard-skills',
-      isOpen: false,
-      toggles: [],
-      dirColor: 'var(--accent-green)',
-    },
-    {
-      accordionId: 2,
-      accordionName: 'soft-skills',
-      isOpen: false,
-      toggles: [],
-      dirColor: 'var(--gradients-blue)',
-    },
-  ],
-  users: [
-    {
-      accordionId: 3,
-      accordionName: 'about-me',
-      isOpen: true,
-      toggles: [],
-      dirColor: 'var(--accent-red)',
-    },
-    {
-      accordionId: 4,
-      accordionName: 'interests',
-      isOpen: false,
-      toggles: [],
-      dirColor: 'var(--accent-green)',
-    },
-    {
-      accordionId: 5,
-      accordionName: 'education',
-      isOpen: false,
-      toggles: [
-        {
-          toggleId: 0,
-          toggleName: 'high-school',
-          isOpen: false,
-        },
-        {
-          toggleId: 1,
-          toggleName: 'university',
-          isOpen: false,
-        },
-      ],
-      dirColor: 'var(--gradients-blue)',
-    },
-  ],
-  gamepads: [
-    {
-      accordionId: 6,
-      accordionName: 'watch-e-sports',
-      isOpen: true,
-      toggles: [],
-      dirColor: 'var(--accent-red)',
-    },
-    {
-      accordionId: 7,
-      accordionName: 'game',
-      isOpen: false,
-      toggles: [],
-      dirColor: 'var(--accent-green)',
     },
   ],
 };

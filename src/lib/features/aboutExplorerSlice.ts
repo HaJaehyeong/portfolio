@@ -25,13 +25,13 @@ export const aboutExplorer = createSlice({
         type: action.payload,
       };
     },
-    setAboutExplorerDirectoryId(state, action: PayloadAction<number>) {
+    setAboutExplorerDirectoryId(state, action: PayloadAction<number | undefined>) {
       return {
         ...state,
         directoryId: action.payload,
       };
     },
-    setAboutExplorerFileId(state, action: PayloadAction<number>) {
+    setAboutExplorerFileId(state, action: PayloadAction<number | undefined>) {
       return {
         ...state,
         fileId: action.payload,
@@ -40,5 +40,6 @@ export const aboutExplorer = createSlice({
   },
 });
 
-export const { setAboutExplorerState, setAboutExplorerDirectoryId, setAboutExplorerFileId } = aboutExplorer.actions;
+export const { setAboutExplorerState, setAboutExplorerType, setAboutExplorerDirectoryId, setAboutExplorerFileId } =
+  aboutExplorer.actions;
 export default aboutExplorer.reducer;
