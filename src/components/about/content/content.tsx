@@ -3,13 +3,7 @@ import styles from './content.module.scss';
 import { RootState } from '@/lib/store';
 import { useEffect, useState } from 'react';
 import { EXPLORER_CONTENTS } from '@/types/constants';
-
-type OpenedContentList = {
-  title: string;
-  content: string;
-  directoryId?: number;
-  fileId?: number;
-}[];
+import AboutContentTab from './tab/tab';
 
 const AboutContent: React.FC = () => {
   const [content, setContent] = useState<string>('');
@@ -29,7 +23,11 @@ const AboutContent: React.FC = () => {
     }
   }, [explorerState.directoryId, explorerState.fileId]);
 
-  return <>{content}</>;
+  return (
+    <>
+      <AboutContentTab />
+    </>
+  );
 };
 
 export default AboutContent;
