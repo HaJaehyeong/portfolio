@@ -3,6 +3,7 @@ import styles from './tab.module.scss';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
 import { DIRECTORY_LIST } from '@/types/constants';
+import { RiCloseLine } from '@remixicon/react';
 
 type OpenedContentList = OpenedContent[];
 
@@ -47,9 +48,16 @@ const AboutContentTab: React.FC = () => {
   }, [explorerState.directoryId, explorerState.fileId]);
 
   return (
-    <div>
+    <div className={styles.tabWrapper}>
       {openedContentList.length &&
-        openedContentList.map((content, index) => <div key={content.title + index}>{content.title}</div>)}
+        openedContentList.map((content, index) => (
+          <div className={styles.tab}>
+            <label key={content.title + index} className={styles.tabLabel}>
+              {content.title}
+            </label>
+            <RiCloseLine size={16} color="var(--secondary-gray)" />
+          </div>
+        ))}
     </div>
   );
 };
