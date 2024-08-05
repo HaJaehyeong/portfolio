@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import styles from './tab.module.scss';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
 import { DIRECTORY_LIST, Directory } from '@/types/constants';
 import { RiCloseLine } from '@remixicon/react';
+import { setAboutExplorerDirectoryId, setAboutExplorerFileId } from '@/lib/features/aboutExplorerSlice';
 
 type OpenedContentList = OpenedContent[];
 
@@ -16,6 +17,7 @@ type OpenedContent = {
 const AboutContentTab: React.FC = () => {
   const [openedContentList, setOpenedContentList] = useState<OpenedContentList>([]);
   const explorerState = useSelector((state: RootState) => state.aboutExplorerReducer);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const targetContent = findTargetContent();
@@ -69,20 +71,48 @@ const AboutContentTab: React.FC = () => {
     return explorerState.directoryId === directoryId && explorerState.fileId === undefined;
   };
 
+  const handleTabClick = (directoryId?: number, fileId?: number) => {
+    dispatch(setAboutExplorerDirectoryId(directoryId));
+    dispatch(setAboutExplorerFileId(fileId));
+  };
+
+  const handleTabClose = (directoryId?: number, fileId?: number) => {
+    const filteredList = openedContentList.filter(
+      (content) => content.directoryId !== directoryId || content.fileId !== fileId
+    );
+    setOpenedContentList(filteredList);
+
+    if (filteredList.length > 0 && explorerState.directoryId === directoryId && explorerState.fileId === fileId) {
+      dispatch(setAboutExplorerDirectoryId(filteredList[0].directoryId));
+      dispatch(setAboutExplorerFileId(filteredList[0].fileId));
+    } else if (filteredList.length === 0) {
+      dispatch(setAboutExplorerDirectoryId(undefined));
+      dispatch(setAboutExplorerFileId(undefined));
+    }
+  };
+
   return (
     <div className={styles.tabWrapper}>
-      {openedContentList.length &&
+      {openedContentList.length > 0 ? (
         openedContentList.map((content, index) => (
           <div className={styles.tab}>
             <label
               key={content.title + index}
               className={`${styles.tabLabel} ${isActive(content.directoryId, content.fileId) ? styles.active : ''}`}
+              onClick={() => handleTabClick(content.directoryId, content.fileId)}
             >
               {content.title}
             </label>
-            <RiCloseLine size={16} color="var(--secondary-gray)" />
+            <RiCloseLine
+              size={16}
+              color="var(--secondary-gray)"
+              onClick={() => handleTabClose(content.directoryId, content.fileId)}
+            />
           </div>
-        ))}
+        ))
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 };
