@@ -66,7 +66,7 @@ const AboutContentTab: React.FC = () => {
     if (fileId !== undefined) {
       return explorerState.directoryId === directoryId && explorerState.fileId === fileId;
     }
-    return explorerState.directoryId === directoryId;
+    return explorerState.directoryId === directoryId && explorerState.fileId === undefined;
   };
 
   return (
