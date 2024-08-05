@@ -24,9 +24,10 @@ const AboutContent: React.FC = () => {
   }, [explorerState.directoryId, explorerState.fileId]);
 
   return (
-    <>
+    <div className={styles.contentWrapper}>
       <AboutContentTab />
-    </>
+      <div className={styles.content}>{content}</div>
+    </div>
   );
 };
 
