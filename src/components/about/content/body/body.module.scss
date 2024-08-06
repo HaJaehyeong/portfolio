@@ -1,0 +1,54 @@
+.content-body-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+  padding: 20px;
+  color: var(--secondary-gray);
+}
+
+.line-no {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 5px;
+
+  margin: 0;
+  width: 40px;
+
+  font-size: 16px;
+  counter-reset: line var(--line-num, 0);
+
+  > span {
+    counter-increment: line;
+    margin: 1px 0;
+
+    &::before {
+      content: counter(line) ' ';
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  margin: 0;
+  width: 600px;
+
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: monospace;
+}
+
+.line {
+  display: block;
+}
+
+.prefix {
+  display: inline-block;
+  width: 20px;
+  white-space: pre;
+}

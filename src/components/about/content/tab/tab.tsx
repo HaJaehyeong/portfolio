@@ -95,7 +95,7 @@ const AboutContentTab: React.FC = () => {
     <div className={styles.tabWrapper}>
       {openedContentList.length > 0 ? (
         openedContentList.map((content, index) => (
-          <div className={styles.tab}>
+          <div key={content.title + index} className={styles.tab}>
             <label
               key={content.title + index}
               className={`${styles.tabLabel} ${isActive(content.directoryId, content.fileId) ? styles.active : ''}`}
