@@ -129,7 +129,7 @@ export const EXPLORER_CONTENTS: DirectoryContentList = {
       contentId: 0,
       directoryId: 0,
       content:
-        'I.... am..... Iron man.. 0 I.... am..... Iron man.. 0 I.... am..... Iron man.. 0 I.... am..... Iron man.. 0 I.... am..... Iron man.. 0 I.... am..... Iron man.. 0 I.... am..... Iron man.. 0 I.... am..... Iron man.. 0 I.... am..... Iron man.. 0 I.... am..... Iron man.. 0',
+        '울려댔어 사이렌 텅 빈 길거린엔 도망치다 흘린 칼자루와 피가 흥건해 우리 그때 어릴땐 뭘 몰랐었지 man 그냥 힘쎈 형이 제일로 멋졌었지 그땐 그래 우린 살아나왔어 지옥 이제 어딜가든 다 비옥 수도 없이 맛본 치욕 어릴때부터 입에 붙은 쌍욕 절대 할 수 없었지 신고 할 수 있는게 오직 기도 어떻게 느끼겠어 피곤 붉게 물들지 않을려 내 흰옷 여기서 더 있다간 감방이 내 방 종신형이 친구 책가방 안에 어린 내가 짝사랑하던 그 여잔 이 block에서 지금 몸 팔아 Oh 새꺄 this a real life 김치 냄새 땜에 놀려대길래 도시락통을 닫아 thats real life 그런 날 보고 지 점심을 나눠준 꼬마가 있었어 thats real life 어느 날 관 속에 그 친구의 얼굴을 만지게 됐어 thats 울려댔어 사이렌 텅 빈 길거린엔 도망치다 흘린 칼자루와 피가 흥건해 우리 그때 어릴땐 뭘 몰랐었지 man 그냥 힘쎈 형이 제일로 멋졌었지 그땐 그래 우린 살아나왔어 지옥 이제 어딜가든 다 비옥 수도 없이 맛본 치욕 어릴때부터 입에 붙은 쌍욕 절대 할 수 없었지 신고 할 수 있는게 오직 기도 어떻게 느끼겠어 피곤 붉게 물들지 않을려 내 흰옷',
     },
     {
       contentId: 1,

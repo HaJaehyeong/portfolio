@@ -29,7 +29,7 @@ const AboutContentBody: React.FC = () => {
     const container = textRef.current;
     if (container) {
       const originalText = content;
-      const contentWidth = container.getBoundingClientRect().width;
+      const contentWidth = container.getBoundingClientRect().width - 35;
       const words = originalText.split(' ');
       let currentLine = '';
       const lines: string[] = [];
@@ -66,17 +66,24 @@ const AboutContentBody: React.FC = () => {
     <div className={styles.contentBodyWrapper}>
       <pre className={styles.lineNo}>
         <span />
-        <span />
-        <span />
+        {formattedText.map((_, index) => (
+          <span key={index} />
+        ))}
         <span />
       </pre>
       <div className={styles.content} ref={textRef}>
+        <div className={styles.line}>
+          <span>/**</span>
+        </div>
         {formattedText.map((line, index) => (
-          <div key={index} className={styles.line}>
+          <div key={line[0] + index} className={styles.line}>
             <span className={styles.prefix}>*</span>
             <span>{line}</span>
           </div>
         ))}
+        <div className={styles.line}>
+          <span style={{ marginLeft: '10px' }}>*/</span>
+        </div>
       </div>
     </div>
   );
