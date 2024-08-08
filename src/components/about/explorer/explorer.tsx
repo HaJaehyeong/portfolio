@@ -1,6 +1,6 @@
 import { RiArrowDownSFill, RiMailFill, RiPhoneFill } from '@remixicon/react';
 import styles from './explorer.module.scss';
-import { DIRECTORY_LIST, DIR_COLORS, Directory } from '@/types/constants';
+import { DIRECTORY_LIST, DIR_COLORS, Directory, MY_EMAIL, MY_PHONE } from '@/types/constants';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
@@ -58,11 +58,11 @@ const AboutExplorer: React.FC = () => {
         <div className={styles.contactMeInfo}>
           <div className={styles.info}>
             <RiMailFill color="var(--secondary-gray)" size={18} />
-            <label>hajae305@gamil.com</label>
+            <label>{MY_EMAIL}</label>
           </div>
           <div className={styles.info}>
             <RiPhoneFill color="var(--secondary-gray)" size={18} />
-            <label>+82-10-8077-1157</label>
+            <label>{MY_PHONE}</label>
           </div>
         </div>
       </div>
