@@ -6,7 +6,8 @@
   border-right: solid 1px var(--line);
 }
 
-.subject {
+.subject,
+.contact-me {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -18,21 +19,46 @@
   color: var(--secondary-white);
 }
 
-.subject-text {
+.subject-text,
+.contact-me-subject {
   margin: 0;
 }
 
 .content {
+  height: 200px;
+  border-bottom: solid 1px var(--line);
+
   label {
     color: var(--secondary-white);
   }
 }
 
-.directories-wrapper {
+.directories-wrapper,
+.contact-me-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 8px;
 
   padding: 14px;
+}
+
+.contact-me-info {
+  padding: 14 20px;
+  gap: 10px;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+
+  cursor: pointer;
+
+  label {
+    margin: 0 0 0 5px;
+    color: var(--secondary-gray);
+    cursor: pointer;
+  }
 }

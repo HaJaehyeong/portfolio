@@ -1,4 +1,4 @@
-import { RiArrowDownSFill } from '@remixicon/react';
+import { RiArrowDownSFill, RiMailFill, RiPhoneFill } from '@remixicon/react';
 import styles from './explorer.module.scss';
 import { DIRECTORY_LIST, DIR_COLORS, Directory } from '@/types/constants';
 import { useEffect, useState } from 'react';
@@ -37,7 +37,7 @@ const AboutExplorer: React.FC = () => {
   return (
     <div className={styles.explorer}>
       <div className={styles.subject}>
-        <RiArrowDownSFill color="#fff" size={20} />
+        <RiArrowDownSFill color="var(--secondary-white)" size={20} />
         <label className={styles.subjectText}>{getSubject()}</label>
       </div>
       <div>
@@ -47,6 +47,22 @@ const AboutExplorer: React.FC = () => {
               directories.map((directory, index) => (
                 <DirectoryComponent key={directory.directoryId} directory={directory} dirColor={DIR_COLORS[index]} />
               ))}
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className={styles.contactMe}>
+          <RiArrowDownSFill color="var(--secondary-white)" size={20} />
+          <label className={styles.contactMeSubject}>contact me</label>
+        </div>
+        <div className={styles.contactMeInfo}>
+          <div className={styles.info}>
+            <RiMailFill color="var(--secondary-gray)" size={18} />
+            <label>hajae305@gamil.com</label>
+          </div>
+          <div className={styles.info}>
+            <RiPhoneFill color="var(--secondary-gray)" size={18} />
+            <label>+82-10-8077-1157</label>
           </div>
         </div>
       </div>
