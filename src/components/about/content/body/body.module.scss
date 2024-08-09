@@ -23,6 +23,7 @@
   > span {
     counter-increment: line;
     margin: 0;
+    height: 20px;
 
     &::before {
       content: counter(line) ' ';
