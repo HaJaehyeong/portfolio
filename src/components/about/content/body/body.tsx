@@ -31,7 +31,7 @@ const AboutContentBody: React.FC = () => {
 
     const handleResize = () => {
       const originalText = content;
-      const contentWidth = container.getBoundingClientRect().width - 35;
+      const contentWidth = container.getBoundingClientRect().width - 55;
       const words = originalText.split(' ');
       let currentLine = '';
       const lines: string[] = [];
