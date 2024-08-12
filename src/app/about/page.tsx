@@ -3,6 +3,7 @@ import AboutExplorer from '@/components/about/explorer/explorer';
 import styles from './page.module.scss';
 import AboutSideNav from '@/components/about/sideNav/sideNav';
 import AboutContent from '@/components/about/content/content';
+import AboutCode from '@/components/about/code/code';
 
 const AboutMe: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const AboutMe: React.FC = () => {
       <AboutSideNav />
       <AboutExplorer />
       <AboutContent />
+      <AboutCode />
     </div>
   );
 };

@@ -6,12 +6,11 @@
   gap: 0;
 
   width: 100%;
-  height: 42px;
   border-bottom: solid 1px var(--line);
 
   color: var(--secondary-gray);
-  overflow-x: scroll;
 
+  overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
   &::-webkit-scrollbar {
@@ -20,6 +19,7 @@
 }
 
 .tab {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

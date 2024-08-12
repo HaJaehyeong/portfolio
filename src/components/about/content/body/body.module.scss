@@ -4,8 +4,8 @@
   flex-direction: row;
   gap: 20px;
 
-  padding: 20px;
-  height: 100%;
+  padding: 20px 20px 0;
+  height: calc(100% - 58px);
   color: var(--secondary-gray);
 
   overflow-y: auto;
@@ -77,8 +77,8 @@
 }
 
 .scroll {
-  margin: 5px 1px;
-  width: calc(100% - 2px);
+  margin: 3px 2px;
+  width: calc(100% - 4px);
   height: 8px;
 
   background-color: var(--secondary-gray);
