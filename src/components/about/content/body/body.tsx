@@ -99,6 +99,7 @@ const AboutContentBody: React.FC = () => {
           <span style={{ marginLeft: '10px' }}>*/</span>
         </div>
       </div>
+      {/* NOTE(hajae): 디자인용 동작하지 않음 */}
       <div className={styles.scrollBar}>
         <div className={styles.scroll} />
       </div>
