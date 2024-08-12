@@ -23,24 +23,28 @@ const AboutContentBody: React.FC = () => {
   }, [explorerState.directoryId, explorerState.fileId]);
 
   const [formattedText, setFormattedText] = useState<string[]>([]);
-  const textRef = useRef<HTMLDivElement>(null);
+  const divRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const container = textRef.current;
-    if (container) {
+    const container = divRef.current;
+    if (!container) return;
+
+    const handleResize = () => {
       const originalText = content;
       const contentWidth = container.getBoundingClientRect().width - 35;
       const words = originalText.split(' ');
       let currentLine = '';
       const lines: string[] = [];
 
+      // NOTE(hajae): absolute가 아니면 tempElement가 container내부에 생성되어 container width를 넘을 수 없는 현상이 발생하므로
+      // 표시하지않고 숨기며, whitespace: nowrap으로 개행시키지 않아 width를 비교할 수 있게 한다.
       const tempElement = document.createElement('span');
       tempElement.style.visibility = 'hidden';
       tempElement.style.position = 'absolute';
       tempElement.style.whiteSpace = 'nowrap';
       container.appendChild(tempElement);
 
-      words.forEach((word, index) => {
+      words.forEach((word) => {
         const testLine = currentLine ? `${currentLine} ${word}` : word;
         tempElement.textContent = testLine;
 
@@ -59,7 +63,17 @@ const AboutContentBody: React.FC = () => {
       setFormattedText(lines);
 
       container.removeChild(tempElement);
-    }
+    };
+
+    // NOTE(hajae): DOM 요소의 크기 변화를 감지하고 관찰하는 데 사용되는 API
+    const resizeObserver = new ResizeObserver(handleResize);
+    resizeObserver.observe(container);
+
+    handleResize();
+
+    return () => {
+      resizeObserver.disconnect();
+    };
   }, [content]);
 
   return (
@@ -71,7 +85,7 @@ const AboutContentBody: React.FC = () => {
         ))}
         <span />
       </pre>
-      <div className={styles.content} ref={textRef}>
+      <div className={styles.content} ref={divRef}>
         <div className={styles.line}>
           <span>/**</span>
         </div>
