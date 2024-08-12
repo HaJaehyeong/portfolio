@@ -99,6 +99,9 @@ const AboutContentBody: React.FC = () => {
           <span style={{ marginLeft: '10px' }}>*/</span>
         </div>
       </div>
+      <div className={styles.scrollBar}>
+        <div className={styles.scroll} />
+      </div>
     </div>
   );
 };

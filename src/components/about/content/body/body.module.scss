@@ -1,10 +1,20 @@
 .content-body-wrapper {
+  position: relative;
   display: flex;
   flex-direction: row;
   gap: 20px;
 
   padding: 20px;
+  height: 100%;
   color: var(--secondary-gray);
+
+  overflow-y: auto;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .line-no {
@@ -55,4 +65,21 @@
   width: 10px;
   margin: 0 10px;
   white-space: pre;
+}
+
+.scroll-bar {
+  position: absolute;
+  width: 15px;
+  height: calc(100%);
+  right: 0;
+  top: 0;
+  border-left: solid 1px var(--line);
+}
+
+.scroll {
+  margin: 5px 1px;
+  width: calc(100% - 2px);
+  height: 8px;
+
+  background-color: var(--secondary-gray);
 }
