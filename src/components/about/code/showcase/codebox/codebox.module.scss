@@ -1,0 +1,42 @@
+.codebox-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 12px;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.writer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-image {
+  border-radius: 18px;
+}
+
+.name {
+  color: var(--secondary-blue);
+}
+
+.post-info {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+
+  height: 14px;
+
+  > code {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+  }
+}
