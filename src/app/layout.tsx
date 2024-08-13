@@ -23,12 +23,6 @@ export default function RootLayout({
       <body className={firaCode.className}>
         <div className={styles.pageWrapper}>
           <div className={styles.mainWrapper}>
-            <div className={styles.backgroundBlurs}>
-              <div className={`${styles.position1} ${styles.green}`} />
-              <div className={`${styles.position2} ${styles.green}`} />
-              <div className={`${styles.position3} ${styles.blue}`} />
-              <div className={`${styles.position4} ${styles.blue}`} />
-            </div>
             <Header name="Jaehyeong-Ha 😎" />
             <StoreProvider>{children}</StoreProvider>
             <Footer />
