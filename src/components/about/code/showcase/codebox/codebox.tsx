@@ -5,10 +5,10 @@ import { RiChatSmile3Fill } from '@remixicon/react';
 import Star from '@/components/star/star';
 
 type AboutCodeShowcaseCodeBoxProps = {
-  code: React.ReactNode;
+  children: React.ReactNode;
 };
 
-const AboutCodeShowcaseCodeBox: React.FC<AboutCodeShowcaseCodeBoxProps> = ({ code }) => {
+const AboutCodeShowcaseCodeBox: React.FC<AboutCodeShowcaseCodeBoxProps> = ({ children }) => {
   return (
     <div className={styles.codeboxWrapper}>
       <div className={styles.info}>
@@ -32,7 +32,7 @@ const AboutCodeShowcaseCodeBox: React.FC<AboutCodeShowcaseCodeBoxProps> = ({ cod
           </code>
         </div>
       </div>
-      {code}
+      {children}
     </div>
   );
 };

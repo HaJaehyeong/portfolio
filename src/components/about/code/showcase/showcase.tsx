@@ -1,3 +1,4 @@
+import CodeBox from '@/components/codebox/codebox';
 import AboutCodeShowcaseCodeBox from './codebox/codebox';
 import styles from './showcase.module.scss';
 
@@ -5,8 +6,12 @@ const AboutCodeShowcase: React.FC = () => {
   return (
     <div className={styles.showcaseWrapper}>
       <div className={styles.title}>// Code snippet showcase:</div>
-      <AboutCodeShowcaseCodeBox code={<div>code</div>} />
-      <AboutCodeShowcaseCodeBox code={<div>code</div>} />
+      <AboutCodeShowcaseCodeBox>
+        <CodeBox />
+      </AboutCodeShowcaseCodeBox>
+      <AboutCodeShowcaseCodeBox>
+        <CodeBox />
+      </AboutCodeShowcaseCodeBox>
     </div>
   );
 };

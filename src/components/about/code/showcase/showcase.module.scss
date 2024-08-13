@@ -1,9 +1,12 @@
 .showcase-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   padding: 20px 40px;
 
   color: var(--secondary-gray);
 }
 
 .title {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
