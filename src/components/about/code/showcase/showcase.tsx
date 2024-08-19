@@ -6,10 +6,10 @@ const AboutCodeShowcase: React.FC = () => {
   return (
     <div className={styles.showcaseWrapper}>
       <div className={styles.title}>// Code snippet showcase:</div>
-      <AboutCodeShowcaseCodeBox>
+      <AboutCodeShowcaseCodeBox detail="helloooooohelloooooohelloooooohelloooooohelloooooohelloooooohelloooooohelloooooohelloooooohelloooooo">
         <CodeBox />
       </AboutCodeShowcaseCodeBox>
-      <AboutCodeShowcaseCodeBox>
+      <AboutCodeShowcaseCodeBox detail="helloo">
         <CodeBox />
       </AboutCodeShowcaseCodeBox>
     </div>

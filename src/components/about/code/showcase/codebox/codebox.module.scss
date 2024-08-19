@@ -32,11 +32,36 @@
   gap: 16px;
 
   height: 14px;
+  cursor: pointer;
 
   > code {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 3px;
+
+    &:hover {
+      color: var(--secondary-white);
+    }
+  }
+}
+
+.detail {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-top: 5px;
+  border-top: solid 1px var(--line);
+  padding: 15px 0;
+
+  word-break: break-all;
+
+  > code {
+    max-width: 600px;
+    width: 90%;
+
+    line-height: 1.6;
   }
 }
