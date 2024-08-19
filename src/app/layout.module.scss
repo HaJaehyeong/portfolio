@@ -10,10 +10,14 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+
   width: calc(100vw - 60px);
   height: calc(100dvh - 60px);
 
   background-color: var(--primary-black-2);
   border: solid 1px var(--line);
   border-radius: 8px;
+
+  z-index: 1;
 }
