@@ -1,10 +1,14 @@
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import styles from './tab.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
 import { DIRECTORY_LIST, Directory } from '@/types/constants';
 import { RiCloseLine } from '@remixicon/react';
-import { setAboutExplorerDirectoryId, setAboutExplorerFileId } from '@/lib/features/aboutExplorerSlice';
+import {
+  setAboutExplorerDirectoryId,
+  setAboutExplorerFileId,
+  setAboutExplorerState,
+} from '@/lib/features/aboutExplorerSlice';
 
 type OpenedContentList = OpenedContent[];
 
@@ -20,13 +24,26 @@ const AboutContentTab: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    // NOTE(hajae): component가 unmount될 때 slice를 초기화.
+    return () => {
+      dispatch(
+        setAboutExplorerState({
+          type: 'terminal',
+          directoryId: undefined,
+          fileId: undefined,
+        })
+      );
+    };
+  }, []);
+
+  useEffect(() => {
     const targetContent = findTargetContent();
-    if (targetContent) {
-      if (explorerState.fileId !== undefined) {
-        handleFileOpen(targetContent);
-      } else {
-        handleDirectoryOpen(targetContent);
-      }
+    if (!targetContent) return;
+
+    if (explorerState.fileId !== undefined) {
+      handleFileOpen(targetContent);
+    } else {
+      handleDirectoryOpen(targetContent);
     }
   }, [explorerState.directoryId, explorerState.fileId]);
 
