@@ -44,7 +44,7 @@ const AboutCodeShowcaseCodeBox: React.FC<AboutCodeShowcaseCodeBoxProps> = ({ chi
       {showDetail && (
         <div className={styles.detail}>
           <code>{detail}</code>
-          <div>
+          <div onClick={handleToggleDetail}>
             <RiCloseLine size={16} color="var(--secondary-gray)" />
           </div>
         </div>
