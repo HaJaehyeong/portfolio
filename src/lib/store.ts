@@ -1,6 +1,9 @@
+import aboutExplorerReducer from './features/aboutExplorerSlice';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  aboutExplorerReducer,
+});
 
 export const makeStore = () => {
   const store = configureStore({

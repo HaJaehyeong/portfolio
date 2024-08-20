@@ -1,0 +1,45 @@
+.directory-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.directory {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+
+  cursor: pointer;
+
+  label {
+    margin: 0 0 0 5px;
+    color: var(--secondary-gray);
+    cursor: pointer;
+
+    &.open {
+      color: var(--secondary-white);
+    }
+  }
+}
+
+.file {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+
+  padding-left: 18px;
+
+  cursor: pointer;
+
+  label {
+    margin: 0 0 0 5px;
+    color: var(--secondary-gray);
+    cursor: pointer;
+
+    &.open {
+      color: var(--secondary-white);
+    }
+  }
+}

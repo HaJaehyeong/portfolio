@@ -1,0 +1,11 @@
+.actvie {
+  opacity: 1;
+}
+
+.hover {
+  opacity: 0.4;
+
+  &:hover {
+    opacity: 1;
+  }
+}
