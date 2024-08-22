@@ -1,9 +1,9 @@
 'use client';
-import AboutExplorer from '@/components/about/explorer/explorer';
+import AboutCode from './_components/code/code';
+import AboutContent from './_components/content/content';
+import AboutExplorer from './_components/explorer/explorer';
+import AboutSideNav from './_components/sideNav/sideNav';
 import styles from './page.module.scss';
-import AboutSideNav from '@/components/about/sideNav/sideNav';
-import AboutContent from '@/components/about/content/content';
-import AboutCode from '@/components/about/code/code';
 
 const AboutMe: React.FC = () => {
   return (

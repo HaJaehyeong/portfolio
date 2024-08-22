@@ -1,5 +1,5 @@
 'use client';
-import TechnologyLogo from '@/components/technologyLogo/technologyLogo';
+import TechnologyLogo from '@/ui/technologyLogo/technologyLogo';
 import styles from './sideNav.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';

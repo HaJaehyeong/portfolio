@@ -6,7 +6,7 @@ import boltUpRight from '@/public/images/bolt-up-right.png';
 import boltDownLeft from '@/public/images/bolt-down-left.png';
 import boltDownRight from '@/public/images/bolt-down-right.png';
 import Image from 'next/image';
-import SnakeGame from '@/components/snakeGame/snakeGame';
+import SnakeGame from '@/app/_components/snakeGame/snakeGame';
 
 const Home: React.FC = () => {
   const [displayedText, setDisplayedText] = useState('');
