@@ -1,34 +1,11 @@
+@import '@/styles/animations.scss';
 @import '@/styles/colors.scss';
 @import '@/styles/inputs.scss';
+@import '@/styles/typography.scss';
 
 button,
 input {
   font-family: inherit;
-}
-
-h1 {
-  font-size: 62px;
-}
-
-h2 {
-  font-size: 32px;
-}
-
-p {
-  font-size: 18px;
-}
-
-label {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-code {
-  font-size: 14px;
-}
-
-a {
-  text-decoration: none;
 }
 
 body {

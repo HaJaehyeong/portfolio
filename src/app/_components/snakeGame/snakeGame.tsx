@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './snakeGame.module.scss';
-import CtaButton from '@/components/ctaButton/ctaButton';
+import CtaButton from '@/ui/ctaButton/ctaButton';
 import { RiArrowDownSFill, RiArrowLeftSFill, RiArrowRightSFill, RiArrowUpSFill } from '@remixicon/react';
 
 const rows = 30;

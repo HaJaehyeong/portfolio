@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styles from './codebox.module.scss';
 import profileImage from '@/public/images/profile_image.png';
 import { RiChatSmile3Fill, RiCloseLine } from '@remixicon/react';
-import Star from '@/components/star/star';
+import Star from '@/ui/star/star';
 import { useState } from 'react';
 
 type AboutCodeShowcaseCodeBoxProps = {

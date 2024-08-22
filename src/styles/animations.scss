@@ -1,0 +1,10 @@
+@keyframes cursorBlink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}

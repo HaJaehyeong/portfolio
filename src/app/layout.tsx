@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Fira_Code } from 'next/font/google';
 import styles from './layout.module.scss';
 import './globals.scss';
-import Header from '@/components/header/header';
-import Footer from '@/components/footer/footer';
+import Header from '@/ui/header/header';
+import Footer from '@/ui/footer/footer';
 import StoreProvider from './storeProvider';
 
 const firaCode = Fira_Code({ subsets: ['latin'] });
@@ -13,11 +13,11 @@ export const metadata: Metadata = {
   description: 'first portfolio page',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+type RootLayoutProps = {
   children: React.ReactNode;
-}>) {
+};
+
+const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="ko">
       <body className={firaCode.className}>
@@ -31,4 +31,6 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
