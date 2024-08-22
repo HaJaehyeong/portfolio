@@ -7,24 +7,10 @@ import boltDownLeft from '@/public/images/bolt-down-left.png';
 import boltDownRight from '@/public/images/bolt-down-right.png';
 import Image from 'next/image';
 import SnakeGame from '@/app/_components/snakeGame/snakeGame';
+import useTypingEffect from '@/hooks/useTypingEffect';
 
 const Home: React.FC = () => {
-  const [displayedText, setDisplayedText] = useState('');
-  const [count, setCount] = useState(0);
-  const fullText = 'Front-end developer';
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      if (count < fullText.length) {
-        setDisplayedText((prev) => prev + fullText[count]);
-        setCount((prev) => prev + 1);
-      } else {
-        clearInterval(intervalId);
-      }
-    }, 200);
-
-    return () => clearInterval(intervalId);
-  }, [count, fullText.length]);
+  const typingText = useTypingEffect('Front-end developer');
 
   return (
     <div className={styles.mainWrapper}>
@@ -39,8 +25,7 @@ const Home: React.FC = () => {
         <h1 className={styles.name}>Jaehyeong Ha</h1>
         <h2 className={styles.job}>
           {'> '}
-          <span>{displayedText}</span>
-          <span className={styles.cursor}>|</span>
+          {typingText}
         </h2>
 
         <label className={styles.comment}>// complete the game to continue</label>
