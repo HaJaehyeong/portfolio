@@ -171,4 +171,6 @@ export class Technology extends EnumBase<TechnologyEnum> {
     this.user,
     this.gamepad,
   ];
+
+  techs = [this.react, this.html5, this.vue, this.css, this.flutter, this.angular, this.variant5, this.nextjs];
 }

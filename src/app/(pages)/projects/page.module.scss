@@ -1,0 +1,9 @@
+.projects-wrapper {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  height: calc(100% - 107px);
+
+  z-index: 999;
+}
