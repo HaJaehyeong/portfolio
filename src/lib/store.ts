@@ -1,8 +1,10 @@
 import aboutExplorerReducer from './features/aboutExplorerSlice';
+import projectFilterReducer from './features/projectFilterSlice';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 const rootReducer = combineReducers({
   aboutExplorerReducer,
+  projectFilterReducer,
 });
 
 export const makeStore = () => {
