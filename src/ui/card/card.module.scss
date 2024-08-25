@@ -1,0 +1,30 @@
+.card-wrapper {
+  position: relative;
+  width: 370px;
+  height: 315px;
+
+  background-color: var(--primary-black-3);
+  border: solid 1px var(--line);
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.card-image {
+  position: relative;
+  height: 145px;
+  border-bottom: solid 1px var(--line);
+}
+
+.card-description {
+  position: relative;
+  margin: 0;
+  padding: 30px 30px 20px 30px;
+
+  word-break: keep-all;
+  color: var(--secondary-gray);
+}
+
+.button-wrapper {
+  padding-left: 30px;
+}
