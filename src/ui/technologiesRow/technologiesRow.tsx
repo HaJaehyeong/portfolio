@@ -1,8 +1,10 @@
+'use client';
 import { Enums } from '@/enums/enums';
 import Checkbox from '../checkbox/checkbox';
 import TechnologyLogo from '../technologyLogo/technologyLogo';
 import styles from './technologiesRow.module.scss';
 import { TechCodesType } from '@/types/constants';
+import { useState } from 'react';
 
 type TechnologiesRow = {
   tech: TechCodesType;
@@ -10,12 +12,13 @@ type TechnologiesRow = {
 };
 
 const TechnologiesRow: React.FC<TechnologiesRow> = ({ tech, checked = false }) => {
+  const [isChecked, setIsChecked] = useState(checked);
   const targetTech = Enums.Technology.valueOf(tech);
 
   return (
     targetTech && (
       <div className={styles.technologiesRow}>
-        <Checkbox checked={checked} />
+        <Checkbox checked={isChecked} handleChange={(e) => setIsChecked(e.target.checked)} />
         <div className={styles.technologiesRowTitle}>
           <TechnologyLogo icon={tech} size={24} />
           <span>{targetTech?.name}</span>

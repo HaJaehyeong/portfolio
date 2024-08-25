@@ -7,3 +7,10 @@
 
   z-index: 999;
 }
+
+.projects {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}

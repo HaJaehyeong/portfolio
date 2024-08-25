@@ -1,0 +1,19 @@
+.tabs-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+
+  border-bottom: solid 1px var(--line);
+
+  color: var(--secondary-gray);
+}
+
+.tab {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+
+  padding: 10px 15px;
+  border-right: solid 1px var(--line);
+}
