@@ -1,0 +1,17 @@
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
+  row-gap: 40px;
+
+  padding: 60px;
+}
+
+.card-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  color: var(--secondary-blue);
+  font-weight: 600;
+}
