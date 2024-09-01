@@ -1,30 +1,18 @@
 import styles from './cards.module.scss';
 import Card from '@/ui/card/card';
-import cardImage from '@/public/images/card-example.jpg';
+import { PROJECT_LIST, Project } from '@/types/constants';
 
 const ProjectsCards: React.FC = () => {
   return (
     <div className={styles.cardsWrapper}>
-      <div className={styles.cardItem}>
-        <label>Project1 // title</label>
-        <Card image={cardImage}></Card>
-      </div>
-      <div className={styles.cardItem}>
-        <label>Project1 // title</label>
-        <Card image={cardImage}></Card>
-      </div>
-      <div className={styles.cardItem}>
-        <label>Project1 // title</label>
-        <Card image={cardImage}></Card>
-      </div>
-      <div className={styles.cardItem}>
-        <label>Project1 // title</label>
-        <Card image={cardImage}></Card>
-      </div>
-      <div className={styles.cardItem}>
-        <label>Project1 // title</label>
-        <Card image={cardImage}></Card>
-      </div>
+      {PROJECT_LIST.map((project: Project) => (
+        <div className={styles.cardItem}>
+          <label>
+            Project{project.projectId} // {project.title}
+          </label>
+          <Card image={project.image}></Card>
+        </div>
+      ))}
     </div>
   );
 };
