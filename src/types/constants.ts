@@ -231,4 +231,18 @@ export const PROJECT_LIST: ProjectList = [
     image: cardImage,
     linkUrl: 'https://www.example.com/project5',
   },
+  {
+    projectId: 6,
+    title: 'Project 5',
+    discription: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
+    image: cardImage,
+    linkUrl: 'https://www.example.com/project5',
+  },
+  {
+    projectId: 7,
+    title: 'Project 5',
+    discription: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
+    image: cardImage,
+    linkUrl: 'https://www.example.com/project5',
+  },
 ];
