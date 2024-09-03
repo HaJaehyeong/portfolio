@@ -28,3 +28,10 @@
     border-left: solid 1px var(--line);
   }
 }
+
+@media screen and (min-width: 1440px) and (max-width: 1700px) {
+  .header-text-wrapper {
+    height: 45px;
+    font-size: 14px;
+  }
+}

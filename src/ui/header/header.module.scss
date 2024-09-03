@@ -42,5 +42,26 @@
   overflow: scroll;
 }
 
-.contact {
+// NOTE(hajae): for Laptop
+@media screen and (min-width: 1440px) and (max-width: 1700px) {
+  .header-wrapper {
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .name {
+    height: 45px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .header-wrapper {
+    height: 42px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .header-wrapper {
+    height: 30px;
+  }
 }
