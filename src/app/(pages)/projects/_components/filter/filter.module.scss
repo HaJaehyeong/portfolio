@@ -1,0 +1,29 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+
+  width: 310px;
+  border-right: solid 1px var(--line);
+}
+
+.subject {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+
+  padding: 10px 15px;
+  border-bottom: solid 1px var(--line);
+
+  color: var(--secondary-white);
+}
+
+.subject-text {
+  margin: 0;
+}
+
+.tech-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px 0 0 20px;
+}
