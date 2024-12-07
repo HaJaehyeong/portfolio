@@ -1,5 +1,5 @@
+import AboutCodeShowcase from '../code-showcase/code-showcase';
 import styles from './code.module.scss';
-import AboutCodeShowcase from './showcase/showcase';
 
 const AboutCode: React.FC = () => {
   return (

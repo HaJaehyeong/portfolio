@@ -1,4 +1,4 @@
-import { SocialMedia } from './socialMedia.enum';
+import { SocialMedia } from './social-media.enum';
 import { Technology } from './technology.enum';
 
 export const Enums = {

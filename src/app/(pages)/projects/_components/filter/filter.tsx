@@ -1,11 +1,11 @@
 'use client';
 import { RiArrowDownSFill } from '@remixicon/react';
 import styles from './filter.module.scss';
-import TechnologiesRow from '@/ui/technologiesRow/technologiesRow';
+import TechnologiesRow from '@/ui/technologies-row/technologies-row';
 import { Enums } from '@/enums/enums';
 import { TechCodesType } from '@/types/constants';
 import { ChangeEvent } from 'react';
-import { addProjectFilterTab, removeProjectFilterTab } from '@/lib/features/projectFilterSlice';
+import { addProjectFilterTab, removeProjectFilterTab } from '@/lib/features/project-filter-slice';
 import { useDispatch } from 'react-redux';
 
 const ProjectsFilter: React.FC = () => {

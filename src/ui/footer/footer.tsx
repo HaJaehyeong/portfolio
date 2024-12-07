@@ -1,5 +1,5 @@
 import { SOCIAL_MEDIAS, SocialMediaType } from '@/types/constants';
-import SocialMedia from '../socialMedia/socialMedia';
+import SocialMedia from '../social-media/social-media';
 import styles from './footer.module.scss';
 
 const Footer: React.FC = () => {
@@ -8,8 +8,8 @@ const Footer: React.FC = () => {
       <div className={styles.findMe}>find me in: </div>
       <div className={styles.others}>
         <div className={styles.socialIconWrapper}>
-          {SOCIAL_MEDIAS.map((media) => (
-            <div className={styles.socialIcon}>
+          {SOCIAL_MEDIAS.map((media, index) => (
+            <div key={index} className={styles.socialIcon}>
               <SocialMedia value={media as SocialMediaType} />
             </div>
           ))}

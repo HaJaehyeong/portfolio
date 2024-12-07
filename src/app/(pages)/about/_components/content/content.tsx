@@ -1,6 +1,6 @@
-import AboutContentBody from './body/body';
+import AboutContentBody from '../content-body/content-body';
 import styles from './content.module.scss';
-import AboutContentTab from './tab/tab';
+import AboutContentTab from '../content-tab/content-tab';
 
 const AboutContent: React.FC = () => {
   return (

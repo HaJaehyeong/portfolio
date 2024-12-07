@@ -1,4 +1,4 @@
-import styles from './headerText.module.scss';
+import styles from './header-text.module.scss';
 
 type HeaderTextProps = {
   text: string;

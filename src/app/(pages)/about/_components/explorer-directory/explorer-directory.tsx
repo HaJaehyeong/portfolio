@@ -1,16 +1,16 @@
 import { RiArrowDownSLine, RiArrowRightSLine, RiFolder3Fill, RiMarkdownFill } from '@remixicon/react';
-import styles from './directory.module.scss';
+import styles from './explorer-directory.module.scss';
 import { Directory } from '@/types/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
-import { setAboutExplorerDirectoryId, setAboutExplorerFileId } from '@/lib/features/aboutExplorerSlice';
+import { setAboutExplorerDirectoryId, setAboutExplorerFileId } from '@/lib/features/about-explorer-slice';
 
-type DirectoryComponentProps = {
+type ExplorerDirectoryComponentProps = {
   directory: Directory;
   dirColor: string;
 };
 
-const DirectoryComponent: React.FC<DirectoryComponentProps> = ({ directory, dirColor }) => {
+const ExplorerDirectoryComponent: React.FC<ExplorerDirectoryComponentProps> = ({ directory, dirColor }) => {
   const dispatch = useDispatch();
   const explorerState = useSelector((state: RootState) => state.aboutExplorerReducer);
   const isOpen = explorerState.directoryId === directory.directoryId;
@@ -47,4 +47,4 @@ const DirectoryComponent: React.FC<DirectoryComponentProps> = ({ directory, dirC
   );
 };
 
-export default DirectoryComponent;
+export default ExplorerDirectoryComponent;

@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import { Fira_Code } from 'next/font/google';
 import styles from './layout.module.scss';
-import './globals.scss';
 import Header from '@/ui/header/header';
 import Footer from '@/ui/footer/footer';
 import StoreProvider from './storeProvider';
+import './globals.scss';
 
 const firaCode = Fira_Code({ subsets: ['latin'] });
 

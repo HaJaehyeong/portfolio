@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react';
-import styles from './snakeGame.module.scss';
-import CtaButton from '@/ui/ctaButton/ctaButton';
+'use client';
+import { useCallback, useEffect, useState } from 'react';
+import styles from './snake-game.module.scss';
+import CtaButton from '@/ui/cta-button/cta-button';
 import { RiArrowDownSFill, RiArrowLeftSFill, RiArrowRightSFill, RiArrowUpSFill } from '@remixicon/react';
+import { useRouter } from 'next/navigation';
 
 const rows = 30;
 const cols = 51;
@@ -15,21 +17,40 @@ const SnakeGame: React.FC = () => {
   const [isGameCleared, setIsGameCleared] = useState<boolean>(false);
   const [foodCount, setFoodCount] = useState<number>(0);
   const [food, setFood] = useState<number>(253);
+  const router = useRouter();
 
-  const changeDirection = (event: KeyboardEvent) => {
-    if (event.key === 'ArrowUp' && snakeMoveTo !== 'DOWN') setSnakeMoveTo('UP');
-    if (event.key === 'ArrowDown' && snakeMoveTo !== 'UP') setSnakeMoveTo('DOWN');
-    if (event.key === 'ArrowLeft' && snakeMoveTo !== 'RIGHT') setSnakeMoveTo('LEFT');
-    if (event.key === 'ArrowRight' && snakeMoveTo !== 'LEFT') setSnakeMoveTo('RIGHT');
-  };
+  // NOTE(hajae): 해당 게임 컴포넌트는 많은 Rerendering이 발생하기 때문에
+  // 의존성에 포함된 변수가 변경되지 않으면 생성되어있던 함수 참조를 반환하기에 사용
+  const changeDirection = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === 'ArrowUp' && snakeMoveTo !== 'DOWN') setSnakeMoveTo('UP');
+      if (event.key === 'ArrowDown' && snakeMoveTo !== 'UP') setSnakeMoveTo('DOWN');
+      if (event.key === 'ArrowLeft' && snakeMoveTo !== 'RIGHT') setSnakeMoveTo('LEFT');
+      if (event.key === 'ArrowRight' && snakeMoveTo !== 'LEFT') setSnakeMoveTo('RIGHT');
+    },
+    [snakeMoveTo]
+  );
 
-  const startGame = (event: KeyboardEvent) => {
-    if (event.key === ' ') {
-      restartGame();
-    }
-  };
+  const restartGame = useCallback(() => {
+    setSnake(defaultSnake);
+    setSnakeMoveTo('UP');
+    setFoodCount(0);
+    setFood(253);
+    setIsGameOvered(false);
+    setIsGameCleared(false);
+    setIsGameStarted(true);
+  }, []);
 
-  const moveSnake = () => {
+  const startGame = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === ' ') {
+        restartGame();
+      }
+    },
+    [restartGame]
+  );
+
+  const moveSnake = useCallback(() => {
     setSnake((prevSnake) => {
       const copiedSnake = [...prevSnake];
       let head = copiedSnake[0];
@@ -107,7 +128,7 @@ const SnakeGame: React.FC = () => {
       }
       return copiedSnake;
     });
-  };
+  }, [food, foodCount, snakeMoveTo]);
 
   const getGameScreenCells = () => {
     return Array.from({ length: cols }, (_, colIndex) =>
@@ -144,7 +165,7 @@ const SnakeGame: React.FC = () => {
         document.removeEventListener('keydown', changeDirection);
       };
     }
-  }, [isGameStarted, snakeMoveTo]);
+  }, [isGameStarted, snakeMoveTo, moveSnake, changeDirection]);
 
   useEffect(() => {
     document.addEventListener('keydown', startGame);
@@ -152,7 +173,7 @@ const SnakeGame: React.FC = () => {
     return () => {
       document.removeEventListener('keydown', startGame);
     };
-  }, []);
+  }, [startGame]);
 
   useEffect(() => {
     if (foodCount === 10) {
@@ -160,16 +181,6 @@ const SnakeGame: React.FC = () => {
       setIsGameStarted(false);
     }
   }, [foodCount]);
-
-  const restartGame = () => {
-    setSnake(defaultSnake);
-    setSnakeMoveTo('UP');
-    setFoodCount(0);
-    setFood(253);
-    setIsGameOvered(false);
-    setIsGameCleared(false);
-    setIsGameStarted(true);
-  };
 
   return (
     <div className={styles.gameBoxWrapper}>
@@ -202,8 +213,8 @@ const SnakeGame: React.FC = () => {
       <div className={styles.gameStatusWrapper}>
         <div className={styles.manual}>
           <div className={styles.keypadWrapper}>
-            <code>// use keyboard</code>
-            <code>// arrows to play</code>
+            <code>{'// use keyboard'}</code>
+            <code>{'// arrows to play'}</code>
             <div className={styles.keypad}>
               <div>
                 <RiArrowUpSFill />
@@ -216,7 +227,7 @@ const SnakeGame: React.FC = () => {
             </div>
           </div>
           <div className={styles.foodsWrapper}>
-            <code>// food left</code>
+            <code>{'// food left'}</code>
             <div className={styles.foods}>
               {Array.from({ length: 10 }, (_, index) => (
                 <div key={index} className={`${styles.foodScore} ${foodCount > index ? styles.ate : ''}`}></div>
@@ -225,7 +236,7 @@ const SnakeGame: React.FC = () => {
           </div>
         </div>
         <div className={styles.skip}>
-          <CtaButton value="skip" type="ghost" onClick={() => {}} />
+          <CtaButton value="skip" type="ghost" onClick={() => router.push('/about')} />
         </div>
       </div>
     </div>

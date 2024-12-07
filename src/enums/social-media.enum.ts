@@ -1,5 +1,5 @@
 import { RiGithubFill, RiInstagramLine, RiNewsLine } from '@remixicon/react';
-import { EnumBase, EnumDef } from './enumBase';
+import { EnumBase, EnumDef } from './enum-base';
 
 const SocialMediaCode = {
   github: 'github',

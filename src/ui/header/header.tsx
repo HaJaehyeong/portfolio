@@ -1,6 +1,6 @@
 'use client';
 import { TABS } from '@/types/constants';
-import HeaderText from '../headerText/headerText';
+import HeaderText from '../header-text/header-text';
 import styles from './header.module.scss';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';

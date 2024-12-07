@@ -1,7 +1,7 @@
 'use client';
 import { Enums } from '@/enums/enums';
 import { TechCodesType } from '@/types/constants';
-import styles from './technologyLogo.module.scss';
+import styles from './technology-logo.module.scss';
 
 type TechnologyLogoProps = {
   icon: TechCodesType;

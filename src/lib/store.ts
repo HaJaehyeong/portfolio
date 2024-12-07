@@ -1,5 +1,5 @@
-import aboutExplorerReducer from './features/aboutExplorerSlice';
-import projectFilterReducer from './features/projectFilterSlice';
+import aboutExplorerReducer from './features/about-explorer-slice';
+import projectFilterReducer from './features/project-filter-slice';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 const rootReducer = combineReducers({

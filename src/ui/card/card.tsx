@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 import styles from './card.module.scss';
-import CtaButton from '../ctaButton/ctaButton';
+import CtaButton from '../cta-button/cta-button';
 
 type CardProps = {
   image: StaticImageData;

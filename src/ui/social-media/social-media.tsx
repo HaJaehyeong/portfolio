@@ -1,5 +1,5 @@
 import { Enums } from '@/enums/enums';
-import styles from './socialMedia.module.scss';
+import styles from './social-media.module.scss';
 
 type SocialMediaProps = {
   value: 'github' | 'blog' | 'insta';

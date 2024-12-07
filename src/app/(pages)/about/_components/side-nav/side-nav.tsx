@@ -1,9 +1,9 @@
 'use client';
-import TechnologyLogo from '@/ui/technologyLogo/technologyLogo';
-import styles from './sideNav.module.scss';
+import TechnologyLogo from '@/ui/technology-logo/technology-logo';
+import styles from './side-nav.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
-import { setAboutExplorerType } from '@/lib/features/aboutExplorerSlice';
+import { setAboutExplorerType } from '@/lib/features/about-explorer-slice';
 
 const AboutSideNav: React.FC = () => {
   const explorerType = useSelector((state: RootState) => state.aboutExplorerReducer.type);
