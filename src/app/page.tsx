@@ -5,7 +5,7 @@ import boltDownLeft from '@/public/images/bolt-down-left.png';
 import boltDownRight from '@/public/images/bolt-down-right.png';
 import Image from 'next/image';
 import SnakeGame from '@/app/_components/snake-game/snake-game';
-import TypingComponent from './(pages)/projects/_components/typing/typing';
+import TypingComponent from './_components/typing/typing';
 
 const Home: React.FC = () => {
   return (
