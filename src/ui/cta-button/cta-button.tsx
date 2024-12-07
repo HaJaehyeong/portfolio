@@ -1,4 +1,4 @@
-import styles from './ctaButton.module.scss';
+import styles from './cta-button.module.scss';
 
 type CtaButtonProps = {
   value: string;

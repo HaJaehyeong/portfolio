@@ -2,7 +2,7 @@
 import AboutCode from './_components/code/code';
 import AboutContent from './_components/content/content';
 import AboutExplorer from './_components/explorer/explorer';
-import AboutSideNav from './_components/sideNav/sideNav';
+import AboutSideNav from './_components/side-nav/side-nav';
 import styles from './page.module.scss';
 
 const AboutMe: React.FC = () => {

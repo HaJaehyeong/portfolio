@@ -8,7 +8,7 @@ import {
   setAboutExplorerDirectoryId,
   setAboutExplorerFileId,
   setAboutExplorerState,
-} from '@/lib/features/aboutExplorerSlice';
+} from '@/lib/features/about-explorer-slice';
 
 type OpenedContentList = OpenedContent[];
 

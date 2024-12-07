@@ -1,11 +1,10 @@
 'use client';
 import { Enums } from '@/enums/enums';
 import Checkbox from '../checkbox/checkbox';
-import TechnologyLogo from '../technologyLogo/technologyLogo';
-import styles from './technologiesRow.module.scss';
+import TechnologyLogo from '../technology-logo/technology-logo';
+import styles from './technologies-row.module.scss';
 import { TechCodesType } from '@/types/constants';
 import { ChangeEvent, useState } from 'react';
-import { addProjectFilterTab, removeProjectFilterTab } from '@/lib/features/projectFilterSlice';
 
 type TechnologiesRow = {
   tech: TechCodesType;

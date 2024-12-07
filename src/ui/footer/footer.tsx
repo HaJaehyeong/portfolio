@@ -1,5 +1,5 @@
 import { SOCIAL_MEDIAS, SocialMediaType } from '@/types/constants';
-import SocialMedia from '../socialMedia/socialMedia';
+import SocialMedia from '../social-media/social-media';
 import styles from './footer.module.scss';
 
 const Footer: React.FC = () => {

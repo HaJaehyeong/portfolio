@@ -4,7 +4,7 @@ import { DIRECTORY_LIST, DIR_COLORS, Directory, MY_EMAIL, MY_PHONE } from '@/typ
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
-import { setAboutExplorerDirectoryId } from '@/lib/features/aboutExplorerSlice';
+import { setAboutExplorerDirectoryId } from '@/lib/features/about-explorer-slice';
 import DirectoryComponent from './directory/directory';
 
 const AboutExplorer: React.FC = () => {

@@ -5,7 +5,7 @@ import styles from './showcase.module.scss';
 const AboutCodeShowcase: React.FC = () => {
   return (
     <div className={styles.showcaseWrapper}>
-      <div className={styles.title}>// Code snippet showcase:</div>
+      <div className={styles.title}>{'// Code snippet showcase:'}</div>
       <AboutCodeShowcaseCodeBox detail="helloooooohelloooooohelloooooohelloooooohelloooooohelloooooohelloooooohelloooooohelloooooohelloooooo">
         <CodeBox />
       </AboutCodeShowcaseCodeBox>

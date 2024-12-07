@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useRef, useState } from 'react';
 import styles from './body.module.scss';
 import { useSelector } from 'react-redux';
@@ -87,7 +88,7 @@ const AboutContentBody: React.FC = () => {
       </pre>
       <div className={styles.content} ref={divRef}>
         <div className={styles.line}>
-          <span>/**</span>
+          <span>{'/**'}</span>
         </div>
         {formattedText.map((line, index) => (
           <div key={line[0] + index} className={styles.line}>
@@ -96,7 +97,7 @@ const AboutContentBody: React.FC = () => {
           </div>
         ))}
         <div className={styles.line}>
-          <span style={{ marginLeft: '10px' }}>*/</span>
+          <span style={{ marginLeft: '10px' }}>{'*/'}</span>
         </div>
       </div>
       {/* NOTE(hajae): 디자인용 동작하지 않음 */}

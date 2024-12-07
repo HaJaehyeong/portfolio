@@ -3,7 +3,7 @@ import styles from './directory.module.scss';
 import { Directory } from '@/types/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
-import { setAboutExplorerDirectoryId, setAboutExplorerFileId } from '@/lib/features/aboutExplorerSlice';
+import { setAboutExplorerDirectoryId, setAboutExplorerFileId } from '@/lib/features/about-explorer-slice';
 
 type DirectoryComponentProps = {
   directory: Directory;

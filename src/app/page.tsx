@@ -1,12 +1,11 @@
 'use client';
-import { useEffect, useState } from 'react';
 import styles from './page.module.scss';
 import boltUpLeft from '@/public/images/bolt-up-left.png';
 import boltUpRight from '@/public/images/bolt-up-right.png';
 import boltDownLeft from '@/public/images/bolt-down-left.png';
 import boltDownRight from '@/public/images/bolt-down-right.png';
 import Image from 'next/image';
-import SnakeGame from '@/app/_components/snakeGame/snakeGame';
+import SnakeGame from '@/app/_components/snake-game/snake-game';
 import useTypingEffect from '@/hooks/useTypingEffect';
 
 const Home: React.FC = () => {
