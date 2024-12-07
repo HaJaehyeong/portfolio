@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import styles from './snake-game.module.scss';
 import CtaButton from '@/ui/cta-button/cta-button';
 import { RiArrowDownSFill, RiArrowLeftSFill, RiArrowRightSFill, RiArrowUpSFill } from '@remixicon/react';
+import { useRouter } from 'next/navigation';
 
 const rows = 30;
 const cols = 51;
@@ -16,7 +17,10 @@ const SnakeGame: React.FC = () => {
   const [isGameCleared, setIsGameCleared] = useState<boolean>(false);
   const [foodCount, setFoodCount] = useState<number>(0);
   const [food, setFood] = useState<number>(253);
+  const router = useRouter();
 
+  // NOTE(hajae): 해당 게임 컴포넌트는 많은 Rerendering이 발생하기 때문에
+  // 의존성에 포함된 변수가 변경되지 않으면 생성되어있던 함수 참조를 반환하기에 사용
   const changeDirection = useCallback(
     (event: KeyboardEvent) => {
       if (event.key === 'ArrowUp' && snakeMoveTo !== 'DOWN') setSnakeMoveTo('UP');
@@ -232,7 +236,7 @@ const SnakeGame: React.FC = () => {
           </div>
         </div>
         <div className={styles.skip}>
-          <CtaButton value="skip" type="ghost" onClick={() => {}} />
+          <CtaButton value="skip" type="ghost" onClick={() => router.push('/about')} />
         </div>
       </div>
     </div>
