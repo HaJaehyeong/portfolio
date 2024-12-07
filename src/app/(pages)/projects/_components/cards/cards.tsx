@@ -6,9 +6,9 @@ const ProjectsCards: React.FC = () => {
   return (
     <div className={styles.cardsWrapper}>
       {PROJECT_LIST.map((project: Project) => (
-        <div className={styles.cardItem}>
+        <div key={project.projectId} className={styles.cardItem}>
           <label>
-            Project{project.projectId} // {project.title}
+            Project{project.projectId} {'//'} {project.title}
           </label>
           <Card image={project.image}></Card>
         </div>

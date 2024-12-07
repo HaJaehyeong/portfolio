@@ -27,13 +27,13 @@ const Home: React.FC = () => {
           {typingText}
         </h2>
 
-        <label className={styles.comment}>// complete the game to continue</label>
-        <label className={styles.comment}>// you can also see it on my Github page</label>
+        <label className={styles.comment}>{'// complete the game to continue'}</label>
+        <label className={styles.comment}>{'// you can also see it on my Github page'}</label>
         <div className={styles.code}>
           <label>const</label>
           <label className={styles.valiable}> githubLink</label>
           <label className={styles.equal}> = </label>
-          <label className={styles.value}>"htts://github.com/HaJaehyeong/portfolio"</label>
+          <label className={styles.value}>{'"htts://github.com/HaJaehyeong/portfolio"'}</label>
         </div>
       </div>
       <div className={styles.gameBox}>

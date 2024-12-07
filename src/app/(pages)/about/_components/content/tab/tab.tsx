@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from 'react';
+import { use, useCallback, useEffect, useState } from 'react';
 import styles from './tab.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
@@ -23,63 +23,48 @@ const AboutContentTab: React.FC = () => {
   const explorerState = useSelector((state: RootState) => state.aboutExplorerReducer);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    // NOTE(hajae): component가 unmount될 때 slice를 초기화.
-    return () => {
-      dispatch(
-        setAboutExplorerState({
-          type: 'terminal',
-          directoryId: undefined,
-          fileId: undefined,
-        })
-      );
-    };
-  }, []);
-
-  useEffect(() => {
-    const targetContent = findTargetContent();
-    if (!targetContent) return;
-
-    if (explorerState.fileId !== undefined) {
-      handleFileOpen(targetContent);
-    } else {
-      handleDirectoryOpen(targetContent);
-    }
-  }, [explorerState.directoryId, explorerState.fileId]);
-
-  const findTargetContent = () => {
+  const findTargetContent = useCallback(() => {
     return DIRECTORY_LIST.directories.find((directory) => directory.directoryId === explorerState.directoryId);
-  };
+  }, [explorerState.directoryId]);
 
-  const handleFileOpen = (targetContent: Directory) => {
-    const targetFile = targetContent.files.find((file) => file.fileId === explorerState.fileId);
-    if (targetFile) {
+  const isContentOpened = useCallback(
+    (newContent: OpenedContent) => {
+      return openedContentList.some(
+        (content) => content.directoryId === newContent.directoryId && content.fileId === newContent.fileId
+      );
+    },
+    [openedContentList]
+  );
+
+  const handleFileOpen = useCallback(
+    (targetContent: Directory) => {
+      const targetFile = targetContent.files.find((file) => file.fileId === explorerState.fileId);
+      if (targetFile) {
+        const newContent = {
+          title: `${targetContent.directoryName}/${targetFile.fileName}`,
+          directoryId: targetContent.directoryId,
+          fileId: targetFile.fileId,
+        };
+        if (!isContentOpened(newContent)) {
+          setOpenedContentList((prev) => [...prev, newContent]);
+        }
+      }
+    },
+    [explorerState.fileId, isContentOpened]
+  );
+
+  const handleDirectoryOpen = useCallback(
+    (targetContent: Directory) => {
       const newContent = {
-        title: `${targetContent.directoryName}/${targetFile.fileName}`,
+        title: targetContent.directoryName,
         directoryId: targetContent.directoryId,
-        fileId: targetFile.fileId,
       };
       if (!isContentOpened(newContent)) {
         setOpenedContentList((prev) => [...prev, newContent]);
       }
-    }
-  };
-
-  const handleDirectoryOpen = (targetContent: Directory) => {
-    const newContent = {
-      title: targetContent.directoryName,
-      directoryId: targetContent.directoryId,
-    };
-    if (!isContentOpened(newContent)) {
-      setOpenedContentList((prev) => [...prev, newContent]);
-    }
-  };
-
-  const isContentOpened = (newContent: OpenedContent) => {
-    return openedContentList.some(
-      (content) => content.directoryId === newContent.directoryId && content.fileId === newContent.fileId
-    );
-  };
+    },
+    [isContentOpened]
+  );
 
   const isActive = (directoryId?: number, fileId?: number) => {
     if (fileId !== undefined) {
@@ -107,6 +92,30 @@ const AboutContentTab: React.FC = () => {
       dispatch(setAboutExplorerFileId(undefined));
     }
   };
+
+  useEffect(() => {
+    // NOTE(hajae): component가 unmount될 때 slice를 초기화.
+    return () => {
+      dispatch(
+        setAboutExplorerState({
+          type: 'terminal',
+          directoryId: undefined,
+          fileId: undefined,
+        })
+      );
+    };
+  }, [dispatch]);
+
+  useEffect(() => {
+    const targetContent = findTargetContent();
+    if (!targetContent) return;
+
+    if (explorerState.fileId !== undefined) {
+      handleFileOpen(targetContent);
+    } else {
+      handleDirectoryOpen(targetContent);
+    }
+  }, [explorerState.directoryId, explorerState.fileId, findTargetContent, handleFileOpen, handleDirectoryOpen]);
 
   return (
     <div className={styles.tabWrapper}>

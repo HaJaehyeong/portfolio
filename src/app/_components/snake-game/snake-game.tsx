@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import styles from './snake-game.module.scss';
 import CtaButton from '@/ui/cta-button/cta-button';
 import { RiArrowDownSFill, RiArrowLeftSFill, RiArrowRightSFill, RiArrowUpSFill } from '@remixicon/react';
@@ -16,20 +16,36 @@ const SnakeGame: React.FC = () => {
   const [foodCount, setFoodCount] = useState<number>(0);
   const [food, setFood] = useState<number>(253);
 
-  const changeDirection = (event: KeyboardEvent) => {
-    if (event.key === 'ArrowUp' && snakeMoveTo !== 'DOWN') setSnakeMoveTo('UP');
-    if (event.key === 'ArrowDown' && snakeMoveTo !== 'UP') setSnakeMoveTo('DOWN');
-    if (event.key === 'ArrowLeft' && snakeMoveTo !== 'RIGHT') setSnakeMoveTo('LEFT');
-    if (event.key === 'ArrowRight' && snakeMoveTo !== 'LEFT') setSnakeMoveTo('RIGHT');
-  };
+  const changeDirection = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === 'ArrowUp' && snakeMoveTo !== 'DOWN') setSnakeMoveTo('UP');
+      if (event.key === 'ArrowDown' && snakeMoveTo !== 'UP') setSnakeMoveTo('DOWN');
+      if (event.key === 'ArrowLeft' && snakeMoveTo !== 'RIGHT') setSnakeMoveTo('LEFT');
+      if (event.key === 'ArrowRight' && snakeMoveTo !== 'LEFT') setSnakeMoveTo('RIGHT');
+    },
+    [snakeMoveTo]
+  );
 
-  const startGame = (event: KeyboardEvent) => {
-    if (event.key === ' ') {
-      restartGame();
-    }
-  };
+  const restartGame = useCallback(() => {
+    setSnake(defaultSnake);
+    setSnakeMoveTo('UP');
+    setFoodCount(0);
+    setFood(253);
+    setIsGameOvered(false);
+    setIsGameCleared(false);
+    setIsGameStarted(true);
+  }, []);
 
-  const moveSnake = () => {
+  const startGame = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === ' ') {
+        restartGame();
+      }
+    },
+    [restartGame]
+  );
+
+  const moveSnake = useCallback(() => {
     setSnake((prevSnake) => {
       const copiedSnake = [...prevSnake];
       let head = copiedSnake[0];
@@ -107,7 +123,7 @@ const SnakeGame: React.FC = () => {
       }
       return copiedSnake;
     });
-  };
+  }, [food, foodCount, snakeMoveTo]);
 
   const getGameScreenCells = () => {
     return Array.from({ length: cols }, (_, colIndex) =>
@@ -144,7 +160,7 @@ const SnakeGame: React.FC = () => {
         document.removeEventListener('keydown', changeDirection);
       };
     }
-  }, [isGameStarted, snakeMoveTo]);
+  }, [isGameStarted, snakeMoveTo, moveSnake, changeDirection]);
 
   useEffect(() => {
     document.addEventListener('keydown', startGame);
@@ -152,7 +168,7 @@ const SnakeGame: React.FC = () => {
     return () => {
       document.removeEventListener('keydown', startGame);
     };
-  }, []);
+  }, [startGame]);
 
   useEffect(() => {
     if (foodCount === 10) {
@@ -160,16 +176,6 @@ const SnakeGame: React.FC = () => {
       setIsGameStarted(false);
     }
   }, [foodCount]);
-
-  const restartGame = () => {
-    setSnake(defaultSnake);
-    setSnakeMoveTo('UP');
-    setFoodCount(0);
-    setFood(253);
-    setIsGameOvered(false);
-    setIsGameCleared(false);
-    setIsGameStarted(true);
-  };
 
   return (
     <div className={styles.gameBoxWrapper}>
@@ -202,8 +208,8 @@ const SnakeGame: React.FC = () => {
       <div className={styles.gameStatusWrapper}>
         <div className={styles.manual}>
           <div className={styles.keypadWrapper}>
-            <code>// use keyboard</code>
-            <code>// arrows to play</code>
+            <code>{'// use keyboard'}</code>
+            <code>{'// arrows to play'}</code>
             <div className={styles.keypad}>
               <div>
                 <RiArrowUpSFill />
@@ -216,7 +222,7 @@ const SnakeGame: React.FC = () => {
             </div>
           </div>
           <div className={styles.foodsWrapper}>
-            <code>// food left</code>
+            <code>{'// food left'}</code>
             <div className={styles.foods}>
               {Array.from({ length: 10 }, (_, index) => (
                 <div key={index} className={`${styles.foodScore} ${foodCount > index ? styles.ate : ''}`}></div>

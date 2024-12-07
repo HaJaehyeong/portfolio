@@ -21,7 +21,7 @@ const AboutExplorer: React.FC = () => {
       setDirectories(targetDirectoies);
       dispatch(setAboutExplorerDirectoryId(targetDirectoies[0].directoryId));
     }
-  }, [explorerState.type]);
+  }, [explorerState.type, dispatch]);
 
   const getSubject = () => {
     switch (explorerState.type) {

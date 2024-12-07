@@ -8,8 +8,8 @@ const Footer: React.FC = () => {
       <div className={styles.findMe}>find me in: </div>
       <div className={styles.others}>
         <div className={styles.socialIconWrapper}>
-          {SOCIAL_MEDIAS.map((media) => (
-            <div className={styles.socialIcon}>
+          {SOCIAL_MEDIAS.map((media, index) => (
+            <div key={index} className={styles.socialIcon}>
               <SocialMedia value={media as SocialMediaType} />
             </div>
           ))}
