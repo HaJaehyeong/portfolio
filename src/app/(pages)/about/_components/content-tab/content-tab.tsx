@@ -1,6 +1,6 @@
 'use client';
 import { useCallback, useEffect, useState } from 'react';
-import styles from './tab.module.scss';
+import styles from './content-tab.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
 import { DIRECTORY_LIST, Directory } from '@/types/constants';

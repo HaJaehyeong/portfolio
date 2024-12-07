@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import styles from './body.module.scss';
+import styles from './content-body.module.scss';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
 import { EXPLORER_CONTENTS } from '@/types/constants';

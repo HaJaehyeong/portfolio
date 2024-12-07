@@ -1,6 +1,6 @@
 import CodeBox from '@/components/codebox/codebox';
-import AboutCodeShowcaseCodeBox from './codebox/codebox';
-import styles from './showcase.module.scss';
+import styles from './code-showcase.module.scss';
+import AboutCodeShowcaseCodeBox from '../code-showcase-codebox/code-showcase-codebox';
 
 const AboutCodeShowcase: React.FC = () => {
   return (

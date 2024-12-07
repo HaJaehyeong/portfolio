@@ -6,7 +6,6 @@
   border-right: solid 1px var(--line);
 }
 
-.subject,
 .contact-me {
   display: flex;
   flex-direction: row;
@@ -19,21 +18,10 @@
   color: var(--secondary-white);
 }
 
-.subject-text,
 .contact-me-subject {
   margin: 0;
 }
 
-.content {
-  height: 200px;
-  border-bottom: solid 1px var(--line);
-
-  label {
-    color: var(--secondary-white);
-  }
-}
-
-.directories-wrapper,
 .contact-me-info {
   display: flex;
   flex-direction: column;
