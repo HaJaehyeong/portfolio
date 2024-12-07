@@ -1,4 +1,3 @@
-'use client';
 import styles from './page.module.scss';
 import boltUpLeft from '@/public/images/bolt-up-left.png';
 import boltUpRight from '@/public/images/bolt-up-right.png';
@@ -6,11 +5,9 @@ import boltDownLeft from '@/public/images/bolt-down-left.png';
 import boltDownRight from '@/public/images/bolt-down-right.png';
 import Image from 'next/image';
 import SnakeGame from '@/app/_components/snake-game/snake-game';
-import useTypingEffect from '@/hooks/useTypingEffect';
+import TypingComponent from './(pages)/projects/_components/typing/typing';
 
 const Home: React.FC = () => {
-  const typingText = useTypingEffect('Front-end developer');
-
   return (
     <div className={styles.mainWrapper}>
       <div className={styles.backgroundBlurs}>
@@ -24,7 +21,7 @@ const Home: React.FC = () => {
         <h1 className={styles.name}>Jaehyeong Ha</h1>
         <h2 className={styles.job}>
           {'> '}
-          {typingText}
+          <TypingComponent />
         </h2>
 
         <label className={styles.comment}>{'// complete the game to continue'}</label>
@@ -33,7 +30,9 @@ const Home: React.FC = () => {
           <label>const</label>
           <label className={styles.valiable}> githubLink</label>
           <label className={styles.equal}> = </label>
-          <label className={styles.value}>{'"htts://github.com/HaJaehyeong/portfolio"'}</label>
+          <a href="https://github.com/HaJaehyeong/portfolio" target="_blank">
+            <label className={styles.value}>{'"https://github.com/HaJaehyeong/portfolio"'}</label>
+          </a>
         </div>
       </div>
       <div className={styles.gameBox}>

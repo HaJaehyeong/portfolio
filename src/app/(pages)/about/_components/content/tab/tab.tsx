@@ -1,4 +1,5 @@
-import { use, useCallback, useEffect, useState } from 'react';
+'use client';
+import { useCallback, useEffect, useState } from 'react';
 import styles from './tab.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
@@ -79,6 +80,8 @@ const AboutContentTab: React.FC = () => {
   };
 
   const handleTabClose = (directoryId?: number, fileId?: number) => {
+    if (openedContentList.length <= 1) return;
+
     const filteredList = openedContentList.filter(
       (content) => content.directoryId !== directoryId || content.fileId !== fileId
     );

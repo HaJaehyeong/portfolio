@@ -1,4 +1,3 @@
-'use client';
 import AboutCode from './_components/code/code';
 import AboutContent from './_components/content/content';
 import AboutExplorer from './_components/explorer/explorer';

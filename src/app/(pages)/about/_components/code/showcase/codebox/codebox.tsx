@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import styles from './codebox.module.scss';
 import profileImage from '@/public/images/profile_image.png';

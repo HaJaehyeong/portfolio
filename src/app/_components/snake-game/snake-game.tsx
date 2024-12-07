@@ -1,3 +1,4 @@
+'use client';
 import { useCallback, useEffect, useState } from 'react';
 import styles from './snake-game.module.scss';
 import CtaButton from '@/ui/cta-button/cta-button';

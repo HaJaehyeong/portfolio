@@ -1,3 +1,4 @@
+'use client';
 import { RiArrowDownSFill, RiMailFill, RiPhoneFill } from '@remixicon/react';
 import styles from './explorer.module.scss';
 import { DIRECTORY_LIST, DIR_COLORS, Directory, MY_EMAIL, MY_PHONE } from '@/types/constants';
