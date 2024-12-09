@@ -1,16 +1,24 @@
 import styles from './cards.module.scss';
 import Card from '@/ui/card/card';
-import { PROJECT_LIST, Project } from '@/types/constants';
+import { Project } from '@/app/apis/projects/route';
+import cardImage from '@/public/images/card-example.jpg';
 
-const ProjectsCards: React.FC = () => {
+type ProjectsCardsProps = {
+  projects: Project[];
+};
+
+const ProjectsCards: React.FC<ProjectsCardsProps> = ({ projects }) => {
   return (
     <div className={styles.cardsWrapper}>
-      {PROJECT_LIST.map((project: Project) => (
-        <div key={project.projectId} className={styles.cardItem}>
+      {projects.map((project: Project, index) => (
+        <div key={project.id} className={styles['card-item']}>
           <label>
-            Project{project.projectId} {'//'} {project.title}
+            Project {index + 1}
+            <span className={styles['card-item__title']}>
+              {' //'} {project.title}
+            </span>
           </label>
-          <Card image={project.image}></Card>
+          <Card image={cardImage} description={project.description}></Card>
         </div>
       ))}
     </div>

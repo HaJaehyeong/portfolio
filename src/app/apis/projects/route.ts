@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
 
 export type ProjectsResponse = {
-  projects: Projects[];
+  projects: Project[];
 };
 
-export type Projects = {
+export type Project = {
   id: string;
   title: string;
   description: string;
@@ -36,7 +36,7 @@ export async function GET(req: Request) {
           },
           {
             id: '4',
-            title: 'Typical Flow Management Improvement Project ',
+            title: 'Selection Flow Management Improvement ',
             description: 'Hello, Next.js!',
             skills: ['Scala', 'Java', 'Angular.js', 'TypeScript', 'AWS'],
           },

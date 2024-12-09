@@ -14,4 +14,9 @@
 
   color: var(--secondary-blue);
   font-weight: 600;
+
+  &__title {
+    color: var(--secondary-gray);
+    font-size: 16px;
+  }
 }

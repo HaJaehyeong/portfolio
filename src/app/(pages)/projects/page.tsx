@@ -12,7 +12,7 @@ const Projects: React.FC = async () => {
       <ProjectsFilter />
       <div className={styles.projects}>
         <ProjectsTab />
-        <ProjectsCards />
+        <ProjectsCards projects={res.projects} />
       </div>
     </div>
   );
