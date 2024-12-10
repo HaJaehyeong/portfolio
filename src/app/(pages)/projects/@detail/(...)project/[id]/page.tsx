@@ -1,9 +1,12 @@
+import Project from '@/app/(pages)/project/[id]/page';
 import Modal from '@/ui/modal/modal';
 
 const ModalProject: React.FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
-  const id = (await params).id;
-
-  return <Modal>project!!! {id}</Modal>;
+  return (
+    <Modal>
+      <Project params={params} />
+    </Modal>
+  );
 };
 
 export default ModalProject;
