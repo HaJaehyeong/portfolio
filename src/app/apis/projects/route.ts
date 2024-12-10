@@ -5,10 +5,11 @@ export type ProjectsResponse = {
 };
 
 export type Project = {
-  id: string;
+  proejctId: string;
   title: string;
   description: string;
   skills: string[];
+  imageSrc: string;
 };
 
 export async function GET(req: Request) {
@@ -17,28 +18,32 @@ export async function GET(req: Request) {
       {
         projects: [
           {
-            id: '1',
+            proejctId: '1',
             title: 'Government-funded R&D SM project',
             description: 'Hello, World!!',
             skills: ['Next.js', 'React', 'TypeScript', 'GCP'],
+            imageSrc: '',
           },
           {
-            id: '2',
+            proejctId: '2',
             title: 'Baro Factory',
             description: 'Hello, World!!',
             skills: ['Next.js', 'React', 'TypeScript', 'GCP'],
+            imageSrc: '',
           },
           {
-            id: '3',
+            proejctId: '3',
             title: 'Next Generation Front End Project',
             description: 'Welcome to the second post!',
             skills: ['Angular', 'TypeScript', 'AWS'],
+            imageSrc: '',
           },
           {
-            id: '4',
+            proejctId: '4',
             title: 'Selection Flow Management Improvement ',
             description: 'Hello, Next.js!',
             skills: ['Scala', 'Java', 'Angular.js', 'TypeScript', 'AWS'],
+            imageSrc: '',
           },
         ],
       },

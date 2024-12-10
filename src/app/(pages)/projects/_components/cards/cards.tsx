@@ -11,14 +11,14 @@ const ProjectsCards: React.FC<ProjectsCardsProps> = ({ projects }) => {
   return (
     <div className={styles.cardsWrapper}>
       {projects.map((project: Project, index) => (
-        <div key={project.id} className={styles['card-item']}>
+        <div key={project.proejctId} className={styles['card-item']}>
           <label>
             Project {index + 1}
             <span className={styles['card-item__title']}>
               {' //'} {project.title}
             </span>
           </label>
-          <Card image={cardImage} description={project.description}></Card>
+          <Card projectId={project.proejctId} imageSrc={cardImage.src} description={project.description}></Card>
         </div>
       ))}
     </div>

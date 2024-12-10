@@ -1,5 +1,5 @@
-const Default: React.FC = () => {
+const DetailDefault: React.FC = () => {
   return <></>;
 };
 
-export default Default;
+export default DetailDefault;
