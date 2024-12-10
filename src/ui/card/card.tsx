@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 import styles from './card.module.scss';
 import CtaButton from '../cta-button/cta-button';
+import Link from 'next/link';
 
 type CardProps = {
   image: StaticImageData;
@@ -15,7 +16,9 @@ const Card: React.FC<CardProps> = ({ image, description }) => {
       </div>
       <p className={styles.cardDescription}>{description}</p>
       <div className={styles.buttonWrapper}>
-        <CtaButton value="view-project" type="default" />
+        <Link href={'/project/12'}>
+          <CtaButton value="view-project" type="default" />
+        </Link>
       </div>
     </div>
   );

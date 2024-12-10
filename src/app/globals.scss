@@ -15,6 +15,7 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 
+  color: var(--secondary-white);
   &::-webkit-scrollbar {
     display: none;
   }
