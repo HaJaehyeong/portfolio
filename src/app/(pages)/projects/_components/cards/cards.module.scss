@@ -1,8 +1,8 @@
 .cards-wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  justify-items: center;
-  row-gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  row-gap: 50px;
 
   padding: 80px;
 }
@@ -10,12 +10,37 @@
 .card-item {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   gap: 5px;
+
+  flex: 1 1 calc(33.333%);
+  max-width: calc(33.333%);
+
+  @media (max-width: 1666px) {
+    flex: 1 1 calc(50%);
+    max-width: calc(50%);
+  }
+
+  @media (max-width: 1290px) {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 
   color: var(--secondary-blue);
   font-weight: 600;
 
+  &__title-wrapper {
+    display: flex;
+    width: 370px;
+  }
+
+  &__title-no {
+    width: 100px;
+  }
+
   &__title {
+    width: 270px;
     color: var(--secondary-gray);
     font-size: 16px;
   }
