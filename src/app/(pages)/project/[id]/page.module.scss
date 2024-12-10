@@ -1,0 +1,38 @@
+.project {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  &__title-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    color: var(--secondary-white);
+    font-size: 24px;
+
+    &--ko {
+      font-weight: 600;
+    }
+
+    &--en {
+      color: var(--secondary-green);
+      font-size: 20px;
+    }
+  }
+
+  &__sub-title {
+    color: var(--secondary-gray);
+    font-size: 16px;
+  }
+
+  > hr {
+    margin: 20px 0 20px -20px;
+    width: calc(100% + 39px);
+    height: 1px;
+
+    background-color: var(--line);
+    border: 0;
+  }
+}
