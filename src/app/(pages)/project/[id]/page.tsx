@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import fetchProjectInfo from './actions';
 
 type ProjectProps = { params: Promise<{ id: string }> };
@@ -5,6 +6,10 @@ type ProjectProps = { params: Promise<{ id: string }> };
 const Project: React.FC<ProjectProps> = async ({ params }) => {
   const id = (await params).id;
   const project = await fetchProjectInfo(id);
+
+  if (!project) {
+    notFound();
+  }
 
   return <>project Page! {project.description}</>;
 };
