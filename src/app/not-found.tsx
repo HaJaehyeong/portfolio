@@ -9,7 +9,7 @@ const NotFound: React.FC = () => {
       <span style={{ fontSize: '32px', fontWeight: '600' }}>404 Not Found</span>
       <span>Could not find requested resource</span>
       <Link href="/">
-        <CtaButton value="Return Home"></CtaButton>
+        <CtaButton value="return-home"></CtaButton>
       </Link>
     </div>
   );

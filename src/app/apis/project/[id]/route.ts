@@ -11,6 +11,7 @@ export type ProjectResponse = {
 };
 
 export async function GET(req: Request, { params }: { params: Promise<{ id: string }> }) {
+  // TODO(hajae): 내용은 나중에 추가 예정
   const ProjectInfoList = [
     {
       projectId: '1',

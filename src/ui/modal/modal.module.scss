@@ -18,7 +18,8 @@
     display: flex;
     flex-direction: column;
 
-    width: 70dvw;
+    width: 50dvw;
+    min-width: 700px;
     height: 70dvh;
 
     background-color: var(--primary-black-3);
@@ -30,6 +31,7 @@
       top: 20px;
       right: 20px;
       cursor: pointer;
+      z-index: 1;
     }
   }
 }

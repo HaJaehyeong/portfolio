@@ -23,18 +23,6 @@ const Project: React.FC<ProjectProps> = async ({ params }) => {
             {project.titleEn}
           </span>
         </div>
-        <div className={styles['project__sub-title']}>
-          <span>
-            {project.startedAt} ~ {project.endedAt}
-          </span>
-        </div>
-        <div className={styles['project__labels']}>
-          {project.skills.map((skill, index) => (
-            <span key={skill + index} className={styles['project__labels__item']}>
-              {skill}
-            </span>
-          ))}
-        </div>
       </div>
       <hr />
     </div>
