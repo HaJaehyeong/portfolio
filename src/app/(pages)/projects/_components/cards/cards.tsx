@@ -18,7 +18,12 @@ const ProjectsCards: React.FC<ProjectsCardsProps> = ({ projects }) => {
               {' //'} {project.title}
             </span>
           </label>
-          <Card projectId={project.proejctId} imageSrc={cardImage.src} description={project.description}></Card>
+          <Card
+            projectId={project.proejctId}
+            imageSrc={cardImage.src}
+            mainSkill={project.mainSkill}
+            description={project.description}
+          ></Card>
         </div>
       ))}
     </div>

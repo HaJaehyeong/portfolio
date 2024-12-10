@@ -1,30 +1,36 @@
-.card-wrapper {
+.card {
   position: relative;
   width: 370px;
-  height: 315px;
 
   background-color: var(--primary-black-3);
   border: solid 1px var(--line);
   border-radius: 20px;
 
   overflow: hidden;
-}
 
-.card-image {
-  position: relative;
-  height: 145px;
-  border-bottom: solid 1px var(--line);
-}
+  &__logo {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 1;
+  }
 
-.card-description {
-  position: relative;
-  margin: 0;
-  padding: 30px 30px 20px 30px;
+  &__image {
+    position: relative;
+    height: 145px;
+    border-bottom: solid 1px var(--line);
+  }
 
-  word-break: keep-all;
-  color: var(--secondary-gray);
-}
+  &__description {
+    position: relative;
+    margin: 0;
+    padding: 30px 30px 20px 30px;
 
-.button-wrapper {
-  padding-left: 30px;
+    word-break: keep-all;
+    color: var(--secondary-gray);
+  }
+
+  &__button {
+    padding: 0 20px 30px 30px;
+  }
 }

@@ -25,7 +25,7 @@ const TechnologyCode = {
   terminal: 'terminal',
   user: 'user',
   gamepad: 'gamepad',
-};
+} as const;
 type TechnologyCode = (typeof TechnologyCode)[keyof typeof TechnologyCode];
 
 const TechnologyName = {

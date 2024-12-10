@@ -17,6 +17,8 @@
   flex: 1 1 calc(33.333%);
   max-width: calc(33.333%);
 
+  color: var(--secondary-blue);
+
   @media (max-width: 1666px) {
     flex: 1 1 calc(50%);
     max-width: calc(50%);
@@ -27,9 +29,6 @@
     max-width: 100%;
   }
 
-  color: var(--secondary-blue);
-  font-weight: 600;
-
   &__title-wrapper {
     display: flex;
     width: 370px;
@@ -37,6 +36,7 @@
 
   &__title-no {
     width: 100px;
+    font-weight: 600;
   }
 
   &__title {
