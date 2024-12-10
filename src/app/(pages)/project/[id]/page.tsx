@@ -15,15 +15,25 @@ const Project: React.FC<ProjectProps> = async ({ params }) => {
   return (
     <div className={styles['project']}>
       <div className={styles['project__title-wrapper']}>
+        <div className={styles['project__bar']} />
         <div className={styles['project__title']}>
-          <span className={styles['project__title--ko']}>정부지원 R&D SM과제</span>
+          <span className={styles['project__title--ko']}>{project.titleKo}</span>
           <span className={styles['project__title--en']}>
             {' // '}
-            {project.title}
+            {project.titleEn}
           </span>
         </div>
         <div className={styles['project__sub-title']}>
-          <span>2024/04/03 ~ 2024/04/05</span>
+          <span>
+            {project.startedAt} ~ {project.endedAt}
+          </span>
+        </div>
+        <div className={styles['project__labels']}>
+          {project.skills.map((skill, index) => (
+            <span key={skill + index} className={styles['project__labels__item']}>
+              {skill}
+            </span>
+          ))}
         </div>
       </div>
       <hr />

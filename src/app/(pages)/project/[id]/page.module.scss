@@ -1,11 +1,23 @@
 .project {
   display: flex;
   flex-direction: column;
+
   padding: 20px;
+  height: 100%;
 
   &__title-wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
+    padding-left: 20px;
+  }
+
+  &__bar {
+    position: absolute;
+    left: 0;
+    width: 5px;
+    height: 52px;
+    background-color: var(--secondary-blue);
   }
 
   &__title {
@@ -27,8 +39,23 @@
     font-size: 16px;
   }
 
+  &__labels {
+    display: flex;
+    gap: 8px;
+
+    margin-top: 8px;
+
+    &__item {
+      padding: 3px 12px;
+      border: solid 2px var(--secondary-gray);
+      border-radius: 32px;
+      color: var(--secondary-gray);
+      font-weight: 600;
+    }
+  }
+
   > hr {
-    margin: 20px 0 20px -20px;
+    margin: 16px 0 20px -20px;
     width: calc(100% + 39px);
     height: 1px;
 

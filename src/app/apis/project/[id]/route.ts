@@ -2,18 +2,24 @@ import { NextResponse } from 'next/server';
 
 export type ProjectResponse = {
   projectId: string;
-  title: string;
+  titleKo: string;
+  titleEn: string;
   description: string;
   skills: string[];
+  startedAt: string;
+  endedAt: string;
 };
 
 export async function GET(req: Request, { params }: { params: Promise<{ id: string }> }) {
   const ProjectInfoList = [
     {
       projectId: '1',
-      title: 'Government-funded R&D SM project',
+      titleKo: '정부지원 R&D SM과제',
+      titleEn: 'Government-funded R&D SM project',
       description: 'Hello, World!!',
       skills: ['Next.js', 'React', 'TypeScript', 'GCP'],
+      startedAt: '2024/10/10',
+      endedAt: '2024/10/20',
     },
   ];
 
