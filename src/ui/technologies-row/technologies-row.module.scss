@@ -5,12 +5,16 @@
   gap: 24px;
 
   width: 100%;
-}
 
-.technologies-row-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
-  color: var(--secondary-white);
+    color: var(--secondary-gray);
+
+    &--active {
+      color: var(--secondary-white);
+    }
+  }
 }

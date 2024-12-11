@@ -12,11 +12,10 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 5px;
-
   flex: 1 1 calc(33.333%);
-  max-width: calc(33.333%);
 
+  max-width: calc(33.333%);
+  height: 370px;
   color: var(--secondary-blue);
 
   @media (max-width: 1666px) {
@@ -32,6 +31,7 @@
   &__title-wrapper {
     display: flex;
     width: 370px;
+    height: 42px;
   }
 
   &__title-no {
@@ -40,8 +40,17 @@
   }
 
   &__title {
+    display: -webkit-box;
     width: 270px;
     color: var(--secondary-gray);
     font-size: 16px;
+
+    // NOTE(hajae): 2줄째부터 overflow ...으로 생략
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    white-space: normal;
+    text-overflow: ellipsis;
   }
 }

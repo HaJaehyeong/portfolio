@@ -1,6 +1,7 @@
 .card {
   position: relative;
   width: 370px;
+  height: 315px;
 
   background-color: var(--primary-black-3);
   border: solid 1px var(--line);
@@ -23,11 +24,18 @@
 
   &__description {
     position: relative;
-    margin: 0;
-    padding: 30px 30px 20px 30px;
+    display: -webkit-box;
+    margin: 30px 30px 20px 30px;
+    height: 46px;
 
-    word-break: keep-all;
     color: var(--secondary-gray);
+
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    white-space: normal;
+    text-overflow: ellipsis;
   }
 
   &__button {
