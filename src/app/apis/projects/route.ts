@@ -10,7 +10,7 @@ export type Project = {
   title: string;
   description: string;
   mainSkill: TechnologyEnum['code'];
-  skills: string[];
+  skills: TechnologyEnum['code'][];
   imageSrc: string;
 };
 
@@ -23,7 +23,7 @@ export async function GET(req: Request) {
           title: 'Government-funded R&D SM project',
           description: 'Hello, World!!',
           mainSkill: 'nextjs',
-          skills: ['Next.js', 'React', 'TypeScript', 'GCP'],
+          skills: ['nextjs', 'react', 'typescript', 'gcp'],
           imageSrc: '',
         },
         {
@@ -31,7 +31,7 @@ export async function GET(req: Request) {
           title: 'Baro Factory',
           description: 'Hello, World!!',
           mainSkill: 'react',
-          skills: ['Next.js', 'React', 'TypeScript', 'GCP'],
+          skills: ['nextjs', 'react', 'typescript', 'gcp'],
           imageSrc: '',
         },
         {
@@ -39,7 +39,7 @@ export async function GET(req: Request) {
           title: 'Next Generation Front End Project',
           description: 'Welcome to the second post!',
           mainSkill: 'angular',
-          skills: ['Angular', 'TypeScript', 'AWS'],
+          skills: ['angular', 'typescript', 'aws'],
           imageSrc: '',
         },
         {
@@ -47,7 +47,7 @@ export async function GET(req: Request) {
           title: 'Selection Flow Management Improvement ',
           description: 'Hello, Next.js!',
           mainSkill: 'angular',
-          skills: ['Scala', 'Java', 'Angular.js', 'TypeScript', 'AWS'],
+          skills: ['scala', 'java', 'angular', 'typescript', 'aws'],
           imageSrc: '',
         },
       ],

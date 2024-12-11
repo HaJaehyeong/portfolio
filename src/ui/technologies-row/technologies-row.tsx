@@ -4,7 +4,7 @@ import Checkbox from '../checkbox/checkbox';
 import TechnologyLogo from '../technology-logo/technology-logo';
 import styles from './technologies-row.module.scss';
 import { TechCodesType } from '@/types/constants';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 
 type TechnologiesRow = {
   tech: TechCodesType;
@@ -15,6 +15,10 @@ type TechnologiesRow = {
 const TechnologiesRow: React.FC<TechnologiesRow> = ({ tech, checked = false, handleChange }) => {
   const [isChecked, setIsChecked] = useState(checked);
   const targetTech = Enums.Technology.valueOf(tech);
+
+  useEffect(() => {
+    setIsChecked(checked);
+  }, [checked]);
 
   return (
     targetTech && (

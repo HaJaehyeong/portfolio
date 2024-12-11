@@ -1,9 +1,12 @@
 import {
+  RiAmazonLine,
   RiAngularjsFill,
   RiCss3Fill,
   RiFlutterFill,
   RiGamepadFill,
+  RiGoogleLine,
   RiHtml5Fill,
+  RiJavaLine,
   RiNextjsLine,
   RiReactjsFill,
   RiTerminalBoxFill,
@@ -25,6 +28,11 @@ const TechnologyCode = {
   terminal: 'terminal',
   user: 'user',
   gamepad: 'gamepad',
+  typescript: 'typescript',
+  gcp: 'gcp',
+  aws: 'aws',
+  scala: 'scala',
+  java: 'java',
 } as const;
 type TechnologyCode = (typeof TechnologyCode)[keyof typeof TechnologyCode];
 
@@ -40,7 +48,12 @@ const TechnologyName = {
   terminal: 'Terminal',
   user: 'User',
   gamepad: 'Gamepad',
-};
+  typescript: 'TypeScript',
+  gcp: 'GCP',
+  aws: 'AWS',
+  scala: 'Scala',
+  java: 'Java',
+} as const;
 type TechnologyName = (typeof TechnologyName)[keyof typeof TechnologyName];
 
 const TechnologyIcon = {
@@ -55,6 +68,9 @@ const TechnologyIcon = {
   terminal: RiTerminalBoxFill,
   user: RiUser4Fill,
   gamepad: RiGamepadFill,
+  gcp: RiGoogleLine,
+  aws: RiAmazonLine,
+  java: RiJavaLine,
 };
 type TechnologyIcon = (typeof TechnologyIcon)[keyof typeof TechnologyIcon];
 
@@ -70,6 +86,11 @@ const TechnologyBackgroundColor = {
   terminal: '#ABCDEF', // NOTE(hajae): 디자인이 없기 때문에 임시
   user: '#ABCDEF', // NOTE(hajae): 디자인이 없기 때문에 임시
   gamepad: '#ABCDEF', // NOTE(hajae): 디자인이 없기 때문에 임시
+  typescript: '#83D2FF',
+  gcp: '#F9A658',
+  aws: '#FF9999',
+  scala: '#F9C23C',
+  java: '#B07219',
 } as const;
 type TechnologyBackgroundColor = (typeof TechnologyBackgroundColor)[keyof typeof TechnologyBackgroundColor];
 
@@ -158,6 +179,41 @@ export class Technology extends EnumBase<TechnologyEnum> {
     backgroundColor: TechnologyBackgroundColor.gamepad,
   };
 
+  typescript = {
+    code: TechnologyCode.typescript,
+    name: TechnologyName.typescript,
+    icon: RiReactjsFill,
+    backgroundColor: TechnologyBackgroundColor.typescript,
+  };
+
+  gcp = {
+    code: TechnologyCode.gcp,
+    name: TechnologyName.gcp,
+    icon: TechnologyIcon.gcp,
+    backgroundColor: TechnologyBackgroundColor.gcp,
+  };
+
+  aws = {
+    code: TechnologyCode.aws,
+    name: TechnologyName.aws,
+    icon: TechnologyIcon.aws,
+    backgroundColor: TechnologyBackgroundColor.aws,
+  };
+
+  scala = {
+    code: TechnologyCode.scala,
+    name: TechnologyName.scala,
+    icon: RiReactjsFill,
+    backgroundColor: TechnologyBackgroundColor.scala,
+  };
+
+  java = {
+    code: TechnologyCode.java,
+    name: TechnologyName.java,
+    icon: TechnologyIcon.java,
+    backgroundColor: TechnologyBackgroundColor.java,
+  };
+
   values = [
     this.react,
     this.html5,
@@ -170,7 +226,26 @@ export class Technology extends EnumBase<TechnologyEnum> {
     this.terminal,
     this.user,
     this.gamepad,
+    this.typescript,
+    this.gcp,
+    this.aws,
+    this.scala,
+    this.java,
   ];
 
-  techs = [this.react, this.html5, this.vue, this.css, this.flutter, this.angular, this.variant5, this.nextjs];
+  techs = [
+    this.react,
+    // this.html5,
+    // this.vue,
+    // this.css,
+    // this.flutter,
+    this.angular,
+    // this.variant5,
+    this.nextjs,
+    this.typescript,
+    this.gcp,
+    this.aws,
+    this.scala,
+    this.java,
+  ];
 }
