@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import styles from './code-showcase-codebox.module.scss';
-import profileImage from '@/public/images/profile_image.png';
+import profileImage from '/public/images/profile_image.png';
 import { RiChatSmile3Fill, RiCloseLine } from '@remixicon/react';
 import Star from '@/ui/star/star';
 import { useState } from 'react';

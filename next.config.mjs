@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    domains: ['plus.unsplash.com'],
-  },
   // NOTE(hajae): snake case to camel case
   webpack: (config) => {
     const rules = config.module.rules

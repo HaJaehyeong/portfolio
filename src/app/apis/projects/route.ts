@@ -24,7 +24,7 @@ export async function GET(req: Request) {
           description: 'Government-funded R&D SM project',
           mainSkill: 'nextjs',
           skills: ['nextjs', 'react', 'typescript', 'gcp'],
-          imageSrc: '',
+          imageSrc: '/images/project1.png',
         },
         {
           proejctId: '2',
@@ -32,7 +32,7 @@ export async function GET(req: Request) {
           description: 'Baro Factory',
           mainSkill: 'react',
           skills: ['nextjs', 'react', 'typescript', 'gcp'],
-          imageSrc: '',
+          imageSrc: '/images/project2.png',
         },
         {
           proejctId: '3',
@@ -40,7 +40,7 @@ export async function GET(req: Request) {
           description: 'Next Generation Front End Project',
           mainSkill: 'angular',
           skills: ['angular', 'typescript', 'aws'],
-          imageSrc: '',
+          imageSrc: '/images/project3.png',
         },
         {
           proejctId: '4',
@@ -48,7 +48,7 @@ export async function GET(req: Request) {
           description: 'Selection Flow Management Improvement ',
           mainSkill: 'angular',
           skills: ['scala', 'java', 'angular', 'typescript', 'aws'],
-          imageSrc: '',
+          imageSrc: '/images/project4.png',
         },
       ],
     };

@@ -1,4 +1,3 @@
-import cardImage from '@/public/images/card-example.jpg';
 import { StaticImageData } from 'next/image';
 
 export type TechCodesType =
@@ -200,49 +199,49 @@ export const PROJECT_LIST: ProjectList = [
     projectId: 1,
     title: 'Project 1',
     discription: 'Duis aute irure dolor in velit esse cillum dolore.',
-    image: cardImage,
+    image: '',
     linkUrl: 'https://www.example.com/project1',
   },
   {
     projectId: 2,
     title: 'Project 2',
     discription: 'Excepteur sint occaecat cupidatat non proident.',
-    image: cardImage,
+    image: '',
     linkUrl: 'https://www.example.com/project2',
   },
   {
     projectId: 3,
     title: 'Project 3',
     discription: 'Sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    image: cardImage,
+    image: '',
     linkUrl: 'https://www.example.com/project3',
   },
   {
     projectId: 4,
     title: 'Project 4',
     discription: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-    image: cardImage,
+    image: '',
     linkUrl: 'https://www.example.com/project4',
   },
   {
     projectId: 5,
     title: 'Project 5',
     discription: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-    image: cardImage,
+    image: '',
     linkUrl: 'https://www.example.com/project5',
   },
   {
     projectId: 6,
     title: 'Project 5',
     discription: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-    image: cardImage,
+    image: '',
     linkUrl: 'https://www.example.com/project5',
   },
   {
     projectId: 7,
     title: 'Project 5',
     discription: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-    image: cardImage,
+    image: '',
     linkUrl: 'https://www.example.com/project5',
   },
 ];

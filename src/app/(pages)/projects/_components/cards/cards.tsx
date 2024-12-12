@@ -2,7 +2,6 @@
 import styles from './cards.module.scss';
 import Card from '@/ui/card/card';
 import { Project } from '@/app/apis/projects/route';
-import cardImage from '@/public/images/card-example.jpg';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
 
@@ -30,7 +29,7 @@ const ProjectsCards: React.FC<ProjectsCardsProps> = ({ projects }) => {
             </label>
             <Card
               projectId={project.proejctId}
-              imageSrc={cardImage.src}
+              imageSrc={project.imageSrc}
               mainSkill={project.mainSkill}
               description={project.description}
             ></Card>
