@@ -9,23 +9,23 @@ import TypingComponent from './_components/typing/typing';
 
 const Home: React.FC = () => {
   return (
-    <div className={styles.mainWrapper}>
-      <div className={styles.backgroundBlurs}>
-        <div className={`${styles.position1} ${styles.green}`} />
-        <div className={`${styles.position2} ${styles.green}`} />
-        <div className={`${styles.position3} ${styles.blue}`} />
-        <div className={`${styles.position4} ${styles.blue}`} />
+    <div className={styles['main']}>
+      <div className={styles['blur']}>
+        <div className={`${styles['blur__item-1']} ${styles['blur__green']}`} />
+        <div className={`${styles['blur__item-2']} ${styles['blur__green']}`} />
+        <div className={`${styles['blur__item-3']} ${styles['blur__blue']}`} />
+        <div className={`${styles['blur__item-4']} ${styles['blur__blue']}`} />
       </div>
-      <div className={styles.whoami}>
-        <p className={styles.hello}>Hi all👋, I am</p>
-        <h1 className={styles.name}>Jaehyeong Ha</h1>
-        <h2 className={styles.job}>
+      <div className={styles['whoami']}>
+        <p className={styles['whoami__hello']}>Hi all👋, I am</p>
+        <h1 className={styles['whoami__name']}>Jaehyeong Ha</h1>
+        <h2 className={styles['whoami__job']}>
           {'> '}
           <TypingComponent />
         </h2>
 
-        <label className={styles.comment}>{'// complete the game to continue'}</label>
-        <label className={styles.comment}>{'// you can also see it on my Github page'}</label>
+        <label className={styles['comment']}>{'// complete the game to continue'}</label>
+        <label className={styles['comment']}>{'// you can also see it on my Github page'}</label>
         <div className={styles.code}>
           <label>const</label>
           <label className={styles.valiable}> githubLink</label>
