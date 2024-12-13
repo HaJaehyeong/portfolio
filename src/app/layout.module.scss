@@ -26,20 +26,6 @@
 /* Mobile */
 @media screen and (max-width: 767px) {
   .page {
-    padding: 10px;
-    width: calc(100vw - 20px);
-    height: calc(100dvh - 20px);
-
-    &__main {
-      width: calc(100vw - 20px);
-      height: calc(100dvh - 20px);
-    }
-  }
-}
-
-/* Tablet */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .page {
     padding: 15px;
     width: calc(100vw - 30px);
     height: calc(100dvh - 30px);
@@ -51,8 +37,8 @@
   }
 }
 
-/* Laptop */
-@media screen and (min-width: 1024px) and (max-width: 1439px) {
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .page {
     padding: 20px;
     width: calc(100vw - 40px);
