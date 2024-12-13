@@ -21,8 +21,8 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="ko">
       <body className={firaCode.className}>
-        <div className={styles.pageWrapper}>
-          <div className={styles.mainWrapper}>
+        <div className={styles['page']}>
+          <div className={styles['page__main']}>
             <Header name="Jaehyeong-Ha 😎" />
             <StoreProvider>{children}</StoreProvider>
             <Footer />
