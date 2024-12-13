@@ -1,4 +1,4 @@
-.header-wrapper {
+.header {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -13,34 +13,21 @@
   font-size: 16px;
 
   z-index: 100;
+
+  &__name {
+    display: flex;
+    align-items: center;
+
+    padding: 0 22px;
+    width: calc(310px - 44px);
+    height: 55px;
+
+    border-right: solid 1px var(--line);
+  }
 }
 
-.name {
-  display: flex;
-  align-items: center;
-
-  padding: 0 22px;
-  width: calc(310px - 44px);
-  height: 55px;
-
-  border-right: solid 1px var(--line);
-}
-
-.tabs-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  width: calc(100% - 311px);
-}
-
-.tabs {
-  display: flex;
-  flex-direction: row;
-  white-space: nowrap;
-
-  overflow: scroll;
-}
-
-.contact {
+@media screen and (max-width: 1023px) {
+  .header__name {
+    border: 0;
+  }
 }

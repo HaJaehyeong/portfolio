@@ -1,9 +1,8 @@
 'use client';
-import { TABS } from '@/types/constants';
-import HeaderText from '../header-text/header-text';
 import styles from './header.module.scss';
 import { usePathname } from 'next/navigation';
-import Link from 'next/link';
+import useWindowSize from '@/hooks/useWindowSize';
+import HeaderTab from '../header-tab/header-tab';
 
 type HeaderProps = {
   name: string;
@@ -11,20 +10,15 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = ({ name }) => {
   const pathname = usePathname();
+  const { width } = useWindowSize();
+
+  // NOTE(hajae): tablet보다 작을 때만 메뉴아이콘 표시 위해
+  const isTabletSize = width <= 1023;
 
   return (
-    <div className={styles.headerWrapper}>
-      <div className={styles.name}>{name}</div>
-      <div className={styles.tabsWrapper}>
-        <div className={styles.tabs}>
-          {TABS.map((tab, index) => (
-            <Link href={tab.pathname} key={tab.tabName + index}>
-              <HeaderText text={tab.tabName} isSelected={tab.pathname === pathname} />
-            </Link>
-          ))}
-        </div>
-        <HeaderText text={'contact-me'} isTab={false} isSelected={pathname === 'contact'} />
-      </div>
+    <div className={styles['header']}>
+      <div className={styles['header__name']}>{name}</div>
+      {isTabletSize ? <div></div> : <HeaderTab pathname={pathname} />}
     </div>
   );
 };
