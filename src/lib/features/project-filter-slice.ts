@@ -1,32 +1,39 @@
+import { TechnologyEnum } from '@/enums/technology.enum';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 export type ProjectFilterState = {
-  tabs: string[];
+  technologies: TechnologyEnum['code'][];
 };
 
 const initialState = {
-  tabs: [],
+  technologies: [],
 } as ProjectFilterState;
 
 export const projectFilter = createSlice({
   name: 'projectFilter',
   initialState,
   reducers: {
-    setProjectFilterTabs(state, action: PayloadAction<string[]>) {
-      return { tabs: action.payload };
+    initProjectFilterState: () => initialState,
+    setProjectFilterTechnologiesState(state, action: PayloadAction<TechnologyEnum['code'][]>) {
+      return { technologies: action.payload };
     },
-    addProjectFilterTab(state, action: PayloadAction<string>) {
+    addProjectFilterTechnologyState(state, action: PayloadAction<TechnologyEnum['code']>) {
       return {
-        tabs: [...state.tabs, action.payload],
+        technologies: [...state.technologies, action.payload],
       };
     },
-    removeProjectFilterTab(state, action: PayloadAction<string>) {
+    removeProjectFilterTechnologyState(state, action: PayloadAction<TechnologyEnum['code']>) {
       return {
-        tabs: state.tabs.filter((tab) => tab !== action.payload),
+        technologies: state.technologies.filter((tech) => tech !== action.payload),
       };
     },
   },
 });
 
-export const { setProjectFilterTabs, addProjectFilterTab, removeProjectFilterTab } = projectFilter.actions;
+export const {
+  initProjectFilterState,
+  setProjectFilterTechnologiesState,
+  addProjectFilterTechnologyState,
+  removeProjectFilterTechnologyState,
+} = projectFilter.actions;
 export default projectFilter.reducer;

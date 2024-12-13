@@ -5,14 +5,22 @@ import TechnologiesRow from '@/ui/technologies-row/technologies-row';
 import { Enums } from '@/enums/enums';
 import { TechCodesType } from '@/types/constants';
 import { ChangeEvent } from 'react';
-import { addProjectFilterTab, removeProjectFilterTab } from '@/lib/features/project-filter-slice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  addProjectFilterTechnologyState,
+  removeProjectFilterTechnologyState,
+} from '@/lib/features/project-filter-slice';
+import { TechnologyEnum } from '@/enums/technology.enum';
+import { RootState } from '@/lib/store';
 
 const ProjectsFilter: React.FC = () => {
   const dispatch = useDispatch();
+  const technologies = useSelector((state: RootState) => state.projectFilterReducer.technologies);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>, tabName: string) => {
-    e.target.checked ? dispatch(addProjectFilterTab(tabName)) : dispatch(removeProjectFilterTab(tabName));
+  const handleChange = (e: ChangeEvent<HTMLInputElement>, techName: TechnologyEnum['code']) => {
+    e.target.checked
+      ? dispatch(addProjectFilterTechnologyState(techName))
+      : dispatch(removeProjectFilterTechnologyState(techName));
   };
 
   return (
@@ -25,6 +33,7 @@ const ProjectsFilter: React.FC = () => {
         {Enums.Technology.techs.map((value) => (
           <TechnologiesRow
             key={value.code}
+            checked={technologies.includes(value.code)}
             tech={value.code as TechCodesType}
             handleChange={(e) => handleChange(e, value.code)}
           />

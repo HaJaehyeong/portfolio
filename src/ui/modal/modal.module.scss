@@ -1,0 +1,37 @@
+.modal {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: calc(100vw - 60px);
+  height: calc(100dvh - 60px);
+
+  background-color: rgba(#000, 0.5);
+  z-index: 999;
+
+  &__body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    width: 50dvw;
+    min-width: 700px;
+    height: 70dvh;
+
+    background-color: var(--primary-black-3);
+    border: solid 1px var(--line);
+    border-radius: 16px;
+
+    &__close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 1;
+    }
+  }
+}
