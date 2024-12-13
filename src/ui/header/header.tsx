@@ -3,6 +3,7 @@ import styles from './header.module.scss';
 import { usePathname } from 'next/navigation';
 import useWindowSize from '@/hooks/useWindowSize';
 import HeaderTab from '../header-tab/header-tab';
+import HeaderMenu from '../header-menu/header-menu';
 
 type HeaderProps = {
   name: string;
@@ -18,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({ name }) => {
   return (
     <div className={styles['header']}>
       <div className={styles['header__name']}>{name}</div>
-      {isTabletSize ? <div></div> : <HeaderTab pathname={pathname} />}
+      {isTabletSize ? <HeaderMenu /> : <HeaderTab pathname={pathname} />}
     </div>
   );
 };

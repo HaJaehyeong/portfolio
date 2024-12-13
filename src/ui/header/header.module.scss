@@ -27,7 +27,11 @@
 }
 
 @media screen and (max-width: 1023px) {
-  .header__name {
-    border: 0;
+  .header {
+    justify-content: space-between;
+
+    &__name {
+      border: 0;
+    }
   }
 }
