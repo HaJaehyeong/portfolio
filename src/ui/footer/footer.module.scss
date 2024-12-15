@@ -1,4 +1,4 @@
-.footer-wrapper {
+.footer {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -11,30 +11,31 @@
 
   color: var(--secondary-gray);
   font-size: 16px;
-}
 
-.find-me {
-  display: flex;
-  align-items: center;
+  &__find-me {
+    display: flex;
+    align-items: center;
 
-  padding: 0 22px;
-  width: calc(165px - 44px);
-  height: 50px;
+    padding: 0 22px;
+    width: calc(165px - 44px);
+    height: 50px;
 
-  border-right: solid 1px var(--line);
+    border-right: solid 1px var(--line);
+  }
+
+  &__others {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 
 .social-icon-wrapper {
   display: flex;
   flex-direction: row;
-}
-
-.others {
-  display: flex;
-  flex-direction: row;
-
-  justify-content: space-between;
-  width: 100%;
+  align-items: center;
 }
 
 .social-icon {
@@ -47,4 +48,24 @@
 
   padding: 0 0 0 22px;
   border-left: solid 1px var(--line);
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    &__find-me {
+      width: 300px;
+    }
+  }
+
+  .github {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .footer {
+    &__find-me {
+      width: 150px;
+    }
+  }
 }

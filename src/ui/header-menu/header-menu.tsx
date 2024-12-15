@@ -4,6 +4,7 @@ import styles from './header-menu.module.scss';
 import { useEffect, useState } from 'react';
 import { TABS } from '@/types/constants';
 import Link from 'next/link';
+import Footer from '../footer/footer';
 
 const HeaderMenu: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -20,13 +21,18 @@ const HeaderMenu: React.FC = () => {
     <div>
       <RiMenuLine className={styles['header-menu']} onClick={handleToggleMenu} />
       <div className={`${styles['pane']} ${isMenuOpen ? styles['show'] : ''}`}>
-        {TABS.map((tab, index) => (
-          <Link href={tab.pathname} key={tab.tabName + index} onClick={handleCloseMenu}>
-            <div className={styles['pane__item']}>_{tab.tabName}</div>
-          </Link>
-        ))}
-        <div className={styles['pane__item']} onClick={handleCloseMenu}>
-          _contact-me
+        <div className={styles['pane__wrapper']}>
+          {TABS.map((tab, index) => (
+            <Link href={tab.pathname} key={tab.tabName + index} onClick={handleCloseMenu}>
+              <div className={styles['pane__item']}>_{tab.tabName}</div>
+            </Link>
+          ))}
+          <div className={styles['pane__item']} onClick={handleCloseMenu}>
+            _contact-me
+          </div>
+        </div>
+        <div>
+          <Footer isShow={true} />
         </div>
       </div>
     </div>

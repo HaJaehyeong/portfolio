@@ -26,12 +26,12 @@ const Home: React.FC = () => {
 
         <label className={styles['comment']}>{'// complete the game to continue'}</label>
         <label className={styles['comment']}>{'// you can also see it on my Github page'}</label>
-        <div className={styles.code}>
+        <div className={styles['code']}>
           <label>const</label>
-          <label className={styles.valiable}> githubLink</label>
-          <label className={styles.equal}> = </label>
+          <label className={styles['code__valiable']}> githubLink</label>
+          <label className={styles['code__equal']}> = </label>
           <a href="https://github.com/HaJaehyeong/portfolio" target="_blank">
-            <label className={styles.value}>{'"https://github.com/HaJaehyeong/portfolio"'}</label>
+            <label className={styles['code__value']}>{'"https://github.com/HaJaehyeong/portfolio"'}</label>
           </a>
         </div>
       </div>

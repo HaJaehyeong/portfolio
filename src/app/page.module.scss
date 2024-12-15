@@ -96,15 +96,15 @@
   .code {
     color: var(--secondary-blue);
 
-    .valiable {
+    &__valiable {
       color: var(--accent-green);
     }
 
-    .equal {
+    &__equal {
       color: var(--secondary-white);
     }
 
-    .value {
+    &__value {
       color: var(--accent-red);
       cursor: pointer;
       word-break: break-all;
@@ -231,6 +231,10 @@
 
   .game-box {
     display: none;
+  }
+
+  .code {
+    margin-bottom: 120px;
   }
 }
 
