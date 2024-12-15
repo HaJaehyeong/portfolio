@@ -11,11 +11,11 @@ type FooterProps = {
 const Footer: React.FC<FooterProps> = ({ isShow = false }) => {
   const { width } = useWindowSize();
 
-  // NOTE(hajae): tablet보다 작을 때만 메뉴아이콘 표시 위해
-  const isTabletSize = width > 767;
+  // NOTE(hajae): mobile보다 작을 때만 Footer 표시 위해
+  const isMobileSize = width > 767;
 
   return (
-    (isTabletSize || isShow) && (
+    (isMobileSize || isShow) && (
       <div className={styles['footer']}>
         <div className={styles['footer__find-me']}>find me in: </div>
         <div className={styles['footer__others']}>
