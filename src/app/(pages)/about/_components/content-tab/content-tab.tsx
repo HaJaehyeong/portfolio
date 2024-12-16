@@ -6,9 +6,9 @@ import { RootState } from '@/lib/store';
 import { DIRECTORY_LIST, Directory } from '@/types/constants';
 import { RiCloseLine } from '@remixicon/react';
 import {
+  initAboutExplorerState,
   setAboutExplorerDirectoryId,
   setAboutExplorerFileId,
-  setAboutExplorerState,
 } from '@/lib/features/about-explorer-slice';
 
 type OpenedContentList = OpenedContent[];
@@ -99,13 +99,7 @@ const AboutContentTab: React.FC = () => {
   useEffect(() => {
     // NOTE(hajae): component가 unmount될 때 slice를 초기화.
     return () => {
-      dispatch(
-        setAboutExplorerState({
-          type: 'terminal',
-          directoryId: undefined,
-          fileId: undefined,
-        })
-      );
+      dispatch(initAboutExplorerState());
     };
   }, [dispatch]);
 

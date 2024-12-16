@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: process.env.NODE_ENV === 'production',
   // NOTE(hajae): snake case to camel case
   webpack: (config) => {
     const rules = config.module.rules

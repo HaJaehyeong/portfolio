@@ -6,6 +6,7 @@ import AboutExplorer from './_components/explorer/explorer';
 import AboutSideNav from './_components/side-nav/side-nav';
 import styles from './page.module.scss';
 import AboutMobileContainer from './_components/mobile-container/mobile-container';
+import LoadingSpinner from '@/app/_components/loading-spinner/loading-spinner';
 
 const AboutMe: React.FC = () => {
   // NOTE(hajae): 서버컴포넌트에서 아래와 같이 모바일인지 확인하는 방법도 있지만,
@@ -16,6 +17,10 @@ const AboutMe: React.FC = () => {
 
   // NOTE(hajae): mobile보다 작을 때만 Footer 표시 위해
   const isMobileSize = width <= 767;
+
+  if (width === 0) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div className={styles['about-me']}>

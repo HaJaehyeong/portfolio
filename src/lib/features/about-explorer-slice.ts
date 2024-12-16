@@ -16,6 +16,7 @@ export const aboutExplorer = createSlice({
   name: 'aboutExplorer',
   initialState,
   reducers: {
+    initAboutExplorerState: () => initialState,
     setAboutExplorerState(state, action: PayloadAction<AboutExplorerState>) {
       return action.payload;
     },
@@ -40,6 +41,11 @@ export const aboutExplorer = createSlice({
   },
 });
 
-export const { setAboutExplorerState, setAboutExplorerType, setAboutExplorerDirectoryId, setAboutExplorerFileId } =
-  aboutExplorer.actions;
+export const {
+  initAboutExplorerState,
+  setAboutExplorerState,
+  setAboutExplorerType,
+  setAboutExplorerDirectoryId,
+  setAboutExplorerFileId,
+} = aboutExplorer.actions;
 export default aboutExplorer.reducer;
