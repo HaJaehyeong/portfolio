@@ -63,6 +63,7 @@ export const TABS: TabType[] = [
 ];
 export const SOCIAL_MEDIAS = ['blog', 'insta'];
 export const DIR_COLORS = ['var(--accent-red)', 'var(--accent-green)', 'var(--secondary-blue)'];
+export const EXPLORER_LIST = ['terminal', 'user', 'gamepad'];
 export const DIRECTORY_LIST: DirectoryList = {
   directories: [
     {
