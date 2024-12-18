@@ -11,6 +11,7 @@
 
 .blur {
   position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
 
@@ -211,7 +212,7 @@
   }
 
   .whoami {
-    padding: 0 20px;
+    padding: 80px 20px 0;
     width: calc(100% - 40px);
 
     &__hello {
@@ -219,11 +220,12 @@
     }
 
     &__name {
+      font-size: 56px;
       letter-spacing: -2px;
     }
 
     &__job {
-      margin: 0 0 150px 0;
+      margin: 0 0 100px 0;
       font-size: 20px;
       color: var(--accent-green);
     }
@@ -231,10 +233,6 @@
 
   .game-box {
     display: none;
-  }
-
-  .code {
-    margin-bottom: 120px;
   }
 }
 

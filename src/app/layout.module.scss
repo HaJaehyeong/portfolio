@@ -28,11 +28,14 @@
   .page {
     padding: 15px;
     width: calc(100vw - 30px);
-    height: calc(100dvh - 30px);
+    min-height: calc(100dvh - 30px);
+    height: fit-content;
 
     &__main {
+      justify-content: initial;
       width: calc(100vw - 30px);
-      height: calc(100dvh - 30px);
+      min-height: calc(100dvh - 30px);
+      height: 100%;
     }
   }
 }

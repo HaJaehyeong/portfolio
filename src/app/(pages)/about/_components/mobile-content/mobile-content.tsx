@@ -3,13 +3,28 @@ import { useSelector } from 'react-redux';
 import styles from './mobile-content.module.scss';
 import { RootState } from '@/lib/store';
 import { useEffect, useState } from 'react';
-import { EXPLORER_CONTENTS } from '@/types/constants';
+import { DIRECTORY_LIST, EXPLORER_CONTENTS } from '@/types/constants';
 
 const AboutMobileContent: React.FC = () => {
   const [content, setContent] = useState<string>('');
+  const [subTitle, setSubTitle] = useState<string>('');
   const explorerState = useSelector((state: RootState) => state.aboutExplorerReducer);
 
-  useEffect(() => {
+  // NOTE(hajae): subtitle로 file이 있으면 fileName, 없으면 dirName
+  const getSubTitle = () => {
+    const targetDirectory = DIRECTORY_LIST.directories.find((dir) => dir.directoryId === explorerState.directoryId);
+    if (targetDirectory) {
+      if (explorerState.fileId !== undefined && targetDirectory.files) {
+        const targetFile = targetDirectory.files.find((file) => file.fileId === explorerState.fileId);
+        if (targetFile) return targetFile.fileName;
+      }
+      return targetDirectory.directoryName;
+    }
+    return '';
+  };
+
+  // NOTE(hajae): 선택한 dir의 내용을 Find and Set
+  const getContent = () => {
     const targetContent = EXPLORER_CONTENTS.contents.find((content) => {
       if (explorerState.fileId !== undefined) {
         return content.fileId === explorerState.fileId;
@@ -18,9 +33,12 @@ const AboutMobileContent: React.FC = () => {
       }
     });
 
-    if (targetContent) {
-      setContent(targetContent.content);
-    }
+    return targetContent?.content || '';
+  };
+
+  useEffect(() => {
+    setSubTitle(getSubTitle());
+    setContent(getContent());
   }, [explorerState.directoryId, explorerState.fileId]);
 
   const getSubject = (explorer: 'terminal' | 'user' | 'gamepad') => {
@@ -38,7 +56,7 @@ const AboutMobileContent: React.FC = () => {
     <div className={styles['content']}>
       <div className={styles['content__title']}>
         <span>{'// ' + getSubject(explorerState.type)}</span>
-        <span className={styles['content__title-sub']}>/ sub-title</span>
+        <span className={styles['content__title-sub']}>/ {subTitle}</span>
       </div>
       <div className={styles['content__body']}>{content}</div>
     </div>

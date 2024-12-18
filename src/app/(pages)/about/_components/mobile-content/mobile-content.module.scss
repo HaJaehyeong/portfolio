@@ -10,7 +10,8 @@
   &__title {
     display: flex;
     align-items: center;
-    gap: 8px;
+    flex-wrap: wrap;
+    gap: 2px 8px;
 
     &-sub {
       color: var(--secondary-gray);
