@@ -1,0 +1,34 @@
+.showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  padding: 0 27px 38px;
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    margin-top: 20px;
+
+    &__profile-image {
+      border-radius: 18px;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      &-name {
+        color: var(--secondary-blue);
+      }
+
+      &-created-at {
+        color: var(--secondary-gray);
+        font-size: 12px;
+      }
+    }
+  }
+}
