@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import profileImage from '/public/images/profile_image.png';
 import styles from './mobile-showcase.module.scss';
-import { RiChatSmile3Fill } from '@remixicon/react';
+import { RiChatSmile3Fill, RiCloseLine } from '@remixicon/react';
 import { useState } from 'react';
+import CodeBox from '@/components/codebox/codebox';
 
 const AboutMobileShowcase: React.FC = () => {
   const [showDetail, setShowDetail] = useState<boolean>(false);
@@ -13,7 +14,7 @@ const AboutMobileShowcase: React.FC = () => {
 
   return (
     <div className={styles['showcase']}>
-      <span>{'// Code snippet showcase:'}</span>
+      <span className={styles['showcase__title']}>{'// Code snippet showcase:'}</span>
       <div className={styles['showcase__user']}>
         <Image
           src={profileImage.src}
@@ -31,6 +32,17 @@ const AboutMobileShowcase: React.FC = () => {
           details
         </code>
       </div>
+      <CodeBox />
+      {showDetail && (
+        <div className={styles['showcase__detail']}>
+          <code className={styles['showcase__detail-body']}>
+            looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong
+          </code>
+          <div className={styles['showcase__detail-close']} onClick={handleToggleDetail}>
+            <RiCloseLine size={16} color="var(--secondary-gray)" />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

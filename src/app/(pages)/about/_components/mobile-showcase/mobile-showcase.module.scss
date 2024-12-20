@@ -5,6 +5,11 @@
   gap: 6px;
 
   padding: 0 27px 38px;
+  color: var(--secondary-gray);
+
+  &__title {
+    color: var(--secondary-white);
+  }
 
   &__user {
     display: flex;
@@ -53,6 +58,30 @@
       &:hover {
         color: var(--secondary-white);
       }
+    }
+  }
+
+  &__detail {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top: 5px;
+    border-top: solid 1px var(--line);
+    padding: 15px 0;
+
+    word-break: break-all;
+
+    &-body {
+      max-width: 600px;
+      width: 90%;
+
+      line-height: 1.6;
+    }
+
+    &-close {
+      cursor: pointer;
     }
   }
 }
