@@ -59,6 +59,7 @@
 @media screen and (max-width: 767px) {
   .pane.show {
     height: calc(100dvh - 100% - 30px);
+    border-bottom: solid 1px var(--line);
   }
 }
 

@@ -1,3 +1,4 @@
+import Footer from '@/ui/footer/footer';
 import AboutMobileContent from '../mobile-content/mobile-content';
 import AboutMobileExplorer from '../mobile-explorer/mobile-explorer';
 import AboutMobileShowcase from '../mobile-showcase/mobile-showcase';
@@ -10,6 +11,7 @@ const AboutMobileContainer: React.FC = () => {
       <AboutMobileExplorer />
       <AboutMobileContent />
       <AboutMobileShowcase />
+      <Footer isShow={true} />
     </div>
   );
 };
