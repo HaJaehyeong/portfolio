@@ -6,3 +6,13 @@
 
   overflow-y: scroll;
 }
+
+@media screen and (max-width: 767px) {
+  .projects {
+    width: 100%;
+
+    &__title {
+      margin: 20px 27px;
+    }
+  }
+}
