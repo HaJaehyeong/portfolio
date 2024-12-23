@@ -3,16 +3,13 @@
   flex-direction: row;
 
   width: 100%;
-  height: calc(100% - 107px);
+  height: calc(100dvh - 86px);
 
   z-index: 9;
 }
 
 /* Mobile */
 @media screen and (max-width: 767px) {
-  .about-me {
-    height: calc(100% - 56px);
-  }
 }
 
 /* Tablet */

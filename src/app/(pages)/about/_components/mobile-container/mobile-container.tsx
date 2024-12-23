@@ -6,11 +6,13 @@ import styles from './mobile-container.module.scss';
 
 const AboutMobileContainer: React.FC = () => {
   return (
-    <div className={styles['mobile-container']}>
-      <div className={styles['mobile-container__title']}>_about-me</div>
-      <AboutMobileExplorer />
-      <AboutMobileContent />
-      <AboutMobileShowcase />
+    <div className={styles['mobile']}>
+      <div className={styles['mobile-container']}>
+        <div className={styles['mobile-container__title']}>_about-me</div>
+        <AboutMobileExplorer />
+        <AboutMobileContent />
+        <AboutMobileShowcase />
+      </div>
       <Footer isShow={true} />
     </div>
   );

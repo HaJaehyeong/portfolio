@@ -24,10 +24,12 @@ const ProjectsContainer: React.FC<ProjectsContainer> = ({ projects }) => {
   return (
     <>
       {isMobileSize ? (
-        <div className={styles['projects']}>
-          <div className={styles['projects__title']}>_projects</div>
-          <ProejctsMobileFilter />
-          <ProjectsCards projects={projects} />
+        <div className={styles['mobile-projects']}>
+          <div className={styles['projects']}>
+            <div className={styles['projects__title']}>_projects</div>
+            <ProejctsMobileFilter />
+            <ProjectsCards projects={projects} />
+          </div>
           <Footer isShow={true} />
         </div>
       ) : (
