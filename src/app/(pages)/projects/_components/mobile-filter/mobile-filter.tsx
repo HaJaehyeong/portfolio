@@ -51,6 +51,12 @@ const ProejctsMobileFilter: React.FC = () => {
           )}
         </div>
       </div>
+      <div className={styles['mobile-filter__title']}>
+        <span>{'// projects'}</span>
+        <span className={styles['mobile-filter__title-sub']}>
+          / {technologies.length ? technologies.join('; ') + ';' : 'all;'}
+        </span>
+      </div>
     </div>
   );
 };

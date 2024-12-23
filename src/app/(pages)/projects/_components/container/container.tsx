@@ -27,6 +27,7 @@ const ProjectsContainer: React.FC<ProjectsContainer> = ({ projects }) => {
         <div className={styles['projects']}>
           <div className={styles['projects__title']}>_projects</div>
           <ProejctsMobileFilter />
+          <ProjectsCards projects={projects} />
           <Footer isShow={true} />
         </div>
       ) : (

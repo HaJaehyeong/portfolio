@@ -1,4 +1,4 @@
-.cards-wrapper {
+.cards {
   display: flex;
   flex-wrap: wrap;
   flex: 1;
@@ -43,5 +43,37 @@
     width: 270px;
     color: var(--secondary-gray);
     font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    row-gap: 40px;
+
+    padding: 15px 27px;
+  }
+
+  .card-item {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    &__title {
+      width: fit-content;
+    }
+
+    &__title-wrapper {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2px 8px;
+
+      width: 100%;
+      height: fit-content;
+    }
   }
 }
