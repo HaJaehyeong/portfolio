@@ -3,7 +3,19 @@
   flex-direction: row;
 
   width: 100%;
-  height: calc(100dvh - 86px);
+  height: calc(100dvh - 168px);
 
   z-index: 99;
+}
+
+@media screen and (max-width: 767px) {
+  .projects {
+    height: calc(100dvh - 86px);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .projects {
+    height: calc(100dvh - 148px);
+  }
 }

@@ -35,3 +35,18 @@
     }
   }
 }
+
+@media screen and (max-width: 767px) {
+  .modal {
+    width: 100dvw;
+    height: 100dvh;
+    top: -15px;
+    left: -15px;
+
+    &__body {
+      width: 96dvw;
+      height: 90dvh;
+      min-width: initial;
+    }
+  }
+}
