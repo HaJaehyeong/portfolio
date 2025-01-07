@@ -1,0 +1,15 @@
+.header-tab {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: calc(100% - 311px);
+
+  &__tabs {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+
+    overflow: scroll;
+  }
+}

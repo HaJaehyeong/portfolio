@@ -1,4 +1,4 @@
-.main-wrapper {
+.main {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9,53 +9,54 @@
   height: calc(100% - 120px);
 }
 
-.background-blurs {
+.blur {
   position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
 
   z-index: 1;
 
-  .position1,
-  .position2,
-  .position3,
-  .position4 {
+  &__item-1,
+  &__item-2,
+  &__item-3,
+  &__item-4 {
     position: absolute;
     opacity: 0.8;
   }
 
-  .blue {
+  &__blue {
     background-color: var(--gradients-blue);
     filter: blur(100px);
   }
 
-  .green {
+  &__green {
     background-color: var(--gradients-green);
     filter: blur(100px);
   }
 
-  .position1 {
+  &__item-1 {
     top: 15%;
     left: 53%;
     width: 150px;
     height: 150px;
   }
 
-  .position2 {
+  &__item-2 {
     top: 35%;
     left: 60%;
     width: 200px;
     height: 150px;
   }
 
-  .position3 {
+  &__item-3 {
     top: 40%;
     left: 78%;
     width: 150px;
     height: 150px;
   }
 
-  .position4 {
+  &__item-4 {
     top: 60%;
     left: 70%;
     width: 150px;
@@ -69,20 +70,20 @@
 
   z-index: 2;
 
-  .hello {
+  &__hello {
     margin: 0;
 
     color: var(--secondary-white);
   }
 
-  .name {
+  &__name {
     margin: 0;
 
     font-weight: 300;
     color: var(--secondary-white);
   }
 
-  .job {
+  &__job {
     margin: 0 0 50px 0;
 
     font-weight: 400;
@@ -96,17 +97,18 @@
   .code {
     color: var(--secondary-blue);
 
-    .valiable {
+    &__valiable {
       color: var(--accent-green);
     }
 
-    .equal {
+    &__equal {
       color: var(--secondary-white);
     }
 
-    .value {
+    &__value {
       color: var(--accent-red);
       cursor: pointer;
+      word-break: break-all;
     }
   }
 }
@@ -166,5 +168,77 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .blur {
+    &__item-1 {
+      top: 23%;
+      left: 15%;
+      width: 100px;
+      height: 100px;
+    }
+
+    &__item-2 {
+      top: 35%;
+      left: 40%;
+      width: 150px;
+      height: 150px;
+    }
+
+    &__item-3 {
+      top: 46%;
+      left: 20%;
+      width: 100px;
+      height: 100px;
+    }
+
+    &__item-4 {
+      top: 60%;
+      left: 40%;
+      width: 150px;
+      height: 150px;
+    }
+
+    &__blue {
+      filter: blur(65px);
+    }
+
+    &__green {
+      filter: blur(65px);
+    }
+  }
+
+  .whoami {
+    padding: 80px 20px 0;
+    width: calc(100% - 40px);
+
+    &__hello {
+      margin-left: 10px;
+    }
+
+    &__name {
+      font-size: 56px;
+      letter-spacing: -2px;
+    }
+
+    &__job {
+      margin: 0 0 100px 0;
+      font-size: 20px;
+      color: var(--accent-green);
+    }
+  }
+
+  .game-box {
+    display: none;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .game-box {
+    display: none;
   }
 }

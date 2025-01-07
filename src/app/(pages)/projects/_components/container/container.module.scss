@@ -1,0 +1,23 @@
+.mobile-projects {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 767px) {
+  .projects {
+    width: 100%;
+
+    &__title {
+      margin: 20px 27px;
+    }
+  }
+}

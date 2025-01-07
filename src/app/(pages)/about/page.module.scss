@@ -1,9 +1,17 @@
-.about-me-wrapper {
+.about-me {
   display: flex;
   flex-direction: row;
 
   width: 100%;
-  height: calc(100% - 107px);
+  height: calc(100dvh - 86px);
 
-  z-index: 999;
+  z-index: 9;
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
 }

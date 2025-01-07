@@ -13,7 +13,7 @@ const ProjectsCards: React.FC<ProjectsCardsProps> = ({ projects }) => {
   const technologies = useSelector((state: RootState) => state.projectFilterReducer.technologies);
 
   return (
-    <div className={styles.cardsWrapper}>
+    <div className={styles['cards']}>
       {projects
         .filter((project) => {
           if (technologies.length === 0) return true;

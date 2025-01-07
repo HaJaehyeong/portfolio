@@ -1,0 +1,24 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 38px 27px;
+
+  width: calc(100% - 54px);
+
+  &__title {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2px 8px;
+
+    &-sub {
+      color: var(--secondary-gray);
+    }
+  }
+
+  &__body {
+    color: var(--secondary-gray);
+  }
+}

@@ -1,5 +1,4 @@
 import LoadingSpinner from '@/app/_components/loading-spinner/loading-spinner';
-import Link from 'next/link';
 import { Suspense } from 'react';
 
 type ProjectsLayoutProps = {
