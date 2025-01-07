@@ -50,7 +50,7 @@ const AboutContentBody: React.FC = () => {
         tempElement.textContent = textLine;
 
         if (word === '\n\n') {
-          lines.push('');
+          lines.push(' ');
         } else if (word === '\n') {
           lines.push(currentLine);
           currentLine = '';
