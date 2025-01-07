@@ -46,14 +46,19 @@ const AboutContentBody: React.FC = () => {
       container.appendChild(tempElement);
 
       words.forEach((word) => {
-        const testLine = currentLine ? `${currentLine} ${word}` : word;
-        tempElement.textContent = testLine;
+        const textLine = currentLine ? `${currentLine} ${word}` : word;
+        tempElement.textContent = textLine;
 
-        if (tempElement.scrollWidth > contentWidth) {
+        if (word === '\n\n') {
+          lines.push('');
+        } else if (word === '\n') {
+          lines.push(currentLine);
+          currentLine = '';
+        } else if (tempElement.scrollWidth > contentWidth) {
           lines.push(currentLine);
           currentLine = word;
         } else {
-          currentLine = testLine;
+          currentLine = textLine;
         }
       });
 
