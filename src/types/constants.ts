@@ -137,12 +137,14 @@ export const EXPLORER_CONTENTS: DirectoryContentList = {
     {
       contentId: 1,
       directoryId: 1,
-      content: 'I.... am..... Iron man.. 1',
+      content:
+        ' Next.js : 서비스 개발 경험 1년 \n Typescript : 서비스 개발 경험 5년 \n Angular : 서비스 개발 경험 4년 \n HTML : 서비스 개발 경험 5년 \n CSS(SCSS) : 서비스 개발 경험 5년 \n Scrum : 3년 이상 경험',
     },
     {
       contentId: 2,
       directoryId: 2,
-      content: 'I.... am..... Iron man.. 2',
+      content:
+        ' Scala(Java기반) : 서비스 개발 경험 2년 \n AWS : ECR, ECS 사용 경험, 가벼운 개인 웹페이지 배포 경험 \n MySQL : SQL문 조회, 삽입, 수정, 삭제 가능한 레벨 \n Docker : 검색하며 docker-compose 작성, 기본적인 기능 사용 가능한 레벨',
     },
     {
       contentId: 3,
