@@ -149,7 +149,8 @@ export const EXPLORER_CONTENTS: DirectoryContentList = {
     {
       contentId: 3,
       directoryId: 3,
-      content: 'I.... am..... Iron man.. 3',
+      content:
+        ' Front End Developer \n 하재형(1994.03.05) \n \n 안녕하세요. 하재형이라고 합니다. 저는 대학시절 일본 취업반에 들어가서 일본 취업에 성공하게 되어 일본에서 4년간 근무했습니다. \n 일본에서 4년이라는 개발경험을 쌓고 한국에 귀국하여 현재 한국에서 1년간 프론트엔드 개발자로서 근무를 하고 있습니다.',
     },
     {
       contentId: 4,
