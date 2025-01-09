@@ -49,9 +49,7 @@ const AboutContentBody: React.FC = () => {
         const textLine = currentLine ? `${currentLine} ${word}` : word;
         tempElement.textContent = textLine;
 
-        if (word === '\n\n') {
-          lines.push(' ');
-        } else if (word === '\n') {
+        if (word === '\n') {
           lines.push(currentLine);
           currentLine = '';
         } else if (tempElement.scrollWidth > contentWidth) {
@@ -96,7 +94,7 @@ const AboutContentBody: React.FC = () => {
           <span>{'/**'}</span>
         </div>
         {formattedText.map((line, index) => (
-          <div key={line[0] + index} className={styles.line}>
+          <div key={'line' + line[0] + index} className={styles.line}>
             <span className={styles.prefix}>*</span>
             <span>{line}</span>
           </div>
