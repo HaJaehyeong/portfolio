@@ -1,18 +1,18 @@
+import { URL_REGEX } from '@/types/constants';
 import { RiShareBoxLine } from '@remixicon/react';
 import React from 'react';
 
-const urlRegex = /(https?:\/\/[^\s]+)/g;
-
-type MobileContentBodyProps = {
+type ConvertContentBodyProps = {
   content: string;
 };
 
-const MobileContentBody: React.FC<MobileContentBodyProps> = ({ content }) => {
+// NOTE(hajae): dangerouslySetInnerHTML로도 가능하지만 XSS 공격에 노출되기 쉬움
+const ConvertContentBody: React.FC<ConvertContentBodyProps> = ({ content }) => {
   const convertLink = () => {
-    const parts = content.split(urlRegex);
+    const parts = content.split(URL_REGEX);
 
     return parts.map((part, index) => {
-      if (urlRegex.test(part)) {
+      if (URL_REGEX.test(part)) {
         return (
           <a
             key={index}
@@ -40,4 +40,4 @@ const MobileContentBody: React.FC<MobileContentBodyProps> = ({ content }) => {
   return <>{convertLink()}</>;
 };
 
-export default MobileContentBody;
+export default ConvertContentBody;

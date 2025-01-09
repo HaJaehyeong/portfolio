@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './content-body.module.scss';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
-import { EXPLORER_CONTENTS } from '@/types/constants';
+import { EXPLORER_CONTENTS, URL_REGEX } from '@/types/constants';
+import ConvertContentBody from '../convert-content-body/convert-content-body';
 
 const AboutContentBody: React.FC = () => {
   const [content, setContent] = useState<string>('');
@@ -47,7 +48,8 @@ const AboutContentBody: React.FC = () => {
 
       words.forEach((word) => {
         const textLine = currentLine ? `${currentLine} ${word}` : word;
-        tempElement.textContent = textLine;
+        // NOTE(hajae): URL Link는 'Link + 아이콘' 만큼의 자리를 차지하기 위해
+        URL_REGEX.test(word) ? (tempElement.textContent = 'Link  ') : (tempElement.textContent = textLine);
 
         if (word === '\n') {
           lines.push(currentLine);
@@ -96,7 +98,7 @@ const AboutContentBody: React.FC = () => {
         {formattedText.map((line, index) => (
           <div key={'line' + line[0] + index} className={styles.line}>
             <span className={styles.prefix}>*</span>
-            <span>{line}</span>
+            <ConvertContentBody content={line} />
           </div>
         ))}
         <div className={styles.line}>

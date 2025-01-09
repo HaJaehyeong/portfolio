@@ -4,7 +4,7 @@ import styles from './mobile-content.module.scss';
 import { RootState } from '@/lib/store';
 import { useEffect, useState } from 'react';
 import { DIRECTORY_LIST, EXPLORER_CONTENTS } from '@/types/constants';
-import MobileContentBody from '../mobile-content-body/mobile-content-body';
+import ConvertContentBody from '../convert-content-body/convert-content-body';
 
 const AboutMobileContent: React.FC = () => {
   const [content, setContent] = useState<string>('');
@@ -64,8 +64,7 @@ const AboutMobileContent: React.FC = () => {
         <span className={styles['content__title-sub']}>/ {subTitle}</span>
       </div>
       <div className={styles['content__body']}>
-        {/** NOTE(hajae): dangerouslySetInnerHTML로도 가능하지만 XSS 공격에 노출되기 쉬움 */}
-        <MobileContentBody content={content}></MobileContentBody>
+        <ConvertContentBody content={content} />
       </div>
     </div>
   );

@@ -191,3 +191,4 @@ export const EXPLORER_CONTENTS: DirectoryContentList = {
 
 export const MY_EMAIL = 'hajae305@gmail.com';
 export const MY_PHONE = '+82-10-8077-1157';
+export const URL_REGEX = /(https?:\/\/[^\s]+)/g;
