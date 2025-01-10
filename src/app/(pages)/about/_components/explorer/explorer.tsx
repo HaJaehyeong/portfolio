@@ -15,7 +15,9 @@ const AboutExplorer: React.FC = () => {
         <div className={styles.contactMeInfo}>
           <div className={styles.info}>
             <RiMailFill color="var(--secondary-gray)" size={18} />
-            <label>{MY_EMAIL}</label>
+            <a href={`mailto:${MY_EMAIL}`}>
+              <label>{MY_EMAIL}</label>
+            </a>
           </div>
           <div className={styles.info}>
             <RiPhoneFill color="var(--secondary-gray)" size={18} />
