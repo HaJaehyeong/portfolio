@@ -32,7 +32,13 @@ const AboutMobileShowcase: React.FC = () => {
           details
         </code>
       </div>
-      <CodeBox />
+      <CodeBox
+        code={`const HelloComponent: React.FC = () => {
+  return <>hello world!!</>
+}
+  
+export default HelloComponent;`}
+      />
       {showDetail && (
         <div className={styles['showcase__detail']}>
           <code className={styles['showcase__detail-body']}>

@@ -7,10 +7,16 @@ const AboutCodeShowcase: React.FC = () => {
     <div className={styles.showcaseWrapper}>
       <div className={styles.title}>{'// Code snippet showcase:'}</div>
       <AboutCodeShowcaseCodeBox detail="helloooooohelloooooohelloooooohelloooooohelloooooohelloooooohelloooooohelloooooohelloooooohelloooooo">
-        <CodeBox />
+        <CodeBox
+          code={`const HelloComponent: React.FC = () => {
+  return <>hello world!!</>
+}
+  
+export default HelloComponent;`}
+        />
       </AboutCodeShowcaseCodeBox>
       <AboutCodeShowcaseCodeBox detail="helloo">
-        <CodeBox />
+        <CodeBox code='const hello: string = "world";' />
       </AboutCodeShowcaseCodeBox>
     </div>
   );

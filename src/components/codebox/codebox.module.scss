@@ -1,9 +1,11 @@
-.codebox-wrapper {
-  margin: 10px 0;
-  padding: 20px;
-  // width: 100%;
-  height: fit-content;
+.editor {
+  margin-top: 10px;
 
+  background-color: var(--primary-black-3);
   border: solid 1px var(--line);
   border-radius: 15px;
+
+  textarea:focus {
+    outline: none;
+  }
 }
