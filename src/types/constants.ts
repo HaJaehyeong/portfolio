@@ -113,13 +113,25 @@ export const DIRECTORY_LIST: DirectoryList = {
     },
     {
       directoryId: 6,
-      directoryName: 'watch-e-sports',
+      directoryName: 'cook!',
       directoryType: 'gamepad',
       files: [],
     },
     {
       directoryId: 7,
       directoryName: 'game',
+      directoryType: 'gamepad',
+      files: [],
+    },
+    {
+      directoryId: 8,
+      directoryName: 'travel',
+      directoryType: 'gamepad',
+      files: [],
+    },
+    {
+      directoryId: 9,
+      directoryName: 'investment',
       directoryType: 'gamepad',
       files: [],
     },
@@ -174,17 +186,31 @@ export const EXPLORER_CONTENTS: DirectoryContentList = {
       contentId: 7,
       directoryId: 5,
       fileId: 1,
-      content: 'I.... am..... Iron man.. 5 toggle 0',
+      content: '경상고등학교 (남고) \n 2010.03 ~ 2013.02 \n 인문계',
     },
     {
       contentId: 8,
       directoryId: 6,
-      content: 'I.... am..... Iron man.. 6',
+      content:
+        '요리하는 것을 좋아하며, 가장 자신있고 좋아하는 요리는 사천식 마파두부. 화자오라는 얼얼하게 하는 향신료를 넣으면 그게 또 매력적입니다.',
     },
     {
       contentId: 9,
       directoryId: 7,
-      content: 'I.... am..... Iron man.. 7',
+      content:
+        '어릴때는 온라인 게임을 좋아했지만 요즘은 시간에 구애받지 않고 천천히 혼자 즐길 수 있는 콘솔 게임류를 하고 있습니다.',
+    },
+    {
+      contentId: 10,
+      directoryId: 8,
+      content:
+        '일본에 살면서 후쿠오카, 삿포로, 오사카, 후지산 등산 등 한국과는 다른 문화를 체험하기위해 여행을 다녔습니다. 특히 일본에 외진 곳의 조용하면서 편안한 분위기를 좋아해서 골목 여기저기 산책도 즐겼습니다.',
+    },
+    {
+      contentId: 11,
+      directoryId: 9,
+      content:
+        '한국에 귀국 후, 노후의 안정적인 현금흐름을 만들기 위해 재테크를 공부. \n 재테크를 공부하면서 좋았던 점은 세상이 크게 어떤 흐름으로 움직이고 있는지, 또 많은 사람들이 어떤 기술, 분야에 관심을 가지고 있는지를 알 수 있었던 점입니다.',
     },
   ],
 };
