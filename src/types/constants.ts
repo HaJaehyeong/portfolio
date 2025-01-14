@@ -189,6 +189,43 @@ export const EXPLORER_CONTENTS: DirectoryContentList = {
   ],
 };
 
+export const SHOWCASE_CODE_NEXT_JS = `type AdminLayoutProps = Readonly<{
+  children: React.ReactNode;
+}>;
+          
+const AdminLayout: React.FC<AdminLayoutProps> = async ({ children }) => {
+  const token = await getCookieValue('token');
+          
+  return (
+    <StoreProvider token={token}>
+      {/* 생략 */}
+    </StoreProvider>
+  );
+};
+          
+export default AdminLayout;`;
+export const SHOWCASE_CODE_NEXT_JS_DETAIL =
+  '최근 1년간 바로팩토리 및 정부 R&D과제를 Next.js Framework를 이용해 개발을 진행했습니다.';
+
+export const SHOWCASE_CODE_SCSS = `.header-title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &__title {
+    color: var(--text-primary);
+    font-size: 34px;
+    font-weight: 700;
+  }
+
+  &__sub-title {
+    color: var(--text-secondary);
+    font-size: 14px;
+  }
+}`;
+export const SHOWCASE_CODE_SCSS_DETAIL =
+  '일본에서는 퍼블리셔라는 포지션이 없었기 때문에 퍼블리싱도 프론트엔드 개발자가 담당 했었습니다. 또한, 한국에서 Next.js로 개발할 때도 동일하게 사내 퍼블리셔가 없었기 때문에 퍼블리싱까지 담당한 경험이 있습니다.';
+
 export const MY_EMAIL = 'hajae305@gmail.com';
 export const MY_PHONE = '+82-10-8077-1157';
 export const URL_REGEX = /(https?:\/\/[^\s]+)/g;

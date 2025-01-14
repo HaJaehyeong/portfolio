@@ -5,7 +5,12 @@ import { RiChatSmile3Fill, RiCloseLine } from '@remixicon/react';
 import { useState } from 'react';
 import CodeBox from '@/components/codebox/codebox';
 
-const AboutMobileShowcase: React.FC = () => {
+type AboutMobileShowcaseProps = {
+  code: string;
+  detail: string;
+};
+
+const AboutMobileShowcase: React.FC<AboutMobileShowcaseProps> = ({ code, detail }) => {
   const [showDetail, setShowDetail] = useState<boolean>(false);
 
   const handleToggleDetail = () => {
@@ -14,7 +19,6 @@ const AboutMobileShowcase: React.FC = () => {
 
   return (
     <div className={styles['showcase']}>
-      <span className={styles['showcase__title']}>{'// Code snippet showcase:'}</span>
       <div className={styles['showcase__user']}>
         <Image
           src={profileImage.src}
@@ -32,18 +36,10 @@ const AboutMobileShowcase: React.FC = () => {
           details
         </code>
       </div>
-      <CodeBox
-        code={`const HelloComponent: React.FC = () => {
-  return <>hello world!!</>
-}
-  
-export default HelloComponent;`}
-      />
+      <CodeBox fontSize={10} code={code} />
       {showDetail && (
         <div className={styles['showcase__detail']}>
-          <code className={styles['showcase__detail-body']}>
-            looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong
-          </code>
+          <code className={styles['showcase__detail-body']}>{detail}</code>
           <div className={styles['showcase__detail-close']} onClick={handleToggleDetail}>
             <RiCloseLine size={16} color="var(--secondary-gray)" />
           </div>

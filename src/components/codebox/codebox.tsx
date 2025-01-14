@@ -8,9 +8,10 @@ import './prism-okaidia.css';
 
 type CodeBoxProps = {
   code: string;
+  fontSize?: number;
 };
 
-const CodeBox: React.FC<CodeBoxProps> = ({ code }) => {
+const CodeBox: React.FC<CodeBoxProps> = ({ code, fontSize = 12 }) => {
   const [codeState, setCodeState] = useState(code);
 
   return (
@@ -20,6 +21,7 @@ const CodeBox: React.FC<CodeBoxProps> = ({ code }) => {
       value={codeState}
       highlight={(codeState) => highlight(codeState, languages.jsx, 'jsx')}
       padding={20}
+      style={{ fontSize: fontSize + 'px' }}
       readOnly
     />
   );
