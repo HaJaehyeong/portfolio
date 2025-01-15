@@ -46,4 +46,18 @@
     padding: 2px 4px;
     color: var(--secondary-blue);
   }
+
+  &__mark-down pre {
+    padding: 20px;
+    width: fit-content;
+    border: solid 1px var(--line);
+    border-radius: 16px;
+    background-color: var(--primary-black-3);
+    color: var(--secondary-blue);
+
+    > code {
+      background-color: var(--primary-black-3);
+      color: var(--secondary-gray);
+    }
+  }
 }
