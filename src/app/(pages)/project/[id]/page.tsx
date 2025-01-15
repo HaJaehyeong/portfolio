@@ -1,8 +1,6 @@
 import styles from './page.module.scss';
 import { notFound } from 'next/navigation';
 import fetchProjectInfo from './actions';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import Markdown from './_components/mark-down/mark-down';
 
 type ProjectProps = { params: Promise<{ id: string }> };
