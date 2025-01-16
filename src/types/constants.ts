@@ -92,9 +92,18 @@ export const DIRECTORY_LIST: DirectoryList = {
     },
     {
       directoryId: 4,
-      directoryName: 'interests',
+      directoryName: 'career',
       directoryType: 'user',
-      files: [],
+      files: [
+        {
+          fileId: 2,
+          fileName: 'yonhap-system',
+        },
+        {
+          fileId: 3,
+          fileName: 'bizreach',
+        },
+      ],
     },
     {
       directoryId: 5,
@@ -167,7 +176,7 @@ export const EXPLORER_CONTENTS: DirectoryContentList = {
     {
       contentId: 4,
       directoryId: 4,
-      content: 'I.... am..... Iron man.. 4',
+      content: '2024.02 ~ 재직중 : 연합시스템 \n 2019.04 ~ 2023.04 : Bizreach(visional group)',
     },
     {
       contentId: 5,
@@ -211,6 +220,20 @@ export const EXPLORER_CONTENTS: DirectoryContentList = {
       directoryId: 9,
       content:
         '한국에 귀국 후, 노후의 안정적인 현금흐름을 만들기 위해 재테크를 공부. \n 재테크를 공부하면서 좋았던 점은 세상이 크게 어떤 흐름으로 움직이고 있는지, 또 많은 사람들이 어떤 기술, 분야에 관심을 가지고 있는지를 알 수 있었던 점입니다.',
+    },
+    {
+      contentId: 12,
+      directoryId: 3,
+      fileId: 2,
+      content:
+        '회사명 : 연합시스템 \n 근무기간 : 2024.02.04 ~ 재직중 \n 회사소개 : \n - 스마트팩토리 플랫폼 제공 및 제조업 \n - 직원수 약 30명 \n - 매출액 약 80억 \n 소속부서 : 전략본부 IT연구개발팀 \n 부서소개 : 스마트팩토리 플랫폼 개발 및 유지 보수, 정부 R&D과제 진행',
+    },
+    {
+      contentId: 13,
+      directoryId: 4,
+      fileId: 3,
+      content:
+        '회사명 : Bizreach (株式会社 ビズリーチ) \n 근무기간 : 2019.04.01 ~ 2023.04.30 (4년 1개월) \n 회사소개 : \n - 이직, 헤드헌터 및 하이 클래스 채용 \n - 직원수 약 2,000명 \n - 매출액 4,395억 \n 소속부서 : Hrmos 채용 개발본부 \n 부서소개 : 채용 관리 시스템. 기업의 인사, 채용을 지원 (B2B)',
     },
   ],
 };
