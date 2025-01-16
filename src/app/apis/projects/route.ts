@@ -21,7 +21,7 @@ export async function GET(req: Request) {
         {
           proejctId: '1',
           title: '_government-funded-R&D',
-          description: 'Government-funded R&D SM project',
+          description: 'Government-funded R&D Smart Machine project',
           mainSkill: 'nextjs',
           skills: ['nextjs', 'react', 'typescript', 'gcp'],
           imageSrc: '/images/project1.png',

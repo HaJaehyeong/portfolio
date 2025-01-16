@@ -2,7 +2,10 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+
   padding: 20px 40px;
+  height: calc(100dvh - 244px);
+  overflow-y: auto;
 
   color: var(--secondary-gray);
 }

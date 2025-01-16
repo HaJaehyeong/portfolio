@@ -1,6 +1,7 @@
 import styles from './page.module.scss';
 import { notFound } from 'next/navigation';
 import fetchProjectInfo from './actions';
+import Markdown from './_components/mark-down/mark-down';
 
 type ProjectProps = { params: Promise<{ id: string }> };
 
@@ -15,8 +16,8 @@ const Project: React.FC<ProjectProps> = async ({ params }) => {
   return (
     <div className={styles['project']}>
       <div className={styles['project__title-wrapper']}>
-        <div className={styles['project__bar']} />
         <div className={styles['project__title']}>
+          <div className={styles['project__bar']} />
           <span className={styles['project__title--ko']}>{project.titleKo}</span>
           <span className={styles['project__title--en']}>
             {' // '}
@@ -24,7 +25,7 @@ const Project: React.FC<ProjectProps> = async ({ params }) => {
           </span>
         </div>
       </div>
-      <hr />
+      {project.description && <Markdown description={project.description} />}
     </div>
   );
 };

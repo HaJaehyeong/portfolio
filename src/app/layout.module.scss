@@ -20,6 +20,12 @@
     border-radius: 8px;
 
     z-index: 1;
+
+    &__body {
+      width: 100%;
+      height: calc(100dvh - 86px);
+      overflow-y: auto;
+    }
   }
 }
 

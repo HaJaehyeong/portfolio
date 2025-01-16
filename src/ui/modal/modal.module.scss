@@ -7,8 +7,8 @@
   padding: 0;
   top: 0;
   left: 0;
-  width: calc(100vw - 60px);
-  height: calc(100dvh - 60px);
+  width: 100vw;
+  height: 100dvh;
 
   background-color: rgba(#000, 0.5);
   z-index: 999;
@@ -22,7 +22,7 @@
     min-width: 700px;
     height: 70dvh;
 
-    background-color: var(--primary-black-3);
+    background-color: var(--primary-black-2);
     border: solid 1px var(--line);
     border-radius: 16px;
 
@@ -41,7 +41,7 @@
     width: 100dvw;
     height: 100dvh;
     top: -15px;
-    left: -15px;
+    left: -17.5px;
 
     &__body {
       width: 96dvw;

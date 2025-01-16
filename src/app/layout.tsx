@@ -24,7 +24,9 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
         <div className={styles['page']}>
           <div className={styles['page__main']}>
             <Header name="Jaehyeong-Ha 😎" />
-            <StoreProvider>{children}</StoreProvider>
+            <div className={styles['page__main__body']}>
+              <StoreProvider>{children}</StoreProvider>
+            </div>
             <Footer />
           </div>
         </div>

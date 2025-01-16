@@ -4,6 +4,7 @@ import styles from './mobile-content.module.scss';
 import { RootState } from '@/lib/store';
 import { useEffect, useState } from 'react';
 import { DIRECTORY_LIST, EXPLORER_CONTENTS } from '@/types/constants';
+import ConvertContentBody from '../convert-content-body/convert-content-body';
 
 const AboutMobileContent: React.FC = () => {
   const [content, setContent] = useState<string>('');
@@ -33,7 +34,11 @@ const AboutMobileContent: React.FC = () => {
       }
     });
 
-    return targetContent?.content || '';
+    if (targetContent) {
+      return targetContent.content.trim().replaceAll(' \n ', '\n');
+    }
+
+    return 'Content Not Found';
   };
 
   useEffect(() => {
@@ -58,7 +63,9 @@ const AboutMobileContent: React.FC = () => {
         <span>{'// ' + getSubject(explorerState.type)}</span>
         <span className={styles['content__title-sub']}>/ {subTitle}</span>
       </div>
-      <div className={styles['content__body']}>{content}</div>
+      <div className={styles['content__body']}>
+        <ConvertContentBody content={content} />
+      </div>
     </div>
   );
 };
