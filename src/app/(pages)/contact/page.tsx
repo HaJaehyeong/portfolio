@@ -1,5 +1,11 @@
+import ContactMeInfo from './_components/info/info';
+
 const ContactMe: React.FC = () => {
-  return <></>;
+  return (
+    <>
+      <ContactMeInfo />
+    </>
+  );
 };
 
 export default ContactMe;

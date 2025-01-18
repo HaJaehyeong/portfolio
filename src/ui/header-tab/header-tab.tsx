@@ -18,7 +18,7 @@ const HeaderTab: React.FC<HeaderTabProps> = ({ pathname }) => {
         ))}
       </div>
       <Link href={'/contact'}>
-        <HeaderText text={'contact-me'} isTab={false} isSelected={pathname === 'contact'} />
+        <HeaderText text={'contact-me'} isTab={false} isSelected={pathname === '/contact'} />
       </Link>
     </div>
   );

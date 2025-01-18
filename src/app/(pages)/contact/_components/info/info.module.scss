@@ -1,0 +1,47 @@
+.info {
+  display: flex;
+  flex-direction: column;
+
+  width: 245px;
+  border-right: solid 1px var(--line);
+
+  &__contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+
+    padding: 8px 5px;
+    border-bottom: solid 1px var(--line);
+
+    color: var(--secondary-white);
+
+    &__title {
+      margin: 0;
+    }
+  }
+
+  &__datas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 14px;
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+
+    cursor: pointer;
+
+    label {
+      margin: 0 0 0 5px;
+      color: var(--secondary-gray);
+      cursor: pointer;
+    }
+  }
+}
