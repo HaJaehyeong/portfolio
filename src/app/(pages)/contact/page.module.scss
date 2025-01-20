@@ -1,9 +1,13 @@
 .contact-me {
   display: flex;
   width: 100%;
+  height: calc(100dvh - 166px);
 
   &__infos {
     display: flex;
     flex-direction: column;
+    height: 100%;
+
+    border-right: solid 1px var(--line);
   }
 }

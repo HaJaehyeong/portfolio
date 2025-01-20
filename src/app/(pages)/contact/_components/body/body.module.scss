@@ -1,6 +1,7 @@
 .body {
   display: flex;
   width: calc(100% - 245px);
+  height: 100%;
 
   &__form {
     width: calc(50% - 50px);
