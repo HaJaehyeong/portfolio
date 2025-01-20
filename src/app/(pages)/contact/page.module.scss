@@ -1,0 +1,9 @@
+.contact-me {
+  display: flex;
+  width: 100%;
+
+  &__infos {
+    display: flex;
+    flex-direction: column;
+  }
+}
