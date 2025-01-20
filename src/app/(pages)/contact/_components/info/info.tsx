@@ -8,7 +8,7 @@ const ContactMeInfo: React.FC = () => {
       <div>
         <div className={styles['info__contact']}>
           <RiArrowDownSFill color="var(--secondary-white)" size={20} />
-          <label className={styles['info__contact__title']}>contact me</label>
+          <label className={styles['info__contact__title']}>contacts</label>
         </div>
         <div className={styles['info__datas']}>
           <div className={styles['info__data']}>

@@ -278,3 +278,22 @@ export const SHOWCASE_CODE_SCSS_DETAIL =
 export const MY_EMAIL = 'hajae305@gmail.com';
 export const MY_PHONE = '+82-10-8077-1157';
 export const URL_REGEX = /(https?:\/\/[^\s]+)/g;
+
+type ContactLink = {
+  name: string;
+  url: string;
+};
+export const CONTACT_LINKS: ContactLink[] = [
+  {
+    name: 'Blog Main',
+    url: '',
+  },
+  {
+    name: 'Instagram accaunt',
+    url: '',
+  },
+  {
+    name: 'Github profile',
+    url: '',
+  },
+];
