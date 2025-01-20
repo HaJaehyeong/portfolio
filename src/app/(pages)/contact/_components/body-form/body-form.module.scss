@@ -1,27 +1,39 @@
 .form {
+  position: relative;
   display: flex;
   flex-direction: column;
+  gap: 16px;
 
-  border-right: solid 1px var(--line);
-  height: 100%;
+  padding: 20%;
+  width: 60%;
 
-  &__tab-wrapper {
+  &__item {
     display: flex;
-    flex-direction: row;
-    gap: 5px;
-
-    border-bottom: solid 1px var(--line);
+    flex-direction: column;
+    gap: 3px;
 
     color: var(--secondary-gray);
-  }
 
-  &__tab {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 30px;
+    textarea,
+    input[type='text'],
+    input[type='email'] {
+      padding: 10px 15px;
 
-    padding: 8px 15px;
-    border-right: solid 1px var(--line);
+      border: solid 1px var(--line);
+      border-radius: 8px;
+
+      background-color: var(--primary-black-3);
+      color: var(--secondary-gray);
+
+      &:focus {
+        outline: solid 2px var(--secondary-gray);
+      }
+    }
+
+    textarea {
+      max-width: calc(100% - 30px);
+      height: 125px;
+      max-height: 300px;
+    }
   }
 }
