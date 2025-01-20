@@ -1,0 +1,8 @@
+.body {
+  display: flex;
+  width: calc(100% - 245px);
+
+  &__form {
+    width: calc(50% - 50px);
+  }
+}
