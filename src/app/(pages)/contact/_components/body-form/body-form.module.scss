@@ -1,4 +1,7 @@
 .form {
+  display: flex;
+  flex-direction: column;
+
   border-right: solid 1px var(--line);
   height: 100%;
 
