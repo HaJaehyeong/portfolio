@@ -12,10 +12,13 @@ body {
   margin: 0;
   background-color: var(--primary-black-3);
 
+  color: var(--secondary-white);
+}
+
+* {
   -ms-overflow-style: none;
   scrollbar-width: none;
 
-  color: var(--secondary-white);
   &::-webkit-scrollbar {
     display: none;
   }

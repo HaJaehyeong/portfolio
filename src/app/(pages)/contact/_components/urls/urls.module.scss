@@ -1,0 +1,50 @@
+.urls {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  border-right: solid 1px var(--line);
+
+  &__title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+
+    padding: 8px 10px;
+    border-top: solid 1px var(--line);
+    border-bottom: solid 1px var(--line);
+
+    color: var(--secondary-white);
+
+    &-text {
+      margin: 0;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 14px;
+    margin-bottom: 16px;
+
+    &__link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 4px;
+
+      color: var(--secondary-gray);
+      cursor: pointer;
+
+      label {
+        margin: 0 0 0 5px;
+        color: var(--secondary-gray);
+        cursor: pointer;
+      }
+    }
+  }
+}

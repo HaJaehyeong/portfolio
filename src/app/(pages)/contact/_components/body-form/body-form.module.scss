@@ -1,0 +1,51 @@
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 20%;
+  width: 60%;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    color: var(--secondary-gray);
+
+    textarea,
+    input[type='text'],
+    input[type='email'] {
+      padding: 10px 15px;
+
+      border: solid 1px var(--line);
+      border-radius: 8px;
+
+      background-color: var(--primary-black-3);
+      color: var(--secondary-gray);
+
+      &:focus {
+        outline: solid 2px var(--secondary-gray);
+      }
+    }
+
+    textarea {
+      max-width: calc(100% - 30px);
+      height: 125px;
+      max-height: 300px;
+    }
+  }
+}
+
+.toast {
+  background-color: var(--primary-black-3);
+  color: var(--secondary-gray);
+}
+
+@media screen and (max-width: 767px) {
+  .form {
+    padding: 27px;
+    width: calc(100% - 54px);
+  }
+}
