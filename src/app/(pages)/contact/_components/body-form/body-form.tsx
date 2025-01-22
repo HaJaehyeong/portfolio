@@ -1,12 +1,14 @@
 'use client';
 import CtaButton from '@/ui/cta-button/cta-button';
 import styles from './body-form.module.scss';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import toast, { ToastOptions, Toaster } from 'react-hot-toast';
+import ContactMeMailSuccess from '../mail-success/mail-success';
 
 const ContactMeBodyForm: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
+  const [isSendSuccess, setIsSendSuccess] = useState(false);
 
   const toastOptions: ToastOptions = {
     duration: 5000,
@@ -34,6 +36,7 @@ const ContactMeBodyForm: React.FC = () => {
       emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
         (_) => {
           toast.success('Email sent successfully!!', toastOptions);
+          setIsSendSuccess(true);
           form.current?.reset();
         },
         (error) => {
@@ -44,7 +47,7 @@ const ContactMeBodyForm: React.FC = () => {
     }
   };
 
-  return (
+  return !isSendSuccess ? (
     <form ref={form} onSubmit={sendEmail} className={styles['form']}>
       <div className={styles['form__item']}>
         <label htmlFor="">_name</label>
@@ -63,6 +66,8 @@ const ContactMeBodyForm: React.FC = () => {
       </div>
       <Toaster />
     </form>
+  ) : (
+    <ContactMeMailSuccess onBackClick={() => setIsSendSuccess(false)} />
   );
 };
 
