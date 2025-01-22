@@ -1,6 +1,7 @@
 import { RiCloseLine } from '@remixicon/react';
 import ContactMeBodyForm from '../body-form/body-form';
 import styles from './body.module.scss';
+import ContactMeMailTemplate from '../mail-template/mail-template';
 
 const ContactMeBody: React.FC = () => {
   return (
@@ -16,7 +17,9 @@ const ContactMeBody: React.FC = () => {
           <ContactMeBodyForm />
         </div>
       </div>
-      <div>free</div>
+      <div className={styles['body__mail-template']}>
+        <ContactMeMailTemplate />
+      </div>
     </div>
   );
 };
