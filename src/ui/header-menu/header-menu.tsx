@@ -27,9 +27,9 @@ const HeaderMenu: React.FC = () => {
               <div className={styles['pane__item']}>_{tab.tabName}</div>
             </Link>
           ))}
-          <div className={styles['pane__item']} onClick={handleCloseMenu}>
-            _contact-me
-          </div>
+          <Link href="/contact" onClick={handleCloseMenu}>
+            <div className={styles['pane__item']}>_contact-me</div>
+          </Link>
         </div>
         <div>
           <Footer isShow={true} />
