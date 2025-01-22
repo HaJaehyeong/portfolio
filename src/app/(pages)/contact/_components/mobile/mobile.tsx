@@ -4,7 +4,6 @@ import ContactMeBodyForm from '../body-form/body-form';
 import { useState } from 'react';
 import { CONTACT_LINKS, MY_EMAIL, MY_PHONE } from '@/types/constants';
 import Link from 'next/link';
-import ContactMeMailSuccess from '../mail-success/mail-success';
 
 const ContactMeMobile: React.FC = () => {
   const [isContactsOpen, setisContactsOpen] = useState(false);
