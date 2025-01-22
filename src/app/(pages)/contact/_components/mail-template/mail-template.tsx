@@ -13,7 +13,7 @@ const ContactMeMailTemplate: React.FC = () => {
         </div>
       </div>
       <div className={styles['mail-template__to']}>
-        <h3>발신처 정보</h3>
+        <h3>수신처 정보</h3>
         <div className={styles['mail-template__to-name']}>
           <span>To:</span>
           <span className={styles['mail-template__to-name__body']}>Ha Jaehyeong</span>
