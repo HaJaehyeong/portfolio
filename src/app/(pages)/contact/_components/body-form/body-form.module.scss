@@ -42,3 +42,10 @@
   background-color: var(--primary-black-3);
   color: var(--secondary-gray);
 }
+
+@media screen and (max-width: 767px) {
+  .form {
+    padding: 27px;
+    width: calc(100% - 54px);
+  }
+}
