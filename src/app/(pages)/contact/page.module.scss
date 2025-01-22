@@ -12,3 +12,9 @@
     border-right: solid 1px var(--line);
   }
 }
+
+@media screen and (max-width: 767px) {
+  .contact-me {
+    height: calc(100% - 1px);
+  }
+}

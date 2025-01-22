@@ -1,4 +1,5 @@
 'use client';
+import styles from './container.module.scss';
 import LoadingSpinner from '@/app/_components/loading-spinner/loading-spinner';
 import useWindowSize from '@/hooks/useWindowSize';
 import ContactMeMobile from '../mobile/mobile';
@@ -15,7 +16,13 @@ const ContactMeContainer: React.FC<ContactMeContainerProps> = ({ children }) => 
     return <LoadingSpinner />;
   }
 
-  return isMobileSize ? <ContactMeMobile /> : <>{children}</>;
+  return isMobileSize ? (
+    <div className={styles['mobile-container']}>
+      <ContactMeMobile />
+    </div>
+  ) : (
+    <>{children}</>
+  );
 };
 
 export default ContactMeContainer;
