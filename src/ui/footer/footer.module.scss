@@ -30,24 +30,25 @@
     justify-content: space-between;
     width: 100%;
   }
-}
 
-.social-icon-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
+  &__social-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 
-.social-icon {
-  border-right: solid 1px var(--line);
-}
+  &__social-icon {
+    border-right: solid 1px var(--line);
+  }
 
-.github {
-  display: flex;
-  align-items: center;
+  &__github {
+    display: flex;
+    align-items: center;
 
-  padding: 0 0 0 22px;
-  border-left: solid 1px var(--line);
+    padding: 0 0 0 22px;
+    border-left: solid 1px var(--line);
+    color: var(--secondary-gray);
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -55,10 +56,10 @@
     &__find-me {
       width: 300px;
     }
-  }
 
-  .github {
-    display: none;
+    &__github {
+      display: none;
+    }
   }
 }
 

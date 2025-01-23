@@ -61,7 +61,21 @@ export const TABS: TabType[] = [
     pathname: '/play',
   },
 ];
-export const SOCIAL_MEDIAS = ['blog', 'insta'];
+
+type SocialMediaLink = {
+  name: string;
+  url: string;
+};
+export const SOCIAL_MEDIAS: SocialMediaLink[] = [
+  {
+    name: 'blog',
+    url: 'https://velog.io/@hajea305/posts',
+  },
+  {
+    name: 'insta',
+    url: 'https://www.instagram.com/h__jaeee',
+  },
+];
 export const DIR_COLORS = ['var(--accent-red)', 'var(--accent-green)', 'var(--secondary-blue)'];
 export const EXPLORER_LIST = ['terminal', 'user', 'gamepad'];
 export const DIRECTORY_LIST: DirectoryList = {
@@ -285,15 +299,19 @@ type ContactLink = {
 };
 export const CONTACT_LINKS: ContactLink[] = [
   {
-    name: 'Blog Main',
-    url: '',
+    name: 'Notion resume',
+    url: 'https://sleepy-manicure-27d.notion.site/cb1e29f9cd144995b98f6f44aaa59cf3?pvs=4',
   },
   {
-    name: 'Instagram accaunt',
+    name: 'Blog main',
+    url: 'https://velog.io/@hajea305/posts',
+  },
+  {
+    name: 'Instagram account',
     url: '',
   },
   {
     name: 'Github profile',
-    url: '',
+    url: 'https://github.com/HaJaehyeong',
   },
 ];
