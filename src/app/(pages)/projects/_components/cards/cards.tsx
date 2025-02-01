@@ -1,9 +1,9 @@
 'use client';
 import styles from './cards.module.scss';
 import Card from '@/ui/card/card';
-import { Project } from '@/app/apis/projects/route';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/store';
+import { Project } from '@/types/constants';
 
 type ProjectsCardsProps = {
   projects: Project[];
@@ -20,7 +20,7 @@ const ProjectsCards: React.FC<ProjectsCardsProps> = ({ projects }) => {
           return project.skills.some((skill) => technologies.includes(skill));
         })
         .map((project: Project, index) => (
-          <div key={project.proejctId} className={styles['card-item']}>
+          <div key={project.projectId} className={styles['card-item']}>
             <label className={styles['card-item__title-wrapper']}>
               <span className={styles['card-item__title-no']}>Project {index + 1}</span>
               <span className={styles['card-item__title']}>
@@ -28,7 +28,7 @@ const ProjectsCards: React.FC<ProjectsCardsProps> = ({ projects }) => {
               </span>
             </label>
             <Card
-              projectId={project.proejctId}
+              projectId={project.projectId}
               imageSrc={project.imageSrc}
               mainSkill={project.mainSkill}
               description={project.description}

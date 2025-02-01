@@ -3,11 +3,11 @@ import styles from './container.module.scss';
 import ProjectsFilter from '../filter/filter';
 import ProjectsTab from '../tab/tab';
 import ProjectsCards from '../cards/cards';
-import { Project } from '@/app/apis/projects/route';
 import LoadingSpinner from '@/app/_components/loading-spinner/loading-spinner';
 import useWindowSize from '@/hooks/useWindowSize';
 import Footer from '@/ui/footer/footer';
 import ProejctsMobileFilter from '../mobile-filter/mobile-filter';
+import { Project } from '@/types/constants';
 
 type ProjectsContainer = {
   projects: Project[];

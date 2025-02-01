@@ -558,7 +558,7 @@ export type ProjectsResponse = {
 };
 
 export type Project = {
-  proejctId: string;
+  projectId: string;
   title: string;
   description: string;
   mainSkill: TechnologyEnum['code'];
@@ -569,7 +569,7 @@ export type Project = {
 export const MOCK_PROJECTS: ProjectsResponse = {
   projects: [
     {
-      proejctId: '1',
+      projectId: '1',
       title: '_government-funded-R&D',
       description: 'Government-funded R&D Smart Machine project',
       mainSkill: 'nextjs',
@@ -577,7 +577,7 @@ export const MOCK_PROJECTS: ProjectsResponse = {
       imageSrc: '/images/project1.png',
     },
     {
-      proejctId: '2',
+      projectId: '2',
       title: '_smart-factory',
       description: 'Baro Factory',
       mainSkill: 'react',
@@ -585,7 +585,7 @@ export const MOCK_PROJECTS: ProjectsResponse = {
       imageSrc: '/images/project2.png',
     },
     {
-      proejctId: '3',
+      projectId: '3',
       title: '_angular-version-upgrade',
       description: 'Next Generation Front End Project',
       mainSkill: 'angular',
@@ -593,7 +593,7 @@ export const MOCK_PROJECTS: ProjectsResponse = {
       imageSrc: '/images/project3.png',
     },
     {
-      proejctId: '4',
+      projectId: '4',
       title: '_adding-new-feature ',
       description: 'Selection Flow Management Improvement ',
       mainSkill: 'angular',
