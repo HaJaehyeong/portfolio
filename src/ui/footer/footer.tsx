@@ -3,6 +3,7 @@ import { SOCIAL_MEDIAS, SocialMediaType } from '@/types/constants';
 import SocialMedia from '../social-media/social-media';
 import styles from './footer.module.scss';
 import useWindowSize from '@/hooks/useWindowSize';
+import Link from 'next/link';
 
 type FooterProps = {
   isShow?: boolean;
@@ -19,16 +20,21 @@ const Footer: React.FC<FooterProps> = ({ isShow = false }) => {
       <div className={styles['footer']}>
         <div className={styles['footer__find-me']}>find me in: </div>
         <div className={styles['footer__others']}>
-          <div className={styles.socialIconWrapper}>
+          <div className={styles['footer__social-links']}>
             {SOCIAL_MEDIAS.map((media, index) => (
-              <div key={index} className={styles.socialIcon}>
-                <SocialMedia value={media as SocialMediaType} />
-              </div>
+              <Link key={media.name} href={media.url} target="_blank">
+                <div key={index} className={styles['footer__social-icon']}>
+                  <SocialMedia value={media.name as SocialMediaType} />
+                </div>
+              </Link>
             ))}
           </div>
-          <div className={styles.github}>
-            @HaJaehyeong <SocialMedia value="github" />
-          </div>
+          <Link href="https://github.com/HaJaehyeong" target="_blank">
+            <div className={styles['footer__github']}>
+              <span>@HaJaehyeong</span>
+              <SocialMedia value="github" />
+            </div>
+          </Link>
         </div>
       </div>
     )

@@ -11,7 +11,7 @@ type MarkdownProps = {
 const Markdown: React.FC<MarkdownProps> = ({ description }) => {
   return (
     <div className={styles['project__mark-down']}>
-      <ReactMarkdown remarkPlugins={[remarkGfm]} children={description} />
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>{description}</ReactMarkdown>
     </div>
   );
 };

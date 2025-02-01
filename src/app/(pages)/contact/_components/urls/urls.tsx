@@ -13,7 +13,7 @@ const ContactMeUrls: React.FC = () => {
         </div>
         <div className={styles['urls__links']}>
           {CONTACT_LINKS.map((link) => (
-            <Link key={link.name} href={link.url} className={styles['urls__links__link']}>
+            <Link key={link.name} href={link.url} className={styles['urls__links__link']} target="_blank">
               <RiShareBoxLine size={16} />
               <span>{link.name}</span>
             </Link>

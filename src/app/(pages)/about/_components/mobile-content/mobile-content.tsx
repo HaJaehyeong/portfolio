@@ -44,7 +44,7 @@ const AboutMobileContent: React.FC = () => {
   useEffect(() => {
     setSubTitle(getSubTitle());
     setContent(getContent());
-  }, [explorerState.directoryId, explorerState.fileId]);
+  }, [explorerState.directoryId, explorerState.fileId, getSubTitle, getContent]);
 
   const getSubject = (explorer: 'terminal' | 'user' | 'gamepad') => {
     switch (explorer) {
