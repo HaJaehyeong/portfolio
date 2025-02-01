@@ -2,6 +2,17 @@ import styles from './page.module.scss';
 import { notFound } from 'next/navigation';
 import fetchProjectInfo from './actions';
 import Markdown from './_components/mark-down/mark-down';
+import fetchProjects from '../../projects/actions';
+
+export async function generateStaticParams() {
+  const projects = await fetchProjects();
+
+  return (
+    projects?.projects.map((project) => ({
+      id: project.projectId.toString(),
+    })) || []
+  );
+}
 
 type ProjectProps = { params: Promise<{ id: string }> };
 
