@@ -8,12 +8,7 @@ type ProjectsLayoutProps = {
 
 const ProjectsLayout: React.FC<ProjectsLayoutProps> = ({ children, detail }) => {
   // NOTE(hajae): fetch Projects를 위한 Suspense
-  return (
-    <Suspense fallback={<LoadingSpinner />}>
-      {children}
-      <div>{detail}</div>
-    </Suspense>
-  );
+  return <Suspense fallback={<LoadingSpinner />}>{children}</Suspense>;
 };
 
 export default ProjectsLayout;

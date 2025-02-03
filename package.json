@@ -2,9 +2,12 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://hajaehyeong.github.io/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "predeploy": "npm run build",
+    "deploy": "touch out/.nojekyll && gh-pages -d out -r https://github.com/HaJaehyeong/HaJaehyeong.github.io.git",
     "start": "next start",
     "lint": "next lint"
   },
@@ -12,6 +15,7 @@
     "@reduxjs/toolkit": "^2.2.1",
     "@remixicon/react": "^4.2.0",
     "emailjs-com": "^3.2.0",
+    "gh-pages": "^6.3.0",
     "next": "15.0.2",
     "prismjs": "^1.29.0",
     "react": "^18",

@@ -1,11 +1,11 @@
 import styles from './page.module.scss';
 import { notFound } from 'next/navigation';
-import fetchProjectInfo from './actions';
 import Markdown from './_components/mark-down/mark-down';
-import fetchProjects from '../../projects/actions';
+import { MOCK_PROJECTS, MOCK_PROJECT_INFO_LIST } from '@/types/constants';
 
+// NOTE(hajae): github pages 정적 페이지 배포를 위해 generateStaticParams를 추가
 export async function generateStaticParams() {
-  const projects = await fetchProjects();
+  const projects = MOCK_PROJECTS;
 
   return (
     projects?.projects.map((project) => ({
@@ -18,7 +18,7 @@ type ProjectProps = { params: Promise<{ id: string }> };
 
 const Project: React.FC<ProjectProps> = async ({ params }) => {
   const id = (await params).id;
-  const project = await fetchProjectInfo(id);
+  const project = MOCK_PROJECT_INFO_LIST.find((project) => project.projectId === id);
 
   if (!project) {
     notFound();

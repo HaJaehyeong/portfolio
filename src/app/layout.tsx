@@ -4,6 +4,7 @@ import styles from './layout.module.scss';
 import Header from '@/ui/header/header';
 import Footer from '@/ui/footer/footer';
 import StoreProvider from './storeProvider';
+import profileImage from '/public/images/profile_image.png';
 import './globals.scss';
 
 const firaCode = Fira_Code({ subsets: ['latin'] });
@@ -11,6 +12,21 @@ const firaCode = Fira_Code({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: "Hajae's Portfolio",
   description: 'first portfolio page',
+  openGraph: {
+    title: "Hajae's Portfolio",
+    description: 'GitHub Pages에서 호스팅된 Portfolio',
+    url: 'https://hajaehyeong.github.io',
+    siteName: "Hajae's Portfolio",
+    images: [
+      {
+        url: profileImage.src,
+        width: 1200,
+        height: 630,
+        alt: 'Portfolio Thumbnail',
+      },
+    ],
+    type: 'website',
+  },
 };
 
 type RootLayoutProps = {

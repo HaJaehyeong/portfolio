@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://hajaehyeong.github.io' : '',
+  images: {
+    unoptimized: true,
+  },
   reactStrictMode: process.env.NODE_ENV === 'production',
   // NOTE(hajae): snake case to camel case
   webpack: (config) => {
