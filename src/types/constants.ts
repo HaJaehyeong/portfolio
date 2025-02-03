@@ -361,22 +361,22 @@ export const MOCK_PROJECT_INFO_LIST: ProjectResponse[] = [
 
 ### 주요 역할
 - **사내용 공용 UI 컴포넌트 개발**
-- \`Input\`, \`Button\`, \`Menu\`, \`Modal\` 등 재사용 가능한 컴포넌트 설계 및 구현
-- 컴포넌트의 일관된 디자인 시스템 구축으로 개발 생산성 향상
+  - \`Input\`, \`Button\`, \`Menu\`, \`Modal\` 등 재사용 가능한 컴포넌트 설계 및 구현
+  - 컴포넌트의 일관된 디자인 시스템 구축으로 개발 생산성 향상
 - **R&D 과제 검증용 화면 개발**
-- 실시간 기계 데이터 처리를 위한 WebSocket(WS) 기반 화면 설계 및 개발
-- 사용자 친화적인 데이터 시각화 및 인터페이스 제공
+  - 실시간 기계 데이터 처리를 위한 WebSocket(WS) 기반 화면 설계 및 개발
+  - 사용자 친화적인 데이터 시각화 및 인터페이스 제공
 - **웹 페이지 기획 및 디자인**
-- 요구사항 분석 및 화면 설계 작업 주도
-- 사용자 경험(UX)을 고려한 디자인과 구조 설계
+  - 요구사항 분석 및 화면 설계 작업 주도
+  - 사용자 경험(UX)을 고려한 디자인과 구조 설계
 
 ### 기대 효과 및 진행 상황
 - 진행 상황 : 공용 UI 컴포넌트 개발 완료, 실시간 데이터 처리 화면 90% 이상 구현
 - 기대 효과
-- 공작기계 최적화 성능 개선을 통해 생산성 13%이상 증가 목표
-- 공구 수명 측정 오차 범위 35% 이내 목표
-- 가공속도 가변에 따른 부하값 일관성 측정 변동폭 10% 이내 목표
-- 원가 절감율 3% 이상 목표
+  - 공작기계 최적화 성능 개선을 통해 생산성 13%이상 증가 목표
+  - 공구 수명 측정 오차 범위 35% 이내 목표
+  - 가공속도 가변에 따른 부하값 일관성 측정 변동폭 10% 이내 목표
+  - 원가 절감율 3% 이상 목표
 `,
     skills: ['Next.js', 'React', 'TypeScript', 'GCP'],
     startedAt: '2024.12.01',
@@ -421,14 +421,14 @@ export const MOCK_PROJECT_INFO_LIST: ProjectResponse[] = [
     
 ### 상세 업무
 - 실시간 모니터링 화면 개발
-- \`Vue.js\`로 개발된 실시간 모니터링 화면 \`Next.js(React)\`로 리뉴얼
-- \`WS\` 으로 실시간 데이터 처리
+  - \`Vue.js\`로 개발된 실시간 모니터링 화면 \`Next.js(React)\`로 리뉴얼
+  - \`WS\` 으로 실시간 데이터 처리
 - 어드민 화면 개발
-- \`Vue.js\`로 개발된 어드민 화면 \`Next.js(React)\`로 리뉴얼
+  - \`Vue.js\`로 개발된 어드민 화면 \`Next.js(React)\`로 리뉴얼
 - 어드민 화면 설계
 - Scrum 개발 방법론 도입
-- Daily Scrum, Sprint Planning, Retrospective 도입
-- Story Point로 일정 관리
+  - Daily Scrum, Sprint Planning, Retrospective 도입
+  - Story Point로 일정 관리
 
 ### 업무 성과
 - 리뉴얼 전 버그로 인한 문의가 \`주2-4건\`에서 \`월0-1건\`으로 감소
@@ -474,15 +474,15 @@ export const MOCK_PROJECT_INFO_LIST: ProjectResponse[] = [
 
 ### 주요 업무
 - 기존에 작성되어 있는 AngularJS코드를 Angular 12버전으로 새롭게 작성
-- 서포트 종료 예정인 AngularJS코드를 Angular 12버전으로 업그레이드
-- 코드 리팩토링
-- 잠재되어 있던 프론트엔드의 버그 수정
+  - 서포트 종료 예정인 AngularJS코드를 Angular 12버전으로 업그레이드
+  - 코드 리팩토링
+  - 잠재되어 있던 프론트엔드의 버그 수정
 - 공용 컴포넌트 작성
-- AngularJS에서 작성된 공용 컴포넌트 새롭게 작성
-- Select, Tooltip, Editor 등 자주 사용되는 공용 컴포넌트 작성
+  - AngularJS에서 작성된 공용 컴포넌트 새롭게 작성
+  - Select, Tooltip, Editor 등 자주 사용되는 공용 컴포넌트 작성
 - 기존에 잠재되어 있던 버그 수정
 - 1주 단위 스프린트로 업무를 계획/수행
-- Scrum 개발방식으로 개발
+  - Scrum 개발방식으로 개발
 - CS(Customer Success)와 디자이너와 커뮤니케이션
 - 코드리뷰 & 에러감시
 
