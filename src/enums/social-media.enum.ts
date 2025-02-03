@@ -1,4 +1,4 @@
-import { RiGithubFill, RiInstagramLine, RiNewsLine } from '@remixicon/react';
+import { RiGithubFill, RiInstagramLine, RiLinksLine, RiNewsLine } from '@remixicon/react';
 import { EnumBase, EnumDef } from './enum-base';
 
 const SocialMediaCode = {
@@ -18,7 +18,7 @@ type SocialMediaName = (typeof SocialMediaName)[keyof typeof SocialMediaName];
 const SocialMediaIcon = {
   github: RiGithubFill,
   blog: RiNewsLine,
-  insta: RiInstagramLine,
+  insta: RiLinksLine,
 };
 type SocialMediaIcon = (typeof SocialMediaIcon)[keyof typeof SocialMediaIcon];
 

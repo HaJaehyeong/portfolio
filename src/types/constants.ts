@@ -74,7 +74,7 @@ export const SOCIAL_MEDIAS: SocialMediaLink[] = [
   },
   {
     name: 'insta',
-    url: 'https://www.instagram.com/h__jaeee',
+    url: 'https://www.notion.so/cb1e29f9cd144995b98f6f44aaa59cf3',
   },
 ];
 export const DIR_COLORS = ['var(--accent-red)', 'var(--accent-green)', 'var(--secondary-blue)'];
@@ -306,10 +306,6 @@ export const CONTACT_LINKS: ContactLink[] = [
   {
     name: 'Blog main',
     url: 'https://velog.io/@hajea305/posts',
-  },
-  {
-    name: 'Instagram account',
-    url: '',
   },
   {
     name: 'Github profile',
