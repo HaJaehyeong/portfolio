@@ -31,7 +31,7 @@ const AboutCodeShowcaseCodeBox: React.FC<AboutCodeShowcaseCodeBoxProps> = ({ chi
           </div>
         </div>
         <div className={styles.postInfo}>
-          <code onClick={handleToggleDetail}>
+          <code onClick={handleToggleDetail} className={showDetail ? styles['button--active'] : ''}>
             <RiChatSmile3Fill size={14} />
             details
           </code>

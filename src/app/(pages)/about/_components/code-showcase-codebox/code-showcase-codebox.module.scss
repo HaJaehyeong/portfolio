@@ -81,3 +81,9 @@
     cursor: pointer;
   }
 }
+
+.button {
+  &--active {
+    color: var(--secondary-white);
+  }
+}
